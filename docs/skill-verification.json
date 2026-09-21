@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-21",
+  "version": "0.2.0",
+  "platform": "macOS",
+  "python": "3.9.6",
+  "runtime_plugin": "26.915.31945",
+  "host": "Codex",
+  "installation": "Copied the complete skill directory outside the source tree; no pip install for the runner",
+  "offline_tests": 17,
+  "skill_validator": "passed",
+  "live_task": {
+    "task": "Open a supplied local fixture in a new tab, fill a synthetic message, apply it and report the result",
+    "status": "completed",
+    "decision_rounds": 8,
+    "jev_calls": 14,
+    "host_requests": 4,
+    "host_request_purposes": [
+      "input",
+      "input",
+      "input",
+      "completion"
+    ],
+    "cua_tool_calls": 20,
+    "standalone_codex_helper_used": false,
+    "stale_decisions_not_executed": 1,
+    "observed_result": "Received: host agent handoff"
+  },
+  "limits": [
+    "Single synthetic task in real Chrome through native CUA.",
+    "Host waits included documentation work; no latency or cost conclusion.",
+    "Other agent hosts and fresh native permission dialogs were not exercised in this sample.",
+    "Private UI exchanges, responses and credentials are not published."
+  ]
+}

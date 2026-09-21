@@ -29,7 +29,8 @@ def runtime_configuration(config=None):
 class NativeCUA:
     """Single-threaded client; native app permissions remain enforced by CUA."""
 
-    def __init__(self, config=None):
+    def __init__(self, config=None, permission_handler=None):
+        self.permission_handler = permission_handler
         self.config, cfg = runtime_configuration(config)
         # No Codex thread metadata, login tokens, or API keys are needed for transport.
         env = {k: os.environ[k] for k in ('HOME', 'PATH', 'TMPDIR', 'USER', 'SHELL') if k in os.environ}
@@ -57,7 +58,7 @@ class NativeCUA:
             self.server = self.request('initialize', {
                 'protocolVersion': '2024-11-05',
                 'capabilities': {'elicitation': {'form': {}}},
-                'clientInfo': {'name': 'jev-computer-use', 'version': '0.1.0'},
+                'clientInfo': {'name': 'jev-computer-use', 'version': '0.2.0'},
             })
             self.send({'jsonrpc': '2.0', 'method': 'notifications/initialized'})
         except BaseException:
@@ -71,6 +72,9 @@ class NativeCUA:
     def _elicitation(self, request):
         """Relay native permission forms to the human; never silently approve."""
         params = request['params']
+        if self.permission_handler:
+            self.send({'jsonrpc': '2.0', 'id': request['id'], 'result': self.permission_handler(params)})
+            return
         print('\nComputer Use permission request:', params.get('message', ''), file=sys.stderr)
         schema = params.get('requestedSchema', {})
         result = {'action': 'cancel'}

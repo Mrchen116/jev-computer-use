@@ -12,7 +12,18 @@
 | `kangshifu1/jev-computer-use` | 独立 Playwright 浏览器适配器、已有 Codex tab 接口与任务验证协议 | 独立模式必须给 startUrl、来源范围、控件和断言 | 安装后实测、确定性断言、合成证据与测量条件 |
 | 本项目 | 从应用列表起步，自动提取控件，Jev 选择，缺内容时再请 LLM | 一句任务；必要的用户事实；不要求初始 URL | 更适合探索性任务，但模型请求包含更多 UI 内容，权限/验收不如限定工作流严格 |
 
-## 最接近：Jev Desktop
+## Skill 入口与外层 Agent 的分工
+
+四个项目都已有 Skill 入口，因此“Skill + 代码”本身不是差异点：
+
+- [jev-desktop 的 Skill](https://github.com/yikangy873-gif/jev-desktop/blob/9b02783ed96a81f2529827492de708ca1956c265/plugins/jev-desktop/skills/jev-desktop/SKILL.md) 让宿主准备目标、允许动作、文本槽和 verifier，再启动本地批量循环；缺少文字时退回宿主。它最接近把推理与执行拆开的产品形态。
+- [Hermes 的 Skill](https://github.com/kerpopule/hermes-jev-skills/blob/29e64b57026eb040b355c260a2480015bd459611/skills/jev-computer-use/SKILL.md) 说明候选动作协议并提供现成 runner；可选 `--plan` 仍会在 runner 中调用文字模型一次，所以不能把所有模式都概括成外层推理。
+- [Jevbridge 的 Skill](https://github.com/tacticocc/Jevbridge/blob/84fcdc30e69a72bcf362e651779aaf38a9897b32/skills/jevbridge/SKILL.md) 教宿主使用 typed decision/MCP/ACP 接口，生成模型留在宿主侧，但桌面执行仍由宿主集成。
+- [同名项目的 Skill](https://github.com/kangshifu1/jev-computer-use/blob/0cd5c076445c00e0d56529a5e0471320a0564a4d/skills/jev-computer-use/SKILL.md) 把规划、自由文本输入、图像理解和结果核验留给宿主，按环境选择已有 Codex tab 或独立浏览器后端。
+
+本项目 0.2.0 改为自包含 Skill：外层 Agent 传任务；同一个持续 worker 自己发现动作并循环执行；需要文字、推理或核验时以结构化请求暂停，宿主回答后继续。不要求事先填好所有文本槽，也不在默认路径另开 `codex exec`。这利用了外层已有对话上下文，但每次交接仍有工具调度开销；不能直接推导出净节费或速度优势。执行后端仍依赖本机 Codex macOS runtime，换宿主不等于跨平台。
+
+## Jev Desktop 的执行约束
 
 其 `createSession` 要求 `targetName` 和 `verify`，候选动作经 `clickLabels`、`textSlots` 等约束后才暴露给 Jev。`buildDecisionSpace` 在一次请求中建立操作头及对应目标头；循环只执行选中操作允许的目标，填值使用本地准备的文本槽。它已经避免每次点击都返回 Codex 主模型，因此不能把这一点当作我们的独创优势。它的循环范围更可控，而本项目免去了为每项任务预制这些规则的要求。参见固定提交的 [runner](https://github.com/yikangy873-gif/jev-desktop/blob/9b02783ed96a81f2529827492de708ca1956c265/plugins/jev-desktop/scripts/runner.mjs)、[policy](https://github.com/yikangy873-gif/jev-desktop/blob/9b02783ed96a81f2529827492de708ca1956c265/plugins/jev-desktop/scripts/policy.mjs)。
 

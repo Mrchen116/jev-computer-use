@@ -23,6 +23,7 @@ def compact_report(report):
     summary = {key: report[key] for key in (
         'backend', 'status', 'elapsed_seconds', 'llm_calls', 'llm_events', 'jev_calls', 'cua_tool_calls'
     )}
+    summary['helper'] = report.get('helper', 'codex')
     summary['steps'] = [
         {key: record[key] for key in ('step', 'operation', 'execution', 'jev_seconds') if key in record}
         for record in report['steps']

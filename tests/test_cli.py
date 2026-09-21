@@ -14,7 +14,7 @@ from jev_computer_use.cli import main
 class ScriptedDesktop:
     fail_fill = False
     mutations = []
-    def __init__(self, config=None):
+    def __init__(self, config=None, permission_handler=None):
         self.stage = 0
         self.client = SimpleNamespace(tool_calls=0)
 
@@ -70,16 +70,16 @@ class ScriptedText:
 
 
 class LoopTests(unittest.TestCase):
-    def run_loop(self, fail=False):
+    def run_loop(self, fail=False, desktop=ScriptedDesktop):
         ScriptedDesktop.fail_fill = fail
         ScriptedDesktop.mutations = []
         with tempfile.TemporaryDirectory() as directory:
             with patch.dict(os.environ, {'TYPESAFE_API_KEY': 'synthetic-test-key'}), \
-                 patch('jev_computer_use.cli.Desktop', ScriptedDesktop), \
+                 patch('jev_computer_use.cli.Desktop', desktop), \
                  patch('jev_computer_use.cli.JevClient', ScriptedJev), \
                  patch('jev_computer_use.cli.CodexTextClient', ScriptedText), \
                  contextlib.redirect_stdout(io.StringIO()):
-                code = main(['Set Message to hello and report the result', '--output-dir', directory])
+                code = main(['Set Message to hello and report the result', '--helper', 'codex', '--output-dir', directory])
             trace = json.loads(next(Path(directory).glob('*/trace.json')).read_text())
         return code, trace
 
@@ -98,6 +98,23 @@ class LoopTests(unittest.TestCase):
         self.assertEqual([s['execution'] for s in trace['steps']], ['executed', 'needs_inspection'])
         self.assertEqual(ScriptedDesktop.mutations.count(('fill', 'hello')), 1)
         self.assertEqual(trace['llm_calls'], 1)
+
+    def test_completion_is_rejected_if_ui_changes_while_host_verifies(self):
+        class ChangingDesktop(ScriptedDesktop):
+            completion_reads = 0
+
+            def observe(self):
+                obs = super().observe()
+                if self.stage == 2:
+                    self.completion_reads += 1
+                    if self.completion_reads > 1:
+                        obs['page'] = obs['raw'] = 'Result changed while verifying'
+                return obs
+
+        code, trace = self.run_loop(desktop=ChangingDesktop)
+        self.assertEqual(code, 1)
+        self.assertNotEqual(trace['status'], 'completed')
+        self.assertEqual(trace['steps'][-1]['execution'], 'rejected')
 
 
 if __name__ == '__main__':

@@ -119,8 +119,8 @@ def descriptions(actions):
 
 
 class Desktop:
-    def __init__(self, config=None):
-        self.client = NativeCUA(config)
+    def __init__(self, config=None, permission_handler=None):
+        self.client = NativeCUA(config, permission_handler=permission_handler)
         self.app = None
         self.scope = 'window'
         self.offset = 0

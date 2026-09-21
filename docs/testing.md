@@ -10,6 +10,8 @@ python scripts/check_release.py
 
 These cover native AX parsing, source evidence retention, tab/control paging, factual history, metadata-only reports, model response validation, text-helper budgets and key exclusion, temporary response cleanup, runtime manifest discovery, and a synthetic end-to-end policy loop. The uncertain-action case verifies that a failed mutation is not replayed or declared complete.
 
+Host handoff tests run a live worker thread through input and completion requests, supply replies through the real file interface, and make constructing a Codex text helper fail. They also reject stale IDs/wrong types, check private file permissions, cancellation, timeout and bounded help. They do not simulate host reasoning quality.
+
 Offline tests use fake model responses/desktop state. They do not establish compatibility with a live Codex installation or Jev service. The release scan checks tracked files for common credential formats, developer home paths and private runtime artifacts; it is not a comprehensive secret detector.
 
 ## Native smoke, zero model calls
@@ -25,12 +27,16 @@ Use this on macOS with Codex desktop open and normal permissions available. `--d
 ## Paid task run
 
 ```sh
-jev-computer-use 'Open the demo page, fill Test message with native test, click Apply locally, and report the result' --local-demo --max-steps 18 --max-llm-calls 8
+jev-computer-use 'Open the demo page, fill Test message with native test, click Apply locally, and report the result' --helper codex --local-demo --max-steps 18 --max-llm-calls 8
 ```
 
 The fixture's URL is a supplied fact; the agent still begins from the app inventory and chooses its own actions. The command requires valid credentials and may invoke the text helper. Only the local fixture is synthetic: the surrounding browser is the real user's application.
 
+For the primary Skill path, run its `scripts/run.py` with `--exchange-dir` and `--local-demo`, then service handoffs exactly as described in [SKILL.md](../skills/jev-computer-use/SKILL.md). No internal text helper should be launched. Do not count waiting for the host as model inference time or turn handoff count into a token-cost estimate.
+
 ## Development evidence
+
+[skill-verification.json](skill-verification.json) records the 0.2.0 host-handoff test from a copied, self-contained skill outside the repository, without pip installation. Codex acted as the external host and answered the real runner's requests. The synthetic form task used 8 decision rounds, 14 Jev requests, 4 host handoffs and 20 CUA calls; no standalone Codex text helper was used. One stale decision was discarded. Host waiting includes time spent editing documentation during the run, so its wall time is not a latency benchmark. Other host agents have not been individually tested.
 
 [development-samples.json](development-samples.json) contains sanitized counts from the pre-packaging prototype. Original private traces stay outside the repository.
 

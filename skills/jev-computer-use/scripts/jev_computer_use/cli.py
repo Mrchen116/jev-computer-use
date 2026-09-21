@@ -14,6 +14,7 @@ import threading
 import time
 from .state import compact_report, make_state
 from .models import CodexTextClient, JevClient
+from .host import HostHelper
 from .doctor import doctor
 from .desktop import Desktop, descriptions
 
@@ -52,6 +53,11 @@ def main(argv=None):
     parser.add_argument('--clipboard-key', action='store_true')
     parser.add_argument('--max-steps', type=int, default=30)
     parser.add_argument('--max-llm-calls', type=int, default=20)
+    parser.add_argument('--helper', choices=('external', 'codex'), default='external',
+                        help='Calling agent (default), or an explicit standalone Codex subprocess')
+    parser.add_argument('--exchange-dir', type=Path, help='Empty private directory for host requests/responses')
+    parser.add_argument('--help-timeout', type=float, default=600, help='Seconds to wait for each host response')
+    parser.add_argument('--key-file', type=Path, help='Private key file (or TYPESAFE_API_KEY_FILE); never printed')
     parser.add_argument('--runtime-config', help='Installed CUA .mcp.json (or JEV_CUA_CONFIG)')
     parser.add_argument('--codex-command', default='codex', help='Codex CLI executable for text help')
     parser.add_argument('--output-dir', type=Path, default=Path.home()/'.local/state/jev-computer-use/runs')
@@ -61,33 +67,41 @@ def main(argv=None):
     parser.add_argument('--fixture', default='native.html')
     args = parser.parse_args(argv)
     if args.doctor:
-        return doctor(args.runtime_config, args.codex_command)
-    if args.max_steps < 1 or args.max_llm_calls < 0:
+        return doctor(args.runtime_config, args.codex_command, args.helper, args.key_file)
+    if args.max_steps < 1 or args.max_llm_calls < 0 or args.help_timeout <= 0:
         parser.error('Budgets must be positive (LLM budget may be zero)')
+    if args.helper == 'external' and not args.exchange_dir:
+        parser.error('Skill mode requires --exchange-dir; standalone text help uses --helper codex')
     if not args.task and not sys.stdin.isatty():
         parser.error('Provide a task')
     task = args.task or input('Task > ').strip()
     if not task:
         parser.error('Task is empty')
     key = subprocess.check_output(['pbpaste'], text=True).strip() if args.clipboard_key else os.environ.get('TYPESAFE_API_KEY', '')
+    key_file = args.key_file or os.environ.get('TYPESAFE_API_KEY_FILE')
+    if not key and key_file:
+        key = Path(key_file).expanduser().read_text().strip()
     if not key and sys.stdin.isatty():
         key = getpass.getpass('TypeSafe API key: ')
     if not key or any(c.isspace() for c in key):
         parser.error('Set TYPESAFE_API_KEY, enter a key interactively, or use --clipboard-key')
     context = Path(args.context).read_text() if args.context else ''
     run = args.output_dir.expanduser() / (time.strftime('%Y%m%d-%H%M%S') + '-' + str(os.getpid()))
-    run.mkdir(parents=True)
+    run.mkdir(parents=True, mode=0o700)
     history = []
     jev_client = JevClient(key)
-    llm_client = CodexTextClient(args.max_llm_calls, args.codex_command)
+    host = HostHelper(args.exchange_dir, args.max_llm_calls, args.help_timeout) if args.helper == 'external' else None
+    llm_client = host or CodexTextClient(args.max_llm_calls, args.codex_command)
     desktop = server = None
     status, answer, feedback = 'incomplete', '', None
     start = time.monotonic()
+    step = -1
 
     def save():
         report = {'task': task, 'backend': 'native-cua', 'status': status, 'answer': answer,
                   'elapsed_seconds': round(time.monotonic()-start, 2),
                   'llm_calls': len(llm_client.events), 'llm_events': llm_client.events, 'jev_calls': jev_client.calls,
+                  'helper': args.helper,
                   'cua_tool_calls': desktop.client.tool_calls if desktop else 0,
                   'steps': history}
         if not args.trace_full:
@@ -101,10 +115,29 @@ def main(argv=None):
         return llm_client.ask(purpose, step+1, instruction, state, fields)
 
     def approval(text):
+        if host:
+            result = llm('confirmation', 'Review this concrete action against the user authorization. '
+                         'Approve only when already authorized or after asking the user. Otherwise decline.',
+                         {'task': task, 'action': text}, {'approved': 'boolean', 'reason': 'string'})
+            if not result['approved']:
+                raise RuntimeError('Action declined by host: '+result['reason'])
+            return
         if not sys.stdin.isatty():
             raise RuntimeError('User confirmation needed: '+text)
         if input(text+'\n输入 yes 执行，其余停止 > ').strip().lower() != 'yes':
             raise RuntimeError('User declined')
+
+    def native_permission(params):
+        result = llm('native_permission', 'The native runtime requests permission. Present its form to the user; '
+                     'do not manufacture approval. Return action accept/cancel/decline and a JSON object string '
+                     'in content_json matching requestedSchema if the user accepts.',
+                     params, {'action': 'string', 'content_json': 'string'})
+        if result['action'] not in ('accept', 'cancel', 'decline'):
+            raise RuntimeError('Invalid native permission response')
+        content = json.loads(result['content_json'])
+        if not isinstance(content, dict):
+            raise RuntimeError('Permission content must be an object')
+        return {'action': result['action'], 'content': content} if result['action'] == 'accept' else {'action': result['action']}
 
     try:
         if args.local_demo:
@@ -117,9 +150,11 @@ def main(argv=None):
                 functools.partial(Handler, directory=str(ROOT/'fixtures')))
             threading.Thread(target=server.serve_forever, daemon=True).start()
             context += f'\nThe requested demo page is at http://127.0.0.1:{server.server_port}/{args.fixture}. It is not open yet.'
-        desktop = Desktop(args.runtime_config)
+        desktop = Desktop(args.runtime_config, permission_handler=native_permission) if host else Desktop(args.runtime_config)
         obs = desktop.observe()
         for step in range(args.max_steps):
+            if host:
+                host.check_cancelled()
             state = {**make_state(task, context, obs, history, feedback),
                      'current_app': obs['app'], 'view': obs['scope'], 'controls_range': obs.get('controls_range')}
             request = decision_payload(state, obs['actions'])
@@ -158,6 +193,13 @@ def main(argv=None):
                     'actions or merely typed values. If incomplete explain the unmet requirement.',
                     state, {'completed': 'boolean', 'answer': 'string', 'evidence': 'string'})
                 record['verification'] = verdict
+                fresh = desktop.observe()
+                if fresh['page'] != obs['page']:
+                    record.update(execution='rejected', rejected_completion='UI changed during host verification')
+                    obs = fresh
+                    feedback = 'Verify the newly observed state; the previous evidence is stale.'
+                    save()
+                    continue
                 quote = verdict['evidence'].strip()
                 if verdict['completed'] and quote and quote in obs['page']:
                     status, answer = 'completed', verdict['answer']
@@ -174,9 +216,16 @@ def main(argv=None):
             value = None
             if action['verb'] in INPUT_VERBS:
                 if SECRET_FIELD.search(action['label']):
-                    if not sys.stdin.isatty():
-                        raise RuntimeError('Sensitive field requires manual entry')
-                    input('请在应用中手动填写敏感字段，完成后按回车。')
+                    if host:
+                        result = llm('manual_input', 'Ask the user to fill this sensitive field in the app directly. '
+                                     'Do not return the secret. Reply ready after they finish, or false to stop.',
+                                     {'field': action['name']}, {'ready': 'boolean'})
+                        if not result['ready']:
+                            raise RuntimeError('Manual input not completed')
+                    else:
+                        if not sys.stdin.isatty():
+                            raise RuntimeError('Sensitive field requires manual entry')
+                        input('请在应用中手动填写敏感字段，完成后按回车。')
                     record.update(input='[entered manually]', execution='executed')
                     next_obs = desktop.observe()
                     record['effect'] = effect(obs, next_obs)
@@ -192,9 +241,17 @@ def main(argv=None):
                     ' If required user facts are missing set needs_user=true; do not invent them. Use supplied URLs/facts when present.',
                     {**state, 'selected_action': action}, {'value': 'string', 'needs_user': 'boolean', 'reason': 'string'})
                 if value_result['needs_user']:
-                    if not sys.stdin.isatty():
-                        raise RuntimeError('Missing user fact: '+value_result['reason'])
-                    value_result['value'] = input(value_result['reason']+'\n> ')
+                    if host:
+                        fact = llm('user_fact', 'Ask the user for this missing fact. Do not invent it. '
+                                   'Return supplied=false if unavailable.',
+                                   {'question': value_result['reason']}, {'value': 'string', 'supplied': 'boolean'})
+                        if not fact['supplied']:
+                            raise RuntimeError('Required user fact unavailable')
+                        value_result['value'] = fact['value']
+                    else:
+                        if not sys.stdin.isatty():
+                            raise RuntimeError('Missing user fact: '+value_result['reason'])
+                        value_result['value'] = input(value_result['reason']+'\n> ')
                 value = value_result['value']
                 if action['verb'] == 'fill' and ('\n' in value or '\r' in value):
                     raise RuntimeError('Multiline text is not supported by this demo; submission must remain a separate action')
@@ -226,6 +283,8 @@ def main(argv=None):
                     save()
                     continue
             record['execution'] = 'attempted'
+            if host:
+                host.check_cancelled()
             save()
             try:
                 next_obs = desktop.execute(action, value)
@@ -248,7 +307,11 @@ def main(argv=None):
         print('BLOCKED: '+answer, flush=True)
     finally:
         save()
-        print(f'Calls: Jev={jev_client.calls}, LLM={len(llm_client.events)}, CUA={desktop.client.tool_calls if desktop else 0}', flush=True)
+        counts = {'jev_calls': jev_client.calls, 'helper_requests': len(llm_client.events),
+                  'cua_tool_calls': desktop.client.tool_calls if desktop else 0}
+        if host:
+            host.finish(status, answer, counts)
+        print(f'Calls: Jev={jev_client.calls}, Helper={len(llm_client.events)}, CUA={counts["cua_tool_calls"]}', flush=True)
         print('Trace: '+str(run/'trace.json'), flush=True)
         if desktop:
             desktop.close()
