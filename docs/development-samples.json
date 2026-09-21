@@ -1,0 +1,41 @@
+{
+  "kind": "pre-packaging development samples",
+  "platform": "macOS",
+  "plugin_version": "26.915.31945",
+  "controlled_benchmark": false,
+  "cases": [
+    {
+      "case": "input_project",
+      "status": "completed",
+      "steps": 8,
+      "initial_scope": "apps",
+      "llm_calls": 3,
+      "llm_purposes": [
+        "input",
+        "action_help",
+        "completion"
+      ],
+      "jev_calls": 14,
+      "cua_tool_calls": 15,
+      "seconds": 71.54
+    },
+    {
+      "case": "native_chinese_form",
+      "status": "completed",
+      "steps": 8,
+      "initial_scope": "apps",
+      "llm_calls": 6,
+      "llm_purposes": [
+        "action_help",
+        "action_help",
+        "input",
+        "input",
+        "input",
+        "completion"
+      ],
+      "jev_calls": 14,
+      "cua_tool_calls": 19,
+      "seconds": 105.61
+    }
+  ]
+}

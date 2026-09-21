@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-computer-use"
+version = "0.1.0"
+description = "Task-driven macOS computer use with Jev decisions and on-demand LLM help"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Mrchen116"}]
+keywords = ["jev", "computer-use", "codex", "macos", "automation"]
+classifiers = ["Development Status :: 3 - Alpha", "Operating System :: MacOS :: MacOS X", "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+dependencies = []
+
+[project.scripts]
+jev-computer-use = "jev_computer_use.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Mrchen116/jev-computer-use"
+Issues = "https://github.com/Mrchen116/jev-computer-use/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+jev_computer_use = ["fixtures/*.html"]

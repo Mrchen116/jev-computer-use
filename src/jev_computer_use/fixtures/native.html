@@ -1,0 +1,9 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Native CUA smoke test</title>
+<style>body{font:22px system-ui;padding:70px}input,button{font:inherit;padding:12px;margin:12px}output{display:block;margin:12px}</style>
+<h1>Native CUA smoke test</h1>
+<label>Test message <input id="message" aria-label="Test message"></label>
+<button id="apply">Apply locally</button>
+<output id="result">Waiting for input</output>
+<script>document.getElementById('apply').onclick=()=>{document.getElementById('result').textContent='Received: '+document.getElementById('message').value;};</script>

@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-21",
+  "package_version": "0.1.0",
+  "platform": "macOS",
+  "python": "3.9.6",
+  "cua_plugin_version": "26.915.31945",
+  "installation": "Built wheel installed with --no-deps in a separate virtual environment outside the source tree",
+  "tested_wheel_sha256": "c3d0877b6827238c0abe02c42b0610d707dc671d296f620fa424d4b7a71b7aac",
+  "offline_tests": {
+    "passed": 12,
+    "network_or_gui_used": false
+  },
+  "native_smoke": {
+    "passed": true,
+    "llm_calls": 0,
+    "jev_calls": 0,
+    "cua_tool_calls": 14,
+    "seconds": 5.45,
+    "evidence": "Received: Jev native transport works 中文"
+  },
+  "live_jev_task": {
+    "passed": true,
+    "scenario": "Synthetic field update and local button, starting at app inventory",
+    "steps": 8,
+    "jev_calls": 14,
+    "llm_calls": 4,
+    "llm_purposes": [
+      "input",
+      "input",
+      "input",
+      "completion"
+    ],
+    "cua_tool_calls": 19,
+    "seconds": 170.23,
+    "evidence": "Received: release verification",
+    "stale_decisions_not_executed": 1
+  },
+  "limits": "One native smoke and one API task on the packaged build; no repeated controlled benchmark, broad-app validation or provider cost comparison. Helper model followed local Codex configuration."
+}
