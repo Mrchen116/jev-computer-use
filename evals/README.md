@@ -10,6 +10,10 @@ agent. Offline tests validate code contracts; they are not task-success evidence
 - [Five-case public-web/realtime protocol](computer_use/PROTOCOL.md).
 - [MiniWoB setup and reproduction](computer_use/MINIWOB.md): original pages and
   rewards, deliberately relaxed 300-second deadlines, not leaderboard scores.
+- [Real invoice form](forms/zoho.md): Jev field/value choices on Zoho, verified
+  amounts and a full normal-speed recording.
+- [Game adapter experiment](games/README.md): live third-party tower defense,
+  custom observations/actions and unaccelerated recording.
 - [Current verification scope](../docs/testing.md).
 
 ## Evidence layout

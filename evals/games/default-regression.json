@@ -1,0 +1,223 @@
+{
+  "date": "2026-09-23",
+  "purpose": "Default native CUA regression after custom adapter Skill guidance; Jev arm only.",
+  "runs": [
+    {
+      "case": "click-checkboxes-large",
+      "seed": 11,
+      "success": true,
+      "raw_reward": 1,
+      "seconds": 276.511497584,
+      "usd": 0.09721029,
+      "llm_requests": 2,
+      "jev_usage": {
+        "input_tokens": 41445,
+        "output_tokens": 5678
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          8
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 4.533000000000001
+      },
+      "model_verified": true,
+      "network_errors": [
+        "Reconnecting... 2/5 (request timed out)",
+        "Reconnecting... 3/5 (stream disconnected before completion: tls handshake eof)",
+        "Reconnecting... 4/5 (stream disconnected before completion: tls handshake eof)",
+        "Reconnecting... 5/5 (stream disconnected before completion: tls handshake eof)",
+        "Reconnecting... waiting for network (Connection failed: error sending request)"
+      ],
+      "previous": {
+        "success": true,
+        "seconds": 33.894909791,
+        "usd": 0.09735086600000001,
+        "llm_requests": 2,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            8
+          ],
+          "outcomes": [
+            "review_completion"
+          ],
+          "jev_seconds": 4.329000000000001
+        }
+      }
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 11,
+      "success": true,
+      "raw_reward": 1,
+      "seconds": 100.96438916700004,
+      "usd": 0.19814957200000002,
+      "llm_requests": 3,
+      "jev_usage": {
+        "input_tokens": 43866,
+        "output_tokens": 5749
+      },
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          1,
+          6
+        ],
+        "outcomes": [
+          "help_input",
+          "uncertain_continuation"
+        ],
+        "jev_seconds": 4.275
+      },
+      "model_verified": true,
+      "network_errors": [],
+      "previous": {
+        "success": true,
+        "seconds": 35.665380792,
+        "usd": 0.13482731,
+        "llm_requests": 3,
+        "delegation": {
+          "stages": 2,
+          "actions_per_stage": [
+            1,
+            6
+          ],
+          "outcomes": [
+            "help_input",
+            "uncertain_continuation"
+          ],
+          "jev_seconds": 4.142
+        }
+      }
+    },
+    {
+      "case": "book-flight",
+      "seed": 11,
+      "success": true,
+      "raw_reward": 1,
+      "seconds": 207.072167875,
+      "usd": 0.39275921,
+      "llm_requests": 11,
+      "jev_usage": {
+        "input_tokens": 52305,
+        "output_tokens": 6813
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          7
+        ],
+        "outcomes": [
+          "help_reasoning"
+        ],
+        "jev_seconds": 4.148
+      },
+      "model_verified": true,
+      "network_errors": [],
+      "previous": {
+        "success": true,
+        "seconds": 57.935013957999985,
+        "usd": 0.183977676,
+        "llm_requests": 6,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            7
+          ],
+          "outcomes": [
+            "help_reasoning"
+          ],
+          "jev_seconds": 3.6109999999999998
+        }
+      }
+    }
+  ],
+  "offline_checks": {
+    "core_tests": 115,
+    "evaluator_tests": 22
+  },
+  "limitations": [
+    "One reused seed per task, not a new success-rate benchmark.",
+    "First task had request timeout and TLS/network reconnects; wall time is retained, not normalized away.",
+    "All three tasks passed, but these runs do not establish unchanged latency or cost.",
+    "Native runtime source is unchanged.",
+    "No native Sol baseline was rerun."
+  ],
+  "skill_sha256": "73b2589544902118484f247107d900a8d45700ed0e441b4a7a9f909a76e7d449",
+  "commercial_demo_followup": {
+    "purpose": "Default native path after commercial custom adapter methodology additions.",
+    "initial_setup_attempt": {
+      "outcome": "blocked_before_agent_launch",
+      "reason": "Native CUA detected an externally changed Chrome window; no Jev task started."
+    },
+    "retry": {
+      "case": "multi-layouts",
+      "seed": 11,
+      "seconds": 49.433376167,
+      "model_verified": true,
+      "model_contexts": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "medium"
+        }
+      ],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.86475,
+        "reason": null,
+        "episode_seconds": 40.575,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for drama movies directed by Holloway from year 2011.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          1,
+          6
+        ],
+        "outcomes": [
+          "help_input",
+          "uncertain_continuation"
+        ],
+        "jev_seconds": 4.139
+      },
+      "llm_usage": {
+        "input_tokens": 67620,
+        "cached_input_tokens": 39936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 506,
+        "reasoning_output_tokens": 29
+      },
+      "jev_usage": {
+        "input_tokens": 43875,
+        "output_tokens": 5751
+      }
+    },
+    "source_sha256": {
+      "skills/jev-computer-use/SKILL.md": "73b2589544902118484f247107d900a8d45700ed0e441b4a7a9f909a76e7d449",
+      "skills/jev-computer-use/references/adapters.md": "dadb364ac79b76ad30dc4601e7df11138560913e1acdb1e25891bd46f90acc00"
+    },
+    "offline_checks": {
+      "core": 115,
+      "evaluator": 22
+    },
+    "note": "One functional regression, not a performance comparison. Default runtime code unchanged."
+  }
+}

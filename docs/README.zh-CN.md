@@ -2,7 +2,7 @@
 
 **让 Codex 等 AI Agent 把重复电脑操作交给 Jev，减少 LLM 调用。**
 
-[English](../README.md) · [安装指南](getting-started.md) · [Skill](../skills/jev-computer-use/SKILL.md) · [实测与复现](../evals/README.md)
+[English](../README.md) · [安装指南](getting-started.md) · [Skill](../skills/jev-computer-use/SKILL.md) · [演示视频](demos.md) · [实测与复现](../evals/README.md)
 
 这是一个自包含的 **Skill + Python 执行器**。用户给出任务，外层 Agent 决定是否委派；
 Jev 根据完整任务、当前完整无障碍界面和每一步简洁历史选择下一步，代码直接执行。
@@ -19,6 +19,16 @@ flowchart TD
     C -->|当前界面| P
     P -->|进展或交棒，附当前界面| A
 ```
+
+## 看实际运行
+
+- [CrazyGames 塔防](media/tower-defense-clash.mp4)：满血、三颗星通关。
+- [Garden Defenders](media/garden-defenders.mp4)：零割草机、三颗星通关。
+- [Zoho 发票生成器](media/zoho-invoice.mp4)：完整填写虚构发票并核验金额。
+
+三个视频均为原速完整录制，使用 Skill 的自定义观测／动作流程和 Agent 编写的
+Playwright 适配器。普通界面任务仍走默认原生 Computer Use。
+[实现方式、失败记录与复现](demos.md)。
 
 ## 安装后直接提任务
 

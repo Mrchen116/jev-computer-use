@@ -1,0 +1,73 @@
+{
+  "game_url": "https://seth-xh.github.io/pvz/",
+  "source_url": "https://github.com/seth-xh/pvz",
+  "source_sha256": "708153f65475c730ea050894916b170b876c10a69234978decafc7cc68da9219",
+  "date": "2026-09-23",
+  "runs": [
+    {
+      "variant": "original",
+      "result": "won",
+      "mowers_used": 2,
+      "kills": 21,
+      "wall_seconds": 139.95847775,
+      "game_seconds": 129.9166666666622,
+      "jev_calls": 37,
+      "jev_usage": {
+        "input_tokens": 109484,
+        "output_tokens": 16711
+      },
+      "timing_mean": null,
+      "failed_plant_attempts": null
+    },
+    {
+      "variant": "whole_actions",
+      "result": "won",
+      "mowers_used": 0,
+      "kills": 21,
+      "wall_seconds": 150.762347666,
+      "game_seconds": 143.93333333334002,
+      "jev_calls": 28,
+      "jev_usage": {
+        "input_tokens": 92468,
+        "output_tokens": 12150
+      },
+      "timing_mean": {
+        "observe_s": 1.660315330357142,
+        "jev_s": 0.4809285714285714,
+        "execute_s": 1.301524569821428,
+        "verify_s": 1.7140733675714301,
+        "cycle_s": 5.156837959857142
+      },
+      "failed_plant_attempts": 1
+    },
+    {
+      "variant": "selection_fix",
+      "result": "won",
+      "mowers_used": 0,
+      "kills": 21,
+      "wall_seconds": 141.245166375,
+      "game_seconds": 135.49999999999997,
+      "jev_calls": 26,
+      "jev_usage": {
+        "input_tokens": 92367,
+        "output_tokens": 14083
+      },
+      "timing_mean": {
+        "observe_s": 1.7229563349615384,
+        "jev_s": 0.42380769230769233,
+        "execute_s": 1.4672392644999996,
+        "verify_s": 1.5705952308076918,
+        "cycle_s": 5.18466269073077
+      },
+      "failed_plant_attempts": 0
+    }
+  ],
+  "limitations": [
+    "Three development runs with unseeded random opponents, not a controlled benchmark.",
+    "Host-generated game-specific adapter and strategic guidance; no in-loop LLM.",
+    "Default native CUA executor unchanged; adapter uses Playwright.",
+    "Videos are normal-speed continuous game recordings.",
+    "Jev usage excludes all host setup and iteration LLM costs.",
+    "First whole-action run retained one failed initial selection; fixed and verified in final run."
+  ]
+}

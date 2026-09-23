@@ -7,7 +7,7 @@
 
 **Let your AI agent delegate repetitive computer tasks to Jev, using fewer LLM calls.**
 
-[中文](docs/README.zh-CN.md) · [Get started](docs/getting-started.md) · [Skill](skills/jev-computer-use/SKILL.md) · [Results](evals/README.md) · [Documentation](docs/README.md)
+[中文](docs/README.zh-CN.md) · [Get started](docs/getting-started.md) · [Skill](skills/jev-computer-use/SKILL.md) · [Demos](docs/demos.md) · [Results](evals/README.md) · [Documentation](docs/README.md)
 
 Your agent plans and reasons. **Jev selects the next UI action**, and Python executes
 it through native Computer Use. The agent steps in for new text, difficult reasoning
@@ -28,6 +28,16 @@ flowchart TD
 A self-contained **Skill + runner**, with no Python runtime dependencies. No required
 starting URL, predicted screen sequence or website-specific routes. Jev sees the
 whole task, complete current accessibility tree and every concise step record.
+
+## Watch it work
+
+- [Tower Defense Clash on CrazyGames](docs/media/tower-defense-clash.mp4) — full-health, three-star victory.
+- [Garden Defenders](docs/media/garden-defenders.mp4) — three stars without using a mower.
+- [Zoho invoice generator](docs/media/zoho-invoice.mp4) — a complete synthetic invoice with verified totals.
+
+These uncut recordings use the Skill's custom observation/action workflow with
+agent-authored Playwright adapters. The default native Computer Use path remains
+available for ordinary UI work. [How they work, results and reproduction](docs/demos.md).
 
 ## Quick start
 

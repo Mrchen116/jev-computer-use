@@ -1,0 +1,190 @@
+{
+  "date": "2026-09-23",
+  "url": "https://www.crazygames.com/game/tower-defense-clash",
+  "mode": "realtime",
+  "period_seconds": 2,
+  "execution": "Read-only Phaser state and real Playwright pointer input via custom Skill workflow.",
+  "runs": [
+    {
+      "run": "jev-clash",
+      "outcome": "adapter_error",
+      "notes": "Reader treated tower wrappers as sprites; stopped after five decisions.",
+      "seconds": null,
+      "jev_calls": null,
+      "jev_usage": null,
+      "final_health": null,
+      "final_wave": null
+    },
+    {
+      "run": "jev-clash-run2",
+      "outcome": "lost",
+      "notes": "Reached wave two, then lost with two towers. Weak strategic guidance and primitive build sequence.",
+      "seconds": 159.434285125,
+      "jev_calls": 40,
+      "jev_usage": {
+        "input_tokens": 64285,
+        "output_tokens": 3991
+      },
+      "final_health": 0,
+      "final_wave": "2 / 4"
+    },
+    {
+      "run": "jev-clash-run3",
+      "outcome": "host_interrupted",
+      "notes": "Replay retained dead tutorial targets; no defenses built. Historical summary said budget despite interruption.",
+      "seconds": 172.584540333,
+      "jev_calls": 39,
+      "jev_usage": {
+        "input_tokens": 57922,
+        "output_tokens": 3840
+      },
+      "final_health": 500,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-macro",
+      "outcome": "host_interrupted",
+      "notes": "Compound build lacked settled menu handling; tutorial did not progress. Historical summary said budget.",
+      "seconds": 107.460709,
+      "jev_calls": 22,
+      "jev_usage": {
+        "input_tokens": 50004,
+        "output_tokens": 8037
+      },
+      "final_health": 500,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-macro-final",
+      "outcome": "adapter_error",
+      "notes": "CLI sandbox lacks global setTimeout. Historical summary incorrectly said budget.",
+      "seconds": 9.911412292,
+      "jev_calls": 1,
+      "jev_usage": {
+        "input_tokens": 1906,
+        "output_tokens": 371
+      },
+      "final_health": 500,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-clean",
+      "outcome": "setup_stopped",
+      "notes": "Worker was started on main menu during setup debugging, not an evaluated game.",
+      "seconds": 55.660638958,
+      "jev_calls": 5,
+      "jev_usage": {
+        "input_tokens": 3186,
+        "output_tokens": 155
+      },
+      "final_health": 0,
+      "final_wave": "1 / 10"
+    },
+    {
+      "run": "jev-clash-verified",
+      "outcome": "host_stop",
+      "notes": "Incomplete tutorial run; retained as click/CLI calibration, not a gameplay success.",
+      "seconds": 145.806268292,
+      "jev_calls": 5,
+      "jev_usage": {
+        "input_tokens": 9770,
+        "output_tokens": 1802
+      },
+      "final_health": 500,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-calibrate",
+      "outcome": "won",
+      "notes": "Full health and three stars, but recording begins partway through tutorial. Not the showcase.",
+      "seconds": 192.752725167,
+      "jev_calls": 55,
+      "jev_usage": {
+        "input_tokens": 140814,
+        "output_tokens": 5240
+      },
+      "final_health": 500,
+      "final_wave": "4 / 4"
+    },
+    {
+      "run": "jev-clash-full-01",
+      "outcome": "adapter_error",
+      "notes": "In-game restart retained a destroyed tutorial target; reader threw. Reload used for subsequent fresh runs.",
+      "seconds": 6.327453708,
+      "jev_calls": 1,
+      "jev_usage": {
+        "input_tokens": 1880,
+        "output_tokens": 380
+      },
+      "final_health": 500,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-full-02",
+      "outcome": "host_stop",
+      "notes": "All four tutorial clicks worked. Permissive wait wording led to one tower, repeated waits and health dropping to 400. Stopped for strategy revision.",
+      "seconds": 73.419535583,
+      "jev_calls": 26,
+      "jev_usage": {
+        "input_tokens": 59560,
+        "output_tokens": 8051
+      },
+      "final_health": 400,
+      "final_wave": "1 / 4"
+    },
+    {
+      "run": "jev-clash-full-03",
+      "outcome": "won",
+      "notes": "Selected full recording. Seven towers, four waves, full health and three stars. Ten non-wait operations verified, no failed action.",
+      "seconds": 182.495121958,
+      "jev_calls": 55,
+      "jev_usage": {
+        "input_tokens": 137768,
+        "output_tokens": 4305
+      },
+      "final_health": 500,
+      "final_wave": "4 / 4"
+    }
+  ],
+  "showcase": {
+    "run": "jev-clash-full-03",
+    "video": "docs/media/tower-defense-clash.mp4",
+    "video_seconds": 183.52,
+    "video_fps": 25,
+    "seconds": 182.495121958,
+    "stars_visually_verified": 3,
+    "health": 500,
+    "initial_health": 500,
+    "towers": 7,
+    "waves": 4,
+    "jev_calls": 55,
+    "jev_usage": {
+      "input_tokens": 137768,
+      "output_tokens": 4305
+    },
+    "intermediate_llm_calls": 0,
+    "outcomes": {
+      "succeeded": 10,
+      "waited": 45
+    },
+    "timing_mean": {
+      "jev_s": 0.41247272727272727,
+      "execute_s": 0.5495099886181813,
+      "observe_s": 1.0348406015090925,
+      "verify_s": 1.189332065199999,
+      "cycle_s": 3.1865107969636344
+    }
+  },
+  "source_sha256": {
+    "evals/games/clash.py": "5eb91f43cc39453a694dcccf6c73d6bba9355c05f276103dc3069a9de4ebb9d7",
+    "evals/games/clash-observe.js": "f05f94e8caf4b1e44b0654e3003f2489a23bbbaf4a45006a65a80a900f422d20"
+  },
+  "limitations": [
+    "Development iterations, not randomized repetitions or a measured success rate.",
+    "Some early setup recordings were replaced during debugging; only the listed available runs have retained summaries/videos. Missing metrics are null, not zero.",
+    "Host strategy and game-specific integration are required. This is not screenshot-based perception or default native CUA.",
+    "No game clock/resources/rules were modified. Game tutorial pauses are intrinsic; worker never pauses for inference or uses fast-forward.",
+    "Outer agent setup, research and iteration costs are not measured.",
+    "Minimum two-second cycle is a request, not achieved latency; average cycle 3.19 seconds includes UI verification."
+  ]
+}

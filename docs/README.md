@@ -8,6 +8,7 @@
 | Context and handoff contents | [Context and handoff](context-and-handoff.md) |
 | Runtime dependency and permissions | [Runtime](runtime.md) |
 | Architecture | [Architecture](architecture.md) |
+| Recorded demonstrations | [Videos and scope](demos.md) |
 | Results, reproduction and earlier failures | [Evaluations](../evals/README.md) |
 | What validation does and does not prove | [Testing](testing.md) |
 | Alternatives and source-pinned research | [Comparison](comparison.md) |

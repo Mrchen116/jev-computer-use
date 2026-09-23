@@ -1,0 +1,130 @@
+{
+  "date": "2026-09-23",
+  "url": "https://www.zoho.com/invoice/free-invoice-generator.html",
+  "mode": "step",
+  "execution": "Custom Playwright adapter via Skill references/adapters.md, not default native CUA",
+  "task": "Synthetic invoice with three line items, zero tax, USD 440; stop at filled on-page draft",
+  "showcase_attempt": 5,
+  "intermediate_llm_calls_in_showcase": 0,
+  "showcase_video": "docs/media/zoho-invoice.mp4",
+  "runs": [
+    {
+      "attempt": 1,
+      "reason": "host_stop",
+      "notes": "Stopped after four correct fields to remove repeated npx launch overhead.",
+      "seconds": 93.000164625,
+      "actions": 4,
+      "jev_calls": 8,
+      "jev_usage": {
+        "input_tokens": 57330,
+        "output_tokens": 2358
+      },
+      "jev_seconds": 4.469,
+      "host_verification": false
+    },
+    {
+      "attempt": 2,
+      "reason": "error",
+      "notes": "Adapter error after four correct fields: select element omitted undefined readOnly property.",
+      "seconds": 20.553059917000002,
+      "actions": 4,
+      "jev_calls": 8,
+      "jev_usage": {
+        "input_tokens": 57304,
+        "output_tokens": 2358
+      },
+      "jev_seconds": 6.076,
+      "host_verification": false
+    },
+    {
+      "attempt": 3,
+      "reason": "host_stop",
+      "notes": "Stopped after repeated date entry failed: fill did not produce datepicker keyboard events.",
+      "seconds": 52.543619791,
+      "actions": 17,
+      "jev_calls": 34,
+      "jev_usage": {
+        "input_tokens": 263555,
+        "output_tokens": 10027
+      },
+      "jev_seconds": 17.412999999999997,
+      "host_verification": false
+    },
+    {
+      "attempt": 4,
+      "reason": "done",
+      "notes": "All values verified. Presentation QA found the left navigation drawer obscured the form; retained but not showcased.",
+      "seconds": 53.942009416,
+      "actions": 20,
+      "jev_calls": 41,
+      "jev_usage": {
+        "input_tokens": 329988,
+        "output_tokens": 12374
+      },
+      "jev_seconds": 20.066,
+      "host_verification": true
+    },
+    {
+      "attempt": 5,
+      "reason": "done",
+      "notes": "All values verified; navigation drawer closed before the run and each field clicked before typing. Showcase.",
+      "seconds": 59.499609416,
+      "actions": 20,
+      "jev_calls": 41,
+      "jev_usage": {
+        "input_tokens": 329495,
+        "output_tokens": 12374
+      },
+      "jev_seconds": 24.003,
+      "host_verification": true
+    }
+  ],
+  "final_verification": {
+    "passed": true,
+    "checks": {
+      "address1": true,
+      "custName": true,
+      "address2": true,
+      "address3": true,
+      "companyCountry": true,
+      "billingAddress1": true,
+      "billingAddress2": true,
+      "billingAddress3": true,
+      "customerCountry": true,
+      "invNumber": true,
+      "invoiceDate": true,
+      "dueDate": true,
+      "itemDesc.1": true,
+      "itemDesc.2": true,
+      "itemDesc.3": true,
+      "customerNotes": true,
+      "terms": true,
+      "currencySym": true,
+      "itemQty.1": true,
+      "itemRate.1": true,
+      "itemTax1.1": true,
+      "itemTotal.1": true,
+      "itemQty.2": true,
+      "itemRate.2": true,
+      "itemTax1.2": true,
+      "itemTotal.2": true,
+      "itemQty.3": true,
+      "itemRate.3": true,
+      "itemTax1.3": true,
+      "itemTotal.3": true,
+      "website_total": true,
+      "three_populated_rows": true
+    }
+  },
+  "source_sha256": {
+    "evals/forms/zoho.py": "3e2ba7b6857ccdfc1436a8d7529f0b20cf3e751024d51ad0d12f3a725c6b09b2",
+    "evals/forms/zoho-observe.js": "99181f7a348318e7aec3721629fefd431efbcf0782319e2ec60fa40372dadcd3",
+    "evals/forms/zoho_verify.py": "c3a161ee64eeda0cf02d64811a8dcdcafdc87e4aa5c29215d1543c68de9428fb"
+  },
+  "limits": [
+    "Demonstration with setup/iteration, not a controlled benchmark or measured success rate.",
+    "Outer agent setup and iteration tokens/costs are not measured.",
+    "Only text/number filling is executed; no general-purpose dropdown/calendar adapter is claimed.",
+    "Original videos and complete logs for all five attempts are retained privately; no cuts or speed changes in showcase."
+  ]
+}
