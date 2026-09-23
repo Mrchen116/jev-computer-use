@@ -8,10 +8,16 @@
 Jev 根据完整任务、当前完整无障碍界面和每一步简洁历史选择下一步，代码直接执行。
 需要新文本、复杂推理或最终核验时，再交还外层 Agent。每次点击不经过 LLM 转发。
 
-```text
-用户 → 外层 Agent（System Two）→ Skill → Python ↔ Jev（System One）
-            ↑                            ↓
-       推理、输入、最终核验 ← 当前界面与进展 ← 原生 Computer Use
+```mermaid
+flowchart TD
+    U[用户任务] --> A[外层 Agent：推理与核验]
+    A -->|委派或恢复任务| S[Skill]
+    S --> P[Python 执行器]
+    P -->|任务、当前界面与历史| J[Jev]
+    J -->|下一步动作或交棒| P
+    P -->|执行动作| C[原生 Computer Use]
+    C -->|当前界面| P
+    P -->|进展或交棒，附当前界面| A
 ```
 
 ## 安装后直接提任务

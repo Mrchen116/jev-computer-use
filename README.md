@@ -13,11 +13,16 @@ Your agent plans and reasons. **Jev selects the next UI action**, and Python exe
 it through native Computer Use. The agent steps in for new text, difficult reasoning
 and final verification—without relaying every click through an LLM.
 
-```text
-User task → your agent → Skill → Python ↔ Jev
-                ↑                  ↓
-          reasoning / review   native Computer Use
-                └──── current interface + progress ────┘
+```mermaid
+flowchart TD
+    U[User task] --> A[Your agent: reasoning and review]
+    A -->|Delegate or resume| S[Skill]
+    S --> P[Python executor]
+    P -->|Task, interface and history| J[Jev]
+    J -->|Next action or handoff| P
+    P -->|Execute action| C[Native Computer Use]
+    C -->|Current interface| P
+    P -->|Progress or handoff with current interface| A
 ```
 
 A self-contained **Skill + runner**, with no Python runtime dependencies. No required
