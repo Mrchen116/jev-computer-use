@@ -77,7 +77,7 @@ startup, reasoning, handoffs and final response in time and token-based cost:
 
 | Evaluation | Completion | Cost vs historical native | Total time vs historical native |
 | --- | --- | --- | --- |
-| MiniWoB: 3 task types × 3 seeds | 9/9 | **52.7% lower** | **38.5% lower** |
+| [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus): 3 task types × 3 seeds | 9/9 | **52.7% lower** | **38.5% lower** |
 | Local realtime game | 12/12 correct | No valid paired cost claim | 1.21–1.52 s reaction time |
 
 The MiniWoB batch cost **$1.049 vs $2.217**, taking **374 vs 608 seconds**.
