@@ -8,7 +8,7 @@
 
 ## Tower Defense Clash — commercial game platform
 
-[Watch the full normal-speed recording](media/tower-defense-clash.mp4)
+https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b
 
 On [CrazyGames](https://www.crazygames.com/game/tower-defense-clash), Jev chooses
 complete tower builds from live game state. The outer agent provides the strategy;
@@ -22,7 +22,7 @@ recognition, game-clock change or default-native-CUA support is implied. See
 
 ## Garden Defenders — custom game adapter
 
-[Watch the full normal-speed recording](media/garden-defenders.mp4)
+https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7
 
 An existing [third-party game](https://seth-xh.github.io/pvz/), played through an
 agent-authored adapter using the [custom Skill workflow](../skills/jev-computer-use/references/adapters.md).
@@ -45,7 +45,7 @@ authors; the project supplies the agent adapter, not the game.
 
 ## Zoho invoice generator — real business form
 
-[Watch the full normal-speed recording](media/zoho-invoice.mp4)
+https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988
 
 On [Zoho's public invoice generator](https://www.zoho.com/invoice/free-invoice-generator.html),
 Jev chooses each field and then its prepared literal value. The host supplies the

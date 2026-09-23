@@ -22,9 +22,10 @@ flowchart TD
 
 ## 看实际运行
 
-- [CrazyGames 塔防](media/tower-defense-clash.mp4)：满血、三颗星通关。
-- [Garden Defenders](media/garden-defenders.mp4)：零割草机、三颗星通关。
-- [Zoho 发票生成器](media/zoho-invoice.mp4)：完整填写虚构发票并核验金额。
+| CrazyGames 塔防 | Garden Defenders | Zoho 发票生成器 |
+| :---: | :---: | :---: |
+| https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
+| 满血、三颗星通关 | 零割草机、三颗星通关 | 完整填写并核验金额 |
 
 三个视频均为原速完整录制，使用 Skill 的自定义观测／动作流程和 Agent 编写的
 Playwright 适配器。普通界面任务仍走默认原生 Computer Use。

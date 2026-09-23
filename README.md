@@ -31,9 +31,10 @@ whole task, complete current accessibility tree and every concise step record.
 
 ## Watch it work
 
-- [Tower Defense Clash on CrazyGames](docs/media/tower-defense-clash.mp4) — full-health, three-star victory.
-- [Garden Defenders](docs/media/garden-defenders.mp4) — three stars without using a mower.
-- [Zoho invoice generator](docs/media/zoho-invoice.mp4) — a complete synthetic invoice with verified totals.
+| Tower Defense Clash · CrazyGames | Garden Defenders | Zoho invoice generator |
+| :---: | :---: | :---: |
+| https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
+| Full-health, three-star victory | Three stars, zero mower use | Complete invoice with verified totals |
 
 These uncut recordings use the Skill's custom observation/action workflow with
 agent-authored Playwright adapters. The default native Computer Use path remains
