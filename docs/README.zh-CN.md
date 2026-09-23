@@ -26,6 +26,11 @@ flowchart TD
 | :---: | :---: | :---: |
 | https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
 | 满血、三颗星通关 | 零割草机、三颗星通关 | 完整填写并核验金额 |
+| **$0.00579** Jev 费用 | **$0.00388** Jev 费用 | **$0.01384** Jev 费用 |
+| 输入 137,768 · 输出 4,305 token | 输入 92,367 · 输出 14,083 token | 输入 329,495 · 输出 12,374 token |
+
+以上为对应录像单次运行的费用，运行中无 LLM 介入。[Jev 单价](https://typesafe.ai/blog/introducing-system-one-models-and-jev)：
+输入 $0.042／百万 token，输出免费；不含外层 Agent 的准备、调试、核验和此前失败轮次。
 
 三个视频均为原速完整录制，使用 Skill 的自定义观测／动作流程和 Agent 编写的
 Playwright 适配器。普通界面任务仍走默认原生 Computer Use。
