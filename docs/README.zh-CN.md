@@ -1,6 +1,6 @@
 # jev-computer-use
 
-**让外层 Agent 负责思考，让 Jev 负责连续操作。**
+**让 Codex 等 AI Agent 把重复电脑操作交给 Jev，减少 LLM 调用。**
 
 [English](../README.md) · [安装指南](getting-started.md) · [Skill](../skills/jev-computer-use/SKILL.md) · [实测与复现](../evals/README.md)
 

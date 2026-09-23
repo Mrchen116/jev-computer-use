@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "jev-computer-use"
 version = "0.3.0"
-description = "Task-driven macOS computer use with Jev decisions and on-demand LLM help"
+description = "Delegate repetitive computer tasks to Jev with a skill for AI agents"
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}

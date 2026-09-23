@@ -5,7 +5,7 @@
 ![macOS](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-**Give your agent a fast System One for sustained computer interaction.**
+**Let your AI agent delegate repetitive computer tasks to Jev, using fewer LLM calls.**
 
 [中文](docs/README.zh-CN.md) · [Get started](docs/getting-started.md) · [Skill](skills/jev-computer-use/SKILL.md) · [Results](evals/README.md) · [Documentation](docs/README.md)
 
