@@ -18,8 +18,8 @@ dependencies = []
 jev-computer-use = "jev_computer_use.task_cli:main"
 
 [project.urls]
-Repository = "https://github.com/Mrchen116/jev-computer-use"
-Issues = "https://github.com/Mrchen116/jev-computer-use/issues"
+Repository = "https://github.com/Mrchen116/jev-computer-use-skill"
+Issues = "https://github.com/Mrchen116/jev-computer-use-skill/issues"
 
 [tool.setuptools.packages.find]
 where = ["skills/jev-computer-use/scripts"]

@@ -15,8 +15,8 @@ create an API account or grant application permissions.
 ## Install
 
 ```sh
-git clone https://github.com/Mrchen116/jev-computer-use.git
-cd jev-computer-use
+git clone https://github.com/Mrchen116/jev-computer-use-skill.git
+cd jev-computer-use-skill
 python3 scripts/install.py --configure-key
 ```
 

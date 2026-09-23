@@ -1,6 +1,6 @@
-# jev-computer-use
+# jev-computer-use-skill
 
-[![tests](https://github.com/Mrchen116/jev-computer-use/actions/workflows/test.yml/badge.svg)](https://github.com/Mrchen116/jev-computer-use/actions/workflows/test.yml)
+[![tests](https://github.com/Mrchen116/jev-computer-use-skill/actions/workflows/test.yml/badge.svg)](https://github.com/Mrchen116/jev-computer-use-skill/actions/workflows/test.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![macOS](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
@@ -53,8 +53,8 @@ and a TypeSafe Jev API key**. This is an experimental community integration; it
 does not bundle or replace the Codex runtime.
 
 ```sh
-git clone https://github.com/Mrchen116/jev-computer-use.git
-cd jev-computer-use
+git clone https://github.com/Mrchen116/jev-computer-use-skill.git
+cd jev-computer-use-skill
 python3 scripts/install.py --configure-key
 ```
 
