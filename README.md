@@ -70,7 +70,7 @@ app/window, concise history, token usage and warnings. A handoff includes the
 **current interface directly**; MCP also preserves the live app binding. Full
 private logs are available when earlier screens or diagnostics are needed.
 
-## Measured results
+## Selected benchmark results
 
 Real native Computer Use, with **Sol/medium as the outer agent**, including its
 startup, reasoning, handoffs and final response in time and token-based cost:
@@ -78,18 +78,17 @@ startup, reasoning, handoffs and final response in time and token-based cost:
 | Evaluation | Completion | Cost vs historical native | Total time vs historical native |
 | --- | --- | --- | --- |
 | MiniWoB: 3 task types × 3 seeds | 9/9 | **52.7% lower** | **38.5% lower** |
-| Four public website tasks | 4/4 | 7.9% lower | **12.3% longer** |
 | Local realtime game | 12/12 correct | No valid paired cost claim | 1.21–1.52 s reaction time |
 
 The MiniWoB batch cost **$1.049 vs $2.217**, taking **374 vs 608 seconds**.
 These are small historical comparisons, not a universal performance claim.
 Codex CLI changed from 0.153.4 to 0.155.1, so strict matched-runtime acceptance
 remains unmet. MiniWoB uses relaxed 300-second deadlines and reused seeds.
-The website batch used the preceding runtime candidate; one task needed host
-screenshots. The native realtime failure was retained, not rerun.
+The native realtime failure was retained, not rerun.
 
 Read the [full report and limitations](evals/computer_use/MINIWOB-RUNTIME.md)
-and [reproduction protocols](evals/README.md). Failed iterations and incomplete
+and [reproduction protocols](evals/README.md) for all evaluated scenarios, including
+public website tasks. Failed iterations and incomplete
 billing remain in the evidence. Prices are API-equivalent token estimates, not
 subscription deductions.
 
