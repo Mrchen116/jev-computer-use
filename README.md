@@ -36,7 +36,7 @@ whole task, complete current accessibility tree and every concise step record.
 | https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
 | Full-health, three-star victory | Three stars, zero mower use | Complete invoice with verified totals |
 | **$0.00579** Jev cost | **$0.00388** Jev cost | **$0.01384** Jev cost |
-| 137,768 input · 4,305 output tokens | 92,367 input · 14,083 output tokens | 329,495 input · 12,374 output tokens |
+| 137,768 input tokens | 92,367 input tokens | 329,495 input tokens |
 
 Per recorded run, with no intermediate LLM calls. [Jev pricing](https://typesafe.ai/blog/introducing-system-one-models-and-jev):
 $0.042 per million input tokens; output is free. Excludes outer-agent setup,
