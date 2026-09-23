@@ -1,0 +1,48 @@
+{
+  "kind": "Development diagnostics, not a paired cost result",
+  "date": "2026-09-22",
+  "saved_page_api_probe": {
+    "kind": "Saved-page Jev API probe; no UI or outer LLM",
+    "views": [
+      {
+        "view": 1,
+        "seconds": 0.966,
+        "choice": "none"
+      },
+      {
+        "view": 2,
+        "seconds": 1.185,
+        "choice": "p2"
+      }
+    ],
+    "found": true,
+    "seconds": 2.1536210839999996,
+    "usage": {
+      "input_tokens": 9393,
+      "output_tokens": 192
+    }
+  },
+  "native_navigation_probe": {
+    "model_calls": 0,
+    "attempts": 6,
+    "successful_target_observations": 6,
+    "seconds": [
+      3.112,
+      2.442,
+      2.284,
+      2.575,
+      2.844,
+      2.994
+    ],
+    "method": "Native paste, displayed-address verification and target-web-area observation; no navigation replay."
+  },
+  "failed_attempts": [
+    "Original native batching returned previous or missing web areas.",
+    "Adding value verification rejected an address with a browser-history query suffix.",
+    "Paste plus any-page-change acknowledgement still accepted a previous in-flight navigation; acknowledgement was tightened to the requested URL and web-area metadata."
+  ],
+  "notes": [
+    "The first navigation raw file was overwritten by a failed follow-up; its summarized observations remain in the development conversation. Later probes used distinct private filenames.",
+    "Saved-page probe omits UI and outer-host costs and is not a full-task performance claim."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case": "native_textedit_bold_save",
+  "status": "blocked_on_native_permission",
+  "task": "Make all text in an evaluator-created temporary RTF bold and save the same file.",
+  "scope": "Only the dedicated Jev-native-check.rtf TextEdit document; no personal files.",
+  "execution": "Real Jev + native CUA TaskRunner; not a Sol/medium paired benchmark.",
+  "ui_actions_completed": 0,
+  "reason": "execution_error",
+  "elapsed_worker_seconds": 1.385,
+  "jev_usage": {
+    "input_tokens": 1385,
+    "output_tokens": 101
+  },
+  "jev_cost_usd": 5.817e-05,
+  "permission_message": "Allow Computer Use to use \"TextEdit\"?",
+  "interpretation": "No native-app completion evidence. Permission was not automatically approved; user confirmation is pending. Setup opened only an evaluator-created temporary file."
+}

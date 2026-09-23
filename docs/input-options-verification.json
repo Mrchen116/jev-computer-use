@@ -1,0 +1,32 @@
+{
+  "kind": "generic finite-input live probe",
+  "note": "Actual Jev and native Chrome, no outer LLM. Not a paired or whole-task comparison. Six nonmatching inputs were tried before a matching seventh input; exact input values came from the probe host.",
+  "seconds": 22.315,
+  "counts": {
+    "decisions": 8,
+    "actions": 15,
+    "skipped_actions": 0
+  },
+  "status": "collection_ready",
+  "jev_usage": {
+    "input_tokens": 53394,
+    "output_tokens": 7079
+  },
+  "jev_usd": 0.002242548,
+  "options_applied": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "final_url": "https://github.com/Mrchen116/nano-multiagent/issues?q=is%3Aissue%20created%3A2026-09-13",
+  "early_return_probe": {
+    "status": "need_help",
+    "decisions": 3,
+    "inputs_tried": 2,
+    "follow_up": "Added explicit remaining-input context and clarified that empty search results alone are not a blocker."
+  }
+}

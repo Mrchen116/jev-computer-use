@@ -1,0 +1,617 @@
+{
+  "status": "development_only; native real-time attempt failed and stopped after scope violation; no frozen paired result",
+  "model": "gpt-5.6-sol",
+  "effort": "medium",
+  "jev_model": "jev-1.13.0",
+  "caveats": [
+    "Single development seed; these are not final effectiveness claims.",
+    "Hybrid-v1 catalog used a simulated Reserve button; native-rest catalog used a comparison tray. Do not compare those two attempts.",
+    "Native-rest research was interrupted by Mac screen lock. Do not compare its cost as a completed task.",
+    "An earlier unavailable in-app browser attempt and an aborted delegate-approval setup attempt are retained privately as infrastructure diagnostics.",
+    "The old Semantic Sprint game had no deadline and is not evidence of real-time task ability; the frozen suite replaces it with Rescue Dispatch."
+  ],
+  "runs": [
+    {
+      "revision": "native-game",
+      "case": "game",
+      "seed": 7,
+      "arm": "baseline",
+      "seconds": 93.825121333,
+      "usd": 0.35294159999999997,
+      "llm_usage": {
+        "input_tokens": 475006,
+        "cached_input_tokens": 438784,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1627,
+        "reasoning_output_tokens": 225
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "accuracy": true
+        },
+        "game_score": 12,
+        "reaction_seconds": [
+          8.470255416,
+          5.8170459170000015,
+          4.149049832999999,
+          4.234378791000005,
+          4.2948376249999995,
+          6.552977624999997,
+          6.166172124999996,
+          5.353167333000002,
+          7.203923791000008,
+          4.178658041999995,
+          4.016530000000003,
+          4.8669812920000055
+        ]
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v1",
+      "case": "catalog",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 46.557931249999996,
+      "usd": 0.122144086,
+      "llm_usage": {
+        "input_tokens": 72689,
+        "cached_input_tokens": 50048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 568,
+        "reasoning_output_tokens": 123
+      },
+      "jev_usage": {
+        "input_tokens": 4783,
+        "output_tokens": 553
+      },
+      "judge": {
+        "success": false,
+        "checks": {
+          "both_filters": true,
+          "cheapest": false,
+          "name_in_answer": true,
+          "price_in_answer": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v1",
+      "case": "form",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 58.2493405,
+      "usd": 0.139525054,
+      "llm_usage": {
+        "input_tokens": 95348,
+        "cached_input_tokens": 71808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 817,
+        "reasoning_output_tokens": 201
+      },
+      "jev_usage": {
+        "input_tokens": 7187,
+        "output_tokens": 776
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "saved": true,
+          "Name": true,
+          "Email": true,
+          "City": true,
+          "Note": true,
+          "Digest": true,
+          "Language": true,
+          "Offline mode": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v1",
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 70.675840916,
+      "usd": 0.151748448,
+      "llm_usage": {
+        "input_tokens": 118706,
+        "cached_input_tokens": 94336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 797,
+        "reasoning_output_tokens": 163
+      },
+      "jev_usage": {
+        "input_tokens": 14144,
+        "output_tokens": 1285
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "accuracy": true
+        },
+        "game_score": 12,
+        "reaction_seconds": [
+          2.304457832999997,
+          1.9608272500000012,
+          2.534610749999999,
+          1.9541228329999996,
+          2.542188041000003,
+          1.9521985000000015,
+          2.0184455410000055,
+          2.0706377079999996,
+          2.152212333999998,
+          2.067417167000002,
+          2.5192574580000056,
+          2.151249292000003
+        ]
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v1",
+      "case": "lookup",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 61.085300416999985,
+      "usd": 0.166013456,
+      "llm_usage": {
+        "input_tokens": 140441,
+        "cached_input_tokens": 116096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1101,
+        "reasoning_output_tokens": 307
+      },
+      "jev_usage": {
+        "input_tokens": 4168,
+        "output_tokens": 394
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "correct_project": true,
+          "opened_latest": true,
+          "title": true,
+          "number": true,
+          "url": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v1",
+      "case": "research",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 103.20276875000002,
+      "usd": 0.15723357,
+      "llm_usage": {
+        "input_tokens": 148222,
+        "cached_input_tokens": 129792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1528,
+        "reasoning_output_tokens": 350
+      },
+      "jev_usage": {
+        "input_tokens": 24685,
+        "output_tokens": 2269
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_all": true,
+          "shortlist_exact": true,
+          "Pine": true,
+          "Birch": true,
+          "Cedar": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "native-rest",
+      "case": "catalog",
+      "seed": 7,
+      "arm": "baseline",
+      "seconds": 53.10007175,
+      "usd": 0.16864720000000002,
+      "llm_usage": {
+        "input_tokens": 159338,
+        "cached_input_tokens": 135168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 895,
+        "reasoning_output_tokens": 241
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "both_filters": true,
+          "cheapest": true,
+          "name_in_answer": true,
+          "price_in_answer": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "native-rest",
+      "case": "form",
+      "seed": 7,
+      "arm": "baseline",
+      "seconds": 75.783226125,
+      "usd": 0.20602240000000002,
+      "llm_usage": {
+        "input_tokens": 226786,
+        "cached_input_tokens": 201856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1278,
+        "reasoning_output_tokens": 288
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "saved": true,
+          "Name": true,
+          "Email": true,
+          "City": true,
+          "Note": true,
+          "Digest": true,
+          "Language": true,
+          "Offline mode": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "native-rest",
+      "case": "lookup",
+      "seed": 7,
+      "arm": "baseline",
+      "seconds": 43.389215791,
+      "usd": 0.1159224,
+      "llm_usage": {
+        "input_tokens": 113710,
+        "cached_input_tokens": 98816,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 841,
+        "reasoning_output_tokens": 324
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "correct_project": true,
+          "opened_latest": true,
+          "title": true,
+          "number": true,
+          "url": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "native-rest",
+      "case": "research",
+      "seed": 7,
+      "arm": "baseline",
+      "seconds": 56.96845854200001,
+      "usd": 0.1428696,
+      "llm_usage": {
+        "input_tokens": 113049,
+        "cached_input_tokens": 90624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 846,
+        "reasoning_output_tokens": 309
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": {
+        "success": false,
+        "checks": {
+          "visited_all": false,
+          "shortlist_exact": false,
+          "Pine": false,
+          "Birch": false,
+          "Cedar": false
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": true
+    },
+    {
+      "revision": "hybrid-v2",
+      "case": "catalog",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 62.06489008400001,
+      "usd": 0.11148814600000001,
+      "llm_usage": {
+        "input_tokens": 66603,
+        "cached_input_tokens": 47744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 833,
+        "reasoning_output_tokens": 202
+      },
+      "jev_usage": {
+        "input_tokens": 7013,
+        "output_tokens": 758
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "both_filters": true,
+          "cheapest": true,
+          "name_in_answer": true,
+          "price_in_answer": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v2",
+      "case": "form",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 134.648531459,
+      "usd": 0.20779191,
+      "llm_usage": {
+        "input_tokens": 163519,
+        "cached_input_tokens": 136448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2227,
+        "reasoning_output_tokens": 1299
+      },
+      "jev_usage": {
+        "input_tokens": 9255,
+        "output_tokens": 895
+      },
+      "judge": {
+        "success": false,
+        "checks": {
+          "saved": true,
+          "Name": true,
+          "Email": true,
+          "City": true,
+          "Note": true,
+          "Digest": true,
+          "Language": false,
+          "Offline mode": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v2",
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 76.44203575,
+      "usd": 0.12466548,
+      "llm_usage": {
+        "input_tokens": 74705,
+        "cached_input_tokens": 51840,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 590,
+        "reasoning_output_tokens": 150
+      },
+      "jev_usage": {
+        "input_tokens": 15940,
+        "output_tokens": 1523
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "accuracy": true
+        },
+        "game_score": 12,
+        "reaction_seconds": [
+          2.280378000000006,
+          2.0441343749999987,
+          2.2017139169999993,
+          2.0208122080000024,
+          1.8695505829999988,
+          1.9209685410000006,
+          1.8019705840000029,
+          2.153605459000005,
+          1.9203352079999974,
+          1.9540424999999928,
+          2.0703825840000007,
+          2.237577416999997
+        ]
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v2",
+      "case": "lookup",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 56.669259666000016,
+      "usd": 0.112481156,
+      "llm_usage": {
+        "input_tokens": 66723,
+        "cached_input_tokens": 47744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 862,
+        "reasoning_output_tokens": 150
+      },
+      "jev_usage": {
+        "input_tokens": 5418,
+        "output_tokens": 514
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "correct_project": true,
+          "opened_latest": true,
+          "title": true,
+          "number": true,
+          "url": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "hybrid-v2",
+      "case": "research",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 125.78789933299998,
+      "usd": 0.17556928,
+      "llm_usage": {
+        "input_tokens": 150733,
+        "cached_input_tokens": 127872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1587,
+        "reasoning_output_tokens": 350
+      },
+      "jev_usage": {
+        "input_tokens": 29440,
+        "output_tokens": 2444
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_all": true,
+          "shortlist_exact": true,
+          "Pine": true,
+          "Birch": true,
+          "Cedar": true
+        },
+        "game_score": null,
+        "reaction_seconds": []
+      },
+      "environment_failure": false
+    },
+    {
+      "revision": "realtime-skill-smoke",
+      "case": "game",
+      "seed": 7,
+      "arm": "jev-stage-only",
+      "seconds": 31.171,
+      "jev_usage": {
+        "input_tokens": 16594,
+        "output_tokens": 1285
+      },
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "rescues": true
+        },
+        "game_score": 12,
+        "game_missed": 0,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          2.676140042,
+          2.383225833999999,
+          2.3831792499999995,
+          2.327327083,
+          2.3823417919999983,
+          2.1072665000000015,
+          2.015739416999999,
+          2.1001122079999988,
+          1.9673622080000008,
+          2.432926416000001,
+          2.0001329169999984,
+          2.0433215830000044
+        ]
+      },
+      "llm_usage": null,
+      "usd": null,
+      "note": "Live plain Skill stage. Host call and final-answer costs not measured; not a full hybrid cost comparison."
+    },
+    {
+      "revision": "native-realtime-aborted",
+      "case": "game",
+      "seed": 7,
+      "arm": "baseline",
+      "outcome": "failed_scope_violation_then_operator_stop",
+      "task_completed": false,
+      "seconds": null,
+      "usd": null,
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "judge": null,
+      "note": "Native Sol generated a rapid loop that selected browser chrome, opened an account page, and could not recover the game. Operator stopped the run. No account submission or modification is present in the recorded actions. Final score and complete billing telemetry were not captured; no zero score or final cost is inferred."
+    }
+  ],
+  "infrastructure_diagnostics": [
+    {
+      "reason": "In-app browser unavailable in independent CLI",
+      "billing_complete": true,
+      "seconds": 43.40442475,
+      "llm_usage": {
+        "input_tokens": 137555,
+        "cached_input_tokens": 110976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 808,
+        "reasoning_output_tokens": 172
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.1668664
+    },
+    {
+      "reason": "Delegate tool approval not configured for authorized local fixture; run stopped",
+      "billing_complete": false,
+      "last_reported_token_usage": {
+        "input_tokens": 328534,
+        "cached_input_tokens": 300416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1795,
+        "reasoning_output_tokens": 294,
+        "total_tokens": 330329
+      }
+    }
+  ]
+}

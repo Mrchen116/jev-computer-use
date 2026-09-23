@@ -1,0 +1,252 @@
+{
+  "scope": "Real native MiniWoB missing-input handoff/resume probe, outside scored Sol/medium trials. The outer Codex agent supplied one exact text reply; its tokens are not included in Jev-only usage below.",
+  "first_reason": "help_input",
+  "terminated_before_help": 0,
+  "final_reason": "uncertain_continuation",
+  "judge": {
+    "success": true,
+    "checks": {
+      "official_raw_reward_one": true,
+      "single_episode": true
+    },
+    "raw_reward": 1,
+    "time_scaled_reward": 0.6310033333333334,
+    "reason": null,
+    "episode_seconds": 110.699,
+    "episodes_started": 1,
+    "episodes_finished": 1,
+    "query": "Search for drama movies directed by Holloway from year 2011.",
+    "minimum_operations": 4,
+    "observed_ui_events": {
+      "click": 4,
+      "input": 3,
+      "keydown": 1
+    },
+    "reaction_seconds": []
+  },
+  "jev_calls": 9,
+  "jev_usage": {
+    "input_tokens": 42505,
+    "output_tokens": 5659
+  },
+  "passed": true,
+  "worker_active_seconds": 17.839,
+  "jev_only_api_equivalent_usd": 0.00178521,
+  "history": [
+    {
+      "step": 1,
+      "actor": "agent",
+      "action": {
+        "guidance": null,
+        "input_text_ids": [
+          "director",
+          "year"
+        ]
+      },
+      "result": {
+        "status": "provided"
+      }
+    },
+    {
+      "step": 2,
+      "actor": "jev",
+      "action": {
+        "type": "click",
+        "target": {
+          "id": "27",
+          "role": "textbox",
+          "name": ""
+        },
+        "label": "Click textbox 27: . Immediately preceding AX sibling text: 'Genre'"
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "27",
+        "interface_changed": true,
+        "observation_id": "c32fe8ac7b6a49ae"
+      }
+    },
+    {
+      "step": 3,
+      "actor": "jev",
+      "action": {
+        "type": "help_input",
+        "target": {
+          "id": "27",
+          "role": "textbox",
+          "name": ""
+        },
+        "label": "Ask the outer agent for the exact text needed in focused field 27: . Immediately preceding AX sibling text: 'Genre'"
+      },
+      "result": {
+        "status": "needs_host"
+      }
+    },
+    {
+      "step": 4,
+      "actor": "agent",
+      "action": {
+        "guidance": null,
+        "input_text_ids": [
+          "missing_value"
+        ]
+      },
+      "result": {
+        "status": "provided"
+      }
+    },
+    {
+      "step": 5,
+      "actor": "jev",
+      "action": {
+        "type": "replace",
+        "target": {
+          "id": "27",
+          "role": "textbox",
+          "name": ""
+        },
+        "text_id": "missing_value",
+        "label": "Replace text in focused field 27 (). Immediately preceding AX sibling text: 'Genre' using input_texts['missing_value'].text exactly. Purpose: movie genre requested by the task. Do not submit."
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "27",
+        "interface_changed": true,
+        "observation_id": "89324ca1a367ffc0",
+        "observed_value": "drama",
+        "verification": "displayed_text"
+      }
+    },
+    {
+      "step": 6,
+      "actor": "jev",
+      "action": {
+        "type": "click",
+        "target": {
+          "id": "29",
+          "role": "textbox",
+          "name": ""
+        },
+        "label": "Click textbox 29: . Immediately preceding AX sibling text: 'Year'"
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "29",
+        "interface_changed": true,
+        "observation_id": "d0720e485d6f19da"
+      }
+    },
+    {
+      "step": 7,
+      "actor": "jev",
+      "action": {
+        "type": "replace",
+        "target": {
+          "id": "29",
+          "role": "textbox",
+          "name": ""
+        },
+        "text_id": "year",
+        "label": "Replace text in focused field 29 (). Immediately preceding AX sibling text: 'Year' using input_texts['year'].text exactly. Purpose: movie year filter. Do not submit."
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "29",
+        "interface_changed": true,
+        "observation_id": "bc4d26b31d810a24",
+        "observed_value": "2011",
+        "verification": "displayed_text"
+      }
+    },
+    {
+      "step": 8,
+      "actor": "jev",
+      "action": {
+        "type": "click",
+        "target": {
+          "id": "31",
+          "role": "textbox",
+          "name": ""
+        },
+        "label": "Click textbox 31: . Immediately preceding AX sibling text: 'Director Name'"
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "31",
+        "interface_changed": true,
+        "observation_id": "6ea7d8eb2a339b55"
+      }
+    },
+    {
+      "step": 9,
+      "actor": "jev",
+      "action": {
+        "type": "replace",
+        "target": {
+          "id": "31",
+          "role": "textbox",
+          "name": ""
+        },
+        "text_id": "director",
+        "label": "Replace text in focused field 31 (). Immediately preceding AX sibling text: 'Director Name' using input_texts['director'].text exactly. Purpose: director name filter. Do not submit."
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "31",
+        "interface_changed": true,
+        "observation_id": "60df99cedd2c4b63",
+        "observed_value": "Holloway",
+        "verification": "displayed_text"
+      }
+    },
+    {
+      "step": 10,
+      "actor": "jev",
+      "action": {
+        "type": "click",
+        "target": {
+          "id": "32",
+          "role": "button",
+          "name": "Search"
+        },
+        "label": "Click button 32: Search"
+      },
+      "result": {
+        "status": "executed",
+        "application": "com.google.Chrome",
+        "window": "Window: \"Multi Layouts Task\", App: Google Chrome.",
+        "focused_element": "32",
+        "interface_changed": true,
+        "observation_id": "111e9eac12fb645e"
+      }
+    },
+    {
+      "step": 11,
+      "actor": "jev",
+      "action": {
+        "type": "uncertain_continuation",
+        "label": "Pause before another UI action for outer-agent review"
+      },
+      "result": {
+        "status": "needs_host",
+        "continue_probability": 0.61
+      }
+    }
+  ],
+  "note": "The episode wall time includes the outer Codex agent reading the handoff and providing a reply; this is an integration check, not a latency or total-cost benchmark. No native UI action was supplied by the host after delegation.",
+  "jev_models": [
+    "jev-1.13.0"
+  ]
+}

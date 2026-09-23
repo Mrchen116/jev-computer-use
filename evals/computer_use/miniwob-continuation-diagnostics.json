@@ -1,0 +1,330 @@
+{
+  "scope": "Development diagnostics, not scored completion attempts. Saved native observations replayed to the real Jev API; then a fresh native Chrome failed-submission probe.",
+  "model": "jev-1.13.0",
+  "threshold": 0.9,
+  "replays": [
+    {
+      "case": "multi-layouts-22-hybrid",
+      "step": 9,
+      "variant": "isolated",
+      "choice": "continue",
+      "confidence": 0.32,
+      "probabilities": {
+        "continue": 0.66,
+        "pause": 0.34
+      },
+      "seconds": 1.415,
+      "usage": {
+        "input_tokens": 3368,
+        "output_tokens": 32
+      }
+    },
+    {
+      "case": "multi-layouts-22-hybrid",
+      "step": 9,
+      "variant": "batched",
+      "choice": "continue",
+      "confidence": 0.36,
+      "probabilities": {
+        "pause": 0.32,
+        "continue": 0.68
+      },
+      "seconds": 1.412,
+      "usage": {
+        "input_tokens": 5128,
+        "output_tokens": 600
+      }
+    },
+    {
+      "case": "book-flight-22-hybrid",
+      "step": 13,
+      "variant": "isolated",
+      "choice": "continue",
+      "confidence": 0.4,
+      "probabilities": {
+        "continue": 0.7,
+        "pause": 0.3
+      },
+      "seconds": 1.075,
+      "usage": {
+        "input_tokens": 4136,
+        "output_tokens": 32
+      }
+    },
+    {
+      "case": "book-flight-22-hybrid",
+      "step": 13,
+      "variant": "batched",
+      "choice": "continue",
+      "confidence": 0.4,
+      "probabilities": {
+        "pause": 0.3,
+        "continue": 0.7
+      },
+      "seconds": 1.109,
+      "usage": {
+        "input_tokens": 6665,
+        "output_tokens": 860
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 1,
+      "variant": "isolated",
+      "choice": "continue",
+      "confidence": 0.99,
+      "probabilities": {
+        "pause": 0.0,
+        "continue": 1.0
+      },
+      "seconds": 1.5,
+      "usage": {
+        "input_tokens": 1952,
+        "output_tokens": 32
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 1,
+      "variant": "batched",
+      "choice": "continue",
+      "confidence": 0.99,
+      "probabilities": {
+        "continue": 1.0,
+        "pause": 0.0
+      },
+      "seconds": 0.947,
+      "usage": {
+        "input_tokens": 3755,
+        "output_tokens": 630
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 2,
+      "variant": "isolated",
+      "choice": "continue",
+      "confidence": 0.99,
+      "probabilities": {
+        "pause": 0.01,
+        "continue": 0.99
+      },
+      "seconds": 0.927,
+      "usage": {
+        "input_tokens": 1912,
+        "output_tokens": 32
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 2,
+      "variant": "batched",
+      "choice": "continue",
+      "confidence": 0.99,
+      "probabilities": {
+        "pause": 0.0,
+        "continue": 1.0
+      },
+      "seconds": 2.073,
+      "usage": {
+        "input_tokens": 3613,
+        "output_tokens": 600
+      }
+    },
+    {
+      "case": "book-flight-11-hybrid",
+      "step": 3,
+      "old_action": "replace_origin",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.291,
+      "usage": {
+        "input_tokens": 4123,
+        "output_tokens": 638
+      }
+    },
+    {
+      "case": "book-flight-11-hybrid",
+      "step": 4,
+      "old_action": "click_45",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.102,
+      "usage": {
+        "input_tokens": 4466,
+        "output_tokens": 660
+      }
+    },
+    {
+      "case": "book-flight-11-hybrid",
+      "step": 6,
+      "old_action": "replace_destination",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 2.451,
+      "usage": {
+        "input_tokens": 4744,
+        "output_tokens": 648
+      }
+    },
+    {
+      "case": "book-flight-11-hybrid",
+      "step": 8,
+      "old_action": "click_32",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.406,
+      "usage": {
+        "input_tokens": 5224,
+        "output_tokens": 660
+      }
+    },
+    {
+      "case": "book-flight-11-hybrid",
+      "step": 11,
+      "old_action": "click_46",
+      "choice": "continue",
+      "p_continue": 0.99,
+      "seconds": 1.413,
+      "usage": {
+        "input_tokens": 7395,
+        "output_tokens": 714
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 3,
+      "old_action": "replace_genre",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.053,
+      "usage": {
+        "input_tokens": 4041,
+        "output_tokens": 651
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 5,
+      "old_action": "replace_year",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.173,
+      "usage": {
+        "input_tokens": 4427,
+        "output_tokens": 650
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 8,
+      "old_action": "click_33",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.958,
+      "usage": {
+        "input_tokens": 5073,
+        "output_tokens": 652
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 9,
+      "old_action": "review_completion",
+      "choice": "continue",
+      "p_continue": 0.57,
+      "seconds": 1.12,
+      "usage": {
+        "input_tokens": 4950,
+        "output_tokens": 608
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 4,
+      "old_action": "click_32",
+      "choice": "continue",
+      "p_continue": 1.0,
+      "seconds": 1.399,
+      "usage": {
+        "input_tokens": 4253,
+        "output_tokens": 630
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 8,
+      "old_action": "click_35",
+      "choice": "continue",
+      "p_continue": 0.99,
+      "seconds": 1.367,
+      "usage": {
+        "input_tokens": 4929,
+        "output_tokens": 630
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 9,
+      "old_action": "review_completion",
+      "choice": "continue",
+      "p_continue": 0.5,
+      "seconds": 1.337,
+      "usage": {
+        "input_tokens": 5108,
+        "output_tokens": 638
+      }
+    }
+  ],
+  "native_failure_probe": {
+    "test": "Native Chrome terminal failure must yield before another UI operation",
+    "official_raw_reward": -0.1111111111111111,
+    "episodes_started": 2,
+    "worker_reason": "help_reasoning",
+    "worker_operations": 2,
+    "jev_calls": 3,
+    "jev_usage": {
+      "input_tokens": 11929,
+      "output_tokens": 1890
+    },
+    "passed": false,
+    "decisions": [
+      {
+        "step": 1,
+        "continue_probability": 0.98,
+        "selected_action": "click_25",
+        "seconds": 1.038,
+        "usage": {
+          "input_tokens": 3734,
+          "output_tokens": 630
+        }
+      },
+      {
+        "step": 2,
+        "continue_probability": 0.96,
+        "selected_action": "click_33",
+        "seconds": 1.487,
+        "usage": {
+          "input_tokens": 4016,
+          "output_tokens": 630
+        }
+      },
+      {
+        "step": 3,
+        "continue_probability": 0.97,
+        "selected_action": "help_reasoning",
+        "seconds": 0.91,
+        "usage": {
+          "input_tokens": 4179,
+          "output_tokens": 630
+        }
+      }
+    ]
+  },
+  "total_usage": {
+    "input_tokens": 101191,
+    "output_tokens": 12487
+  },
+  "api_equivalent_usd": 0.004250022,
+  "conclusion": "On these retained observations the threshold would pause after terminal success/failure and allow ongoing work. A fresh failed submission nevertheless received continuation probability 0.98, executed a click against an obscured control and started another episode. The threshold is an uncertain-action handoff heuristic, not a reliable terminal-state or occlusion detector. The failed probe is retained and is not counted as a benchmark success."
+}

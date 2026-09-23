@@ -1,0 +1,1278 @@
+{
+  "manifest": {
+    "created_at": "2026-09-22T04:17:32.172599+00:00",
+    "suite": "live",
+    "protocol": "general",
+    "seeds": [
+      211,
+      257
+    ],
+    "cases": [
+      "latest_issue",
+      "documentation",
+      "research",
+      "portfolio"
+    ],
+    "arms": [
+      "hybrid"
+    ],
+    "rates_per_million": {
+      "sol_input": 4.0,
+      "sol_cached": 0.4,
+      "sol_write": 5.0,
+      "sol_output": 20.0,
+      "jev_input": 0.042,
+      "jev_output": 0.0
+    },
+    "git_head": "b25da64d6cb15e0e8aced155b5d35cfa9b350a30",
+    "codex_version": "codex-cli 0.153.4",
+    "source_sha256": {
+      "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+      "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+      "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+      "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+      "evals/computer_use/run.py": "bff1035e7b4082b18837ee8ccf5d6ad2a64e39a46f707902d87731d9c13ee3e8",
+      "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+      "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+      "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+      "skills/jev-computer-use/SKILL.md": "206d44782bb21fdfa31598033b733c27b6a53880a9f475f8cd63c39660071ab9",
+      "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+      "skills/jev-computer-use/references/tasks.md": "e3f67dcf6337205e794db6fc8ad34f471f8269e056428190c37106ec8b58fc28",
+      "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "496f4c519a348d835062e86b1e3590fc60de59ff2418598aabb96954fea18a2b",
+      "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+      "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+      "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+      "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "0f160b526cae4f3b29f714cf8274663e01a09609d5520f8dcf5037756c84330a",
+      "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+      "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "90db58a2bbfd2388f423c553124afd2a7b5239b40a6a0685d5b7742051bca0b0",
+      "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "5bfc94cc18dcdd28713c5d843ad3061bdf9628fc820cf4112eb868ef181909d5",
+      "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "e79244e9334fc9a61734b202774592b6af35694ae3ba412d5f97281c10161adb",
+      "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+      "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+      "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "c9914633f1ddbea734c7cc41cae3fdcb5ee7e01d826cceb32a79d5d52602727d",
+      "skills/jev-computer-use/scripts/jev_computer_use/models.py": "d8c8188b8b2a229f1df8922281a01ca60a4db35d07ff4547197a0bd8a68bad6e",
+      "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "ad50995aa59049950e20afd5f6d62cb962cccd30763cec39e11526aa861f94ae",
+      "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+      "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+      "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+      "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "9db45088a8a379fb009ae3dc9546cbaf612b70ed062467a87b508f80caa94d7a",
+      "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "fd21bc3522e98d123de2d55187b6dcc7052cb32db29497eefb4571eac5efb230"
+    }
+  },
+  "source_hashes_match": true,
+  "runs": [
+    {
+      "case": "latest_issue",
+      "seed": 211,
+      "arm": "baseline",
+      "seconds": 177.997295583,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.750528875,
+      "max_request_input_tokens": 74068,
+      "llm_requests": 15,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 777024,
+        "cached_input_tokens": 708608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3129,
+        "reasoning_output_tokens": 1529
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.6196872,
+      "known_usd": 0.6196872,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 13,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 211,
+      "arm": "baseline",
+      "seconds": 115.76092716700003,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.201036875,
+      "max_request_input_tokens": 83703,
+      "llm_requests": 10,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 476160,
+        "cached_input_tokens": 398848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2009,
+        "reasoning_output_tokens": 768
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.5089672000000001,
+      "known_usd": 0.5089672000000001,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 8,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 211,
+      "arm": "baseline",
+      "seconds": 104.44842279099998,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.317011125000022,
+      "max_request_input_tokens": 69562,
+      "llm_requests": 9,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 373053,
+        "cached_input_tokens": 309888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1883,
+        "reasoning_output_tokens": 881
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.4142752,
+      "known_usd": 0.4142752,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 7,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 211,
+      "arm": "baseline",
+      "seconds": 41.97034820900001,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.754999500000054,
+      "max_request_input_tokens": 35190,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 131149,
+        "cached_input_tokens": 103424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 657,
+        "reasoning_output_tokens": 151
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.16540960000000002,
+      "known_usd": 0.16540960000000002,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 3,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 196.5070299160002,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.348203209000076,
+      "max_request_input_tokens": 73238,
+      "llm_requests": 15,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 768654,
+        "cached_input_tokens": 701056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3551,
+        "reasoning_output_tokens": 1785
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.6218344,
+      "known_usd": 0.6218344,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 13,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 94.87155733399982,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.053710207999984,
+      "max_request_input_tokens": 47332,
+      "llm_requests": 8,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 285167,
+        "cached_input_tokens": 244480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1711,
+        "reasoning_output_tokens": 606
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.29476,
+      "known_usd": 0.29476,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 6,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 128.80983041699983,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.836699667000175,
+      "max_request_input_tokens": 81809,
+      "llm_requests": 12,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 569840,
+        "cached_input_tokens": 494080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2313,
+        "reasoning_output_tokens": 963
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.546932,
+      "known_usd": 0.546932,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 10,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 42.000130375000026,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.76029262499992,
+      "max_request_input_tokens": 36005,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 134611,
+        "cached_input_tokens": 98048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 686,
+        "reasoning_output_tokens": 202
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.1991912,
+      "known_usd": 0.1991912,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 3,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 211,
+      "arm": "hybrid",
+      "seconds": 300.03217366599995,
+      "exit_code": -15,
+      "timed_out": true,
+      "interrupted": false,
+      "setup_seconds": 7.719937625,
+      "max_request_input_tokens": 118875,
+      "llm_requests": 15,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 9080,
+        "output_tokens": 1142
+      },
+      "usd": null,
+      "known_usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "opened_issue": true,
+          "title": false,
+          "number": false,
+          "date": false,
+          "url": false
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 32,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          1
+        ],
+        "outcomes": [
+          "execution_error"
+        ],
+        "jev_seconds": 5.3580000000000005
+      },
+      "jev_calls": 2,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": false
+    },
+    {
+      "case": "documentation",
+      "seed": 211,
+      "arm": "hybrid",
+      "seconds": 223.415678916,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 10.302106041999991,
+      "max_request_input_tokens": 52678,
+      "llm_requests": 13,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 481986,
+        "cached_input_tokens": 427008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3256,
+        "reasoning_output_tokens": 1415
+      },
+      "jev_usage": {
+        "input_tokens": 35766,
+        "output_tokens": 4465
+      },
+      "usd": 0.457337372,
+      "known_usd": 0.457337372,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 56,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          6
+        ],
+        "outcomes": [
+          "context_capacity"
+        ],
+        "jev_seconds": 21.753999999999998
+      },
+      "jev_calls": 6,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 211,
+      "arm": "hybrid",
+      "seconds": 300.02886554200006,
+      "exit_code": -15,
+      "timed_out": true,
+      "interrupted": false,
+      "setup_seconds": 7.983901790999994,
+      "max_request_input_tokens": 101540,
+      "llm_requests": 17,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 218823,
+        "output_tokens": 20143
+      },
+      "usd": null,
+      "known_usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": false,
+          "ruff_visited": true,
+          "ruff_facts": false,
+          "mypy_visited": true,
+          "mypy_facts": false
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 153,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          20
+        ],
+        "outcomes": [
+          "time_budget"
+        ],
+        "jev_seconds": 63.809000000000005
+      },
+      "jev_calls": 21,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": false
+    },
+    {
+      "case": "portfolio",
+      "seed": 211,
+      "arm": "hybrid",
+      "seconds": 89.86220533400001,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 10.478257667000094,
+      "max_request_input_tokens": 31921,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 114310,
+        "cached_input_tokens": 89728,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1259,
+        "reasoning_output_tokens": 441
+      },
+      "jev_usage": {
+        "input_tokens": 9035,
+        "output_tokens": 1142
+      },
+      "usd": 0.15977867,
+      "known_usd": 0.15977867,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 21,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          1
+        ],
+        "outcomes": [
+          "execution_error"
+        ],
+        "jev_seconds": 4.386
+      },
+      "jev_calls": 2,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 300.03242112500004,
+      "exit_code": -15,
+      "timed_out": true,
+      "interrupted": false,
+      "setup_seconds": 7.711215165999988,
+      "max_request_input_tokens": 93395,
+      "llm_requests": 18,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 158286,
+        "output_tokens": 16370
+      },
+      "usd": null,
+      "known_usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "opened_issue": true,
+          "title": false,
+          "number": false,
+          "date": false,
+          "url": false
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 82,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          3,
+          5
+        ],
+        "outcomes": [
+          "review_completion",
+          "review_completion"
+        ],
+        "jev_seconds": 21.795
+      },
+      "jev_calls": 11,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": false
+    },
+    {
+      "case": "documentation",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 220.72488420900004,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 9.89913337500002,
+      "max_request_input_tokens": 70588,
+      "llm_requests": 15,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 639144,
+        "cached_input_tokens": 566016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3446,
+        "reasoning_output_tokens": 1309
+      },
+      "jev_usage": {
+        "input_tokens": 35262,
+        "output_tokens": 4465
+      },
+      "usd": 0.5893194039999999,
+      "known_usd": 0.5893194039999999,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 62,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          6
+        ],
+        "outcomes": [
+          "context_capacity"
+        ],
+        "jev_seconds": 17.603
+      },
+      "jev_calls": 6,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 298.7392750419999,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 10.838052999999945,
+      "max_request_input_tokens": 118863,
+      "llm_requests": 20,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 1033498,
+        "cached_input_tokens": 911488,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3306,
+        "reasoning_output_tokens": 1032
+      },
+      "jev_usage": {
+        "input_tokens": 286968,
+        "output_tokens": 24615
+      },
+      "usd": 0.9308078559999999,
+      "known_usd": 0.9308078559999999,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 200,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          26
+        ],
+        "outcomes": [
+          "time_budget"
+        ],
+        "jev_seconds": 65.55799999999999
+      },
+      "jev_calls": 26,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 95.38869512499991,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 9.61899137499995,
+      "max_request_input_tokens": 34095,
+      "llm_requests": 6,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 149469,
+        "cached_input_tokens": 114432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1227,
+        "reasoning_output_tokens": 472
+      },
+      "jev_usage": {
+        "input_tokens": 20858,
+        "output_tokens": 2432
+      },
+      "usd": 0.21133683599999997,
+      "known_usd": 0.21133683599999997,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 16,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          1
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 8.001
+      },
+      "jev_calls": 3,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    }
+  ],
+  "baseline_reuse": {
+    "report": "multisite-frozen.json",
+    "report_sha256": "e596b8a144435a6f4dc3b20052ae24fae06fb60fed3b8eda9d0ac1579247bbba",
+    "created_at": "2026-09-21T18:53:48.083831+00:00",
+    "runs": 8,
+    "latest_issue_reference_unchanged": true,
+    "case_definitions_and_judges": "Unchanged; current observation parser additionally accepts general-task journals",
+    "limitations": [
+      "Historical, not contemporaneous paired baseline",
+      "Public websites and runtime latency can change between runs",
+      "Seeds label repetitions of the same public tasks, not independent websites"
+    ]
+  },
+  "summary": {
+    "cases": [
+      {
+        "case": "latest_issue",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 187.2521627495001,
+          "mean_usd": 0.6207608
+        },
+        "hybrid": {
+          "completed": 0,
+          "runs": 2,
+          "mean_seconds": 300.0322973955,
+          "mean_usd": null
+        },
+        "cost_saving": null
+      },
+      {
+        "case": "documentation",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 105.31624225049993,
+          "mean_usd": 0.40186360000000004
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 222.0702815625,
+          "mean_usd": 0.5233283879999999
+        },
+        "cost_saving": -0.3022537696870278
+      },
+      {
+        "case": "research",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 116.62912660399991,
+          "mean_usd": 0.4806036
+        },
+        "hybrid": {
+          "completed": 1,
+          "runs": 2,
+          "mean_seconds": 299.384070292,
+          "mean_usd": null
+        },
+        "cost_saving": null
+      },
+      {
+        "case": "portfolio",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 41.98523929200002,
+          "mean_usd": 0.18230040000000003
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 92.62545022949996,
+          "mean_usd": 0.185557753
+        },
+        "cost_saving": -0.017868051852875544
+      }
+    ],
+    "totals": {
+      "baseline": {
+        "completed": 8,
+        "runs": 8,
+        "seconds": 902.3655417919999,
+        "usd": 3.3710568000000003,
+        "game_median_reaction_seconds": null
+      },
+      "hybrid": {
+        "completed": 5,
+        "runs": 8,
+        "seconds": 1828.224198959,
+        "usd": null,
+        "game_median_reaction_seconds": null
+      }
+    },
+    "cost_saving": null,
+    "telemetry_verified": false,
+    "engineering_target_met": false
+  },
+  "partial_usage_audit": {
+    "runs": [
+      {
+        "case": "documentation",
+        "seed": 211,
+        "seconds": 223.415678916,
+        "success": true,
+        "usd": 0.457337372,
+        "known_usd_lower_bound": 0.457337372,
+        "recorded_llm_usage": {
+          "input_tokens": 481986,
+          "cached_input_tokens": 427008,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3256
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 35766,
+          "output_tokens": 4465
+        },
+        "usage_matches_final": true,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            6
+          ],
+          "outcomes": [
+            "context_capacity"
+          ],
+          "jev_seconds": 21.753999999999998
+        }
+      },
+      {
+        "case": "documentation",
+        "seed": 257,
+        "seconds": 220.72488420900004,
+        "success": true,
+        "usd": 0.5893194039999999,
+        "known_usd_lower_bound": 0.5893194039999999,
+        "recorded_llm_usage": {
+          "input_tokens": 639144,
+          "cached_input_tokens": 566016,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3446
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 35262,
+          "output_tokens": 4465
+        },
+        "usage_matches_final": true,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            6
+          ],
+          "outcomes": [
+            "context_capacity"
+          ],
+          "jev_seconds": 17.603
+        }
+      },
+      {
+        "case": "latest_issue",
+        "seed": 211,
+        "seconds": 300.03217366599995,
+        "success": false,
+        "usd": null,
+        "known_usd_lower_bound": 1.17536776,
+        "recorded_llm_usage": {
+          "input_tokens": 974008,
+          "cached_input_tokens": 788096,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5805
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 9080,
+          "output_tokens": 1142
+        },
+        "usage_matches_final": null,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            1
+          ],
+          "outcomes": [
+            "execution_error"
+          ],
+          "jev_seconds": 5.3580000000000005
+        }
+      },
+      {
+        "case": "latest_issue",
+        "seed": 257,
+        "seconds": 300.03242112500004,
+        "success": false,
+        "usd": null,
+        "known_usd_lower_bound": 0.8908576119999998,
+        "recorded_llm_usage": {
+          "input_tokens": 1105344,
+          "cached_input_tokens": 1009024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4766
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 158286,
+          "output_tokens": 16370
+        },
+        "usage_matches_final": null,
+        "delegation": {
+          "stages": 2,
+          "actions_per_stage": [
+            3,
+            5
+          ],
+          "outcomes": [
+            "review_completion",
+            "review_completion"
+          ],
+          "jev_seconds": 21.795
+        }
+      },
+      {
+        "case": "portfolio",
+        "seed": 211,
+        "seconds": 89.86220533400001,
+        "success": true,
+        "usd": 0.15977867,
+        "known_usd_lower_bound": 0.15977866999999998,
+        "recorded_llm_usage": {
+          "input_tokens": 114310,
+          "cached_input_tokens": 89728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1259
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 9035,
+          "output_tokens": 1142
+        },
+        "usage_matches_final": true,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            1
+          ],
+          "outcomes": [
+            "execution_error"
+          ],
+          "jev_seconds": 4.386
+        }
+      },
+      {
+        "case": "portfolio",
+        "seed": 257,
+        "seconds": 95.38869512499991,
+        "success": true,
+        "usd": 0.21133683599999997,
+        "known_usd_lower_bound": 0.211336836,
+        "recorded_llm_usage": {
+          "input_tokens": 149469,
+          "cached_input_tokens": 114432,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1227
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 20858,
+          "output_tokens": 2432
+        },
+        "usage_matches_final": true,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            1
+          ],
+          "outcomes": [
+            "review_completion"
+          ],
+          "jev_seconds": 8.001
+        }
+      },
+      {
+        "case": "research",
+        "seed": 211,
+        "seconds": 300.02886554200006,
+        "success": false,
+        "usd": null,
+        "known_usd_lower_bound": 0.804005766,
+        "recorded_llm_usage": {
+          "input_tokens": 776628,
+          "cached_input_tokens": 658688,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2979
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 218823,
+          "output_tokens": 20143
+        },
+        "usage_matches_final": null,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            20
+          ],
+          "outcomes": [
+            "time_budget"
+          ],
+          "jev_seconds": 63.809000000000005
+        }
+      },
+      {
+        "case": "research",
+        "seed": 257,
+        "seconds": 298.7392750419999,
+        "success": true,
+        "usd": 0.9308078559999999,
+        "known_usd_lower_bound": 0.9308078559999999,
+        "recorded_llm_usage": {
+          "input_tokens": 1033498,
+          "cached_input_tokens": 911488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3306
+        },
+        "recorded_jev_usage": {
+          "input_tokens": 286968,
+          "output_tokens": 24615
+        },
+        "usage_matches_final": true,
+        "delegation": {
+          "stages": 1,
+          "actions_per_stage": [
+            26
+          ],
+          "outcomes": [
+            "time_budget"
+          ],
+          "jev_seconds": 65.55799999999999
+        }
+      }
+    ],
+    "total_seconds": 1828.2241989590002,
+    "known_usd_lower_bound": 5.218811276,
+    "passed": 5,
+    "note": "Completed-response records deduplicated by response_id; interrupted or unmetered calls may add unknown cost. Frozen rates, API-equivalent cost, not subscription charges."
+  },
+  "constraints_audit": {
+    "navigation_outside_granted_prefix_observed": false,
+    "url_verification_handoffs": 2,
+    "note": "Review of delegated warnings and native action journals; unavailable URL produced a stop, not a permission override.",
+    "observed_external_pages_outside_grant": [],
+    "browser_internal_surfaces": [
+      {
+        "run": "documentation-211-hybrid",
+        "surface": "chrome://omnibox-popup.top-chrome",
+        "reason": "Chrome address suggestion UI, not an external website"
+      },
+      {
+        "run": "documentation-257-hybrid",
+        "surface": "chrome://omnibox-popup.top-chrome",
+        "reason": "Chrome address suggestion UI, not an external website"
+      },
+      {
+        "run": "research-257-hybrid",
+        "surface": "chrome://omnibox-popup.top-chrome",
+        "reason": "Chrome address suggestion UI, not an external website"
+      }
+    ],
+    "loaded_page_counts": {
+      "documentation-211-hybrid": 4,
+      "latest_issue-257-hybrid": 5,
+      "portfolio-257-hybrid": 2,
+      "research-211-hybrid": 16,
+      "documentation-257-hybrid": 4,
+      "latest_issue-211-hybrid": 5,
+      "research-257-hybrid": 13,
+      "portfolio-211-hybrid": 2
+    }
+  }
+}

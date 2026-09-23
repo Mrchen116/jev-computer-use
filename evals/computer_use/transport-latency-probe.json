@@ -1,0 +1,197 @@
+{
+  "payload_bytes": 11546,
+  "rows": [
+    {
+      "arm": "fresh",
+      "seconds": 1.273600916,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.9663771250000002,
+      "connect_seconds": 0.6094653749999999,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "fresh",
+      "seconds": 1.0016015829999998,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.5166488330000001,
+      "connect_seconds": 0,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "fresh",
+      "seconds": 1.0880085420000003,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.4180664579999993,
+      "connect_seconds": 0,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.39645545900000023,
+      "connect_seconds": 0,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "fresh",
+      "seconds": 0.8783800839999998,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.3553823749999996,
+      "connect_seconds": 0,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "fresh",
+      "seconds": 0.9973400830000001,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "pooled",
+      "seconds": 0.5283642500000001,
+      "connect_seconds": 0,
+      "will_close": false,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    },
+    {
+      "arm": "fresh",
+      "seconds": 0.9098279579999993,
+      "connect_seconds": null,
+      "will_close": true,
+      "usage": {
+        "input_tokens": 3833,
+        "output_tokens": 600
+      },
+      "answers": {
+        "pause_now": "continue",
+        "next_action": "click_27"
+      }
+    }
+  ],
+  "method": "Twelve sequential read-only requests of one previously observed decision payload, six per transport, order reversed halfway. Same endpoint, key, model, payload and existing HTTP CONNECT proxy. No UI actions.",
+  "script_sha256": "8296b3799984e7fcedb9c2cb458102d80fe77d17de58c61e59d3d455bd8d0aeb",
+  "summary": {
+    "fresh": {
+      "requests": 6,
+      "mean_seconds": 1.0247931943333333,
+      "median_seconds": 0.999470833,
+      "input_tokens": 22998,
+      "output_tokens": 3600
+    },
+    "pooled": {
+      "requests": 6,
+      "mean_seconds": 0.5302157499999999,
+      "median_seconds": 0.4673576454999997,
+      "input_tokens": 22998,
+      "output_tokens": 3600
+    },
+    "warm_only_mean_seconds": 0.44298347499999985,
+    "time_saving_including_first_connect": 0.4826119524096515
+  },
+  "limitations": [
+    "Small single-network microbenchmark, not an end-to-end task comparison.",
+    "Connection reuse does not establish outage resilience. Failed inference requests are not automatically retried."
+  ]
+}

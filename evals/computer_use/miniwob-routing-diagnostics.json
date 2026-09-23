@@ -1,0 +1,213 @@
+{
+  "scope": "Observed failed wrapper requests in the frozen R06 hybrid run; these costs are already included in the task totals, not additional charges. A successful direct delegation followed each failure.",
+  "failed_calls": [
+    {
+      "case_seed": "multi-layouts-11-hybrid",
+      "attempt": "Guessed tools.mcp__cua_repl__delegate_task wrapper alias instead of exposed direct tool",
+      "llm_usage": {
+        "input_tokens": 19144,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 363,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 19507
+      },
+      "usd": 0.083836
+    },
+    {
+      "case_seed": "multi-layouts-22-hybrid",
+      "attempt": "Guessed tools.mcp__cua_repl__delegate_task wrapper alias instead of exposed direct tool",
+      "llm_usage": {
+        "input_tokens": 19143,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 431,
+        "reasoning_output_tokens": 43,
+        "total_tokens": 19574
+      },
+      "usd": 0.085192
+    }
+  ],
+  "total_wasted_request_usd": 0.169028,
+  "limits": "Removing a recorded failed call is not a measured counterfactual task cost or latency. A fresh whole-task rerun is required.",
+  "followup": {
+    "report": "miniwob-routing-followup.json",
+    "scope": "All nine frozen R07 attempts. Codex session response items were inspected, including wrapper failures absent from the native journal. Cost parts use actual recorded token usage and the frozen rates. Worker active time excludes outer-agent handoffs; the remainder includes host/provider/startup/transport and is not a measure of pure LLM inference.",
+    "runs": [
+      {
+        "case": "book-flight",
+        "seed": 11,
+        "direct_delegate_calls": 2,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 8,
+        "seconds": 89.03416845800001,
+        "worker_active_seconds": 18.545,
+        "jev_api_seconds": 11.208000000000002,
+        "usd": 0.278113204,
+        "cost_parts": {
+          "llm_uncached_input": 0.161824,
+          "llm_cached_input": 0.09144320000000002,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.02284,
+          "jev": 0.002006004
+        }
+      },
+      {
+        "case": "book-flight",
+        "seed": 22,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 5,
+        "seconds": 60.30509091699997,
+        "worker_active_seconds": 14.012,
+        "jev_api_seconds": 8.884,
+        "usd": 0.28947644,
+        "cost_parts": {
+          "llm_uncached_input": 0.243276,
+          "llm_cached_input": 0.030771200000000002,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.01374,
+          "jev": 0.00168924
+        }
+      },
+      {
+        "case": "book-flight",
+        "seed": 66,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 16,
+        "seconds": 125.511862125,
+        "worker_active_seconds": 13.265,
+        "jev_api_seconds": 8.073,
+        "usd": 0.3845672560000001,
+        "cost_parts": {
+          "llm_uncached_input": 0.15762,
+          "llm_cached_input": 0.19425280000000003,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.03102,
+          "jev": 0.0016744560000000002
+        }
+      },
+      {
+        "case": "click-checkboxes-large",
+        "seed": 11,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 38.907292833,
+        "worker_active_seconds": 15.012,
+        "jev_api_seconds": 9.436,
+        "usd": 0.1265325,
+        "cost_parts": {
+          "llm_uncached_input": 0.110276,
+          "llm_cached_input": 0.0075776,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00698,
+          "jev": 0.0016989000000000001
+        }
+      },
+      {
+        "case": "click-checkboxes-large",
+        "seed": 22,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 47.356636417000004,
+        "worker_active_seconds": 21.489,
+        "jev_api_seconds": 11.895000000000003,
+        "usd": 0.11660906000000001,
+        "cost_parts": {
+          "llm_uncached_input": 0.095876,
+          "llm_cached_input": 0.0093696,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00888,
+          "jev": 0.00248346
+        }
+      },
+      {
+        "case": "click-checkboxes-large",
+        "seed": 66,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 51.113955917,
+        "worker_active_seconds": 22.252,
+        "jev_api_seconds": 14.844,
+        "usd": 0.09600685,
+        "cost_parts": {
+          "llm_uncached_input": 0.075028,
+          "llm_cached_input": 0.0114176,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00712,
+          "jev": 0.00244125
+        }
+      },
+      {
+        "case": "multi-layouts",
+        "seed": 11,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 41.24148075000001,
+        "worker_active_seconds": 14.867,
+        "jev_api_seconds": 9.731,
+        "usd": 0.11074272199999999,
+        "cost_parts": {
+          "llm_uncached_input": 0.092416,
+          "llm_cached_input": 0.0093184,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00744,
+          "jev": 0.001568322
+        }
+      },
+      {
+        "case": "multi-layouts",
+        "seed": 22,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 42.344755125000006,
+        "worker_active_seconds": 14.908,
+        "jev_api_seconds": 8.542000000000002,
+        "usd": 0.16254484400000002,
+        "cost_parts": {
+          "llm_uncached_input": 0.149696,
+          "llm_cached_input": 0.003584,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00772,
+          "jev": 0.001544844
+        }
+      },
+      {
+        "case": "multi-layouts",
+        "seed": 66,
+        "direct_delegate_calls": 1,
+        "wrapper_delegate_attempts": 0,
+        "routing_type_errors": 0,
+        "llm_requests": 2,
+        "seconds": 53.08251425000003,
+        "worker_active_seconds": 13.811,
+        "jev_api_seconds": 8.43,
+        "usd": 0.09421474399999999,
+        "cost_parts": {
+          "llm_uncached_input": 0.072592,
+          "llm_cached_input": 0.011366400000000002,
+          "llm_cache_write": 0.0,
+          "llm_output": 0.00868,
+          "jev": 0.0015763440000000001
+        }
+      }
+    ],
+    "direct_delegate_calls": 10,
+    "wrapper_delegate_attempts": 0,
+    "routing_type_errors": 0
+  }
+}

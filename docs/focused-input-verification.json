@@ -1,0 +1,16 @@
+{
+  "kind": "saved_public_observation_api_probe",
+  "original_step": 15,
+  "original_choice": "click_9",
+  "removed_option": "repeat focus on already focused textbox",
+  "new_choice": "help_input",
+  "seconds": 2.955,
+  "usage": {
+    "input_tokens": 11429,
+    "output_tokens": 947
+  },
+  "jev_only_usd": 0.000480018,
+  "model": "jev-1.13.0",
+  "native_ui_actions": 0,
+  "note": "One saved-context counterfactual, no outer LLM and no UI execution; not end-to-end completion evidence."
+}

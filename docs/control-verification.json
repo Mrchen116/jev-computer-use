@@ -1,0 +1,991 @@
+{
+  "kind": "development functional verification; not a frozen comparison",
+  "date": "2026-09-21",
+  "host": {
+    "model": "gpt-5.6-sol",
+    "effort": "medium"
+  },
+  "offline_checks": {
+    "project_tests": 43,
+    "evaluator_tests": 9,
+    "skill_validation": "passed"
+  },
+  "runs": [
+    {
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 105.78261479199999,
+      "usd": null,
+      "judge": {
+        "success": false,
+        "checks": {
+          "finished": true,
+          "rescues": false
+        },
+        "game_score": 1,
+        "game_missed": 11,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          2.9338250410000057
+        ]
+      },
+      "llm_usage": {
+        "input_tokens": 248297,
+        "cached_input_tokens": 220160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2199,
+        "reasoning_output_tokens": 772
+      },
+      "jev_usage": {
+        "input_tokens": 2065,
+        "output_tokens": 178
+      },
+      "model_verified": true,
+      "revision": "modes-pilot-1",
+      "formal_benchmark": false,
+      "modes": [
+        "realtime",
+        "realtime"
+      ],
+      "known_usd": 0.24467873,
+      "unmetered_jev_calls": 1,
+      "note": "Jev transport returned SSL EOF without usage for one request. Metered subtotal is not the total cost. The attempt failed."
+    },
+    {
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 150.191299375,
+      "usd": 0.27477656799999994,
+      "judge": {
+        "success": false,
+        "checks": {
+          "finished": true,
+          "rescues": false
+        },
+        "game_score": 0,
+        "game_missed": 12,
+        "game_wrong": 0,
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 272076,
+        "cached_input_tokens": 236672,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1904,
+        "reasoning_output_tokens": 763
+      },
+      "jev_usage": {
+        "input_tokens": 9804,
+        "output_tokens": 800
+      },
+      "model_verified": true,
+      "revision": "modes-pilot-2",
+      "formal_benchmark": false,
+      "modes": [
+        "realtime",
+        "step"
+      ],
+      "note": "Host chose 1500 ms expiry while several requests took over 2000 ms; repeated discards preceded an invalid native accessibility element. The attempt failed."
+    },
+    {
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 80.301070667,
+      "usd": 0.12870708,
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "rescues": true
+        },
+        "game_score": 11,
+        "game_missed": 1,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          1.5963571250000044,
+          1.7837664580000023,
+          1.9162251660000038,
+          2.050538416000002,
+          2.591187667,
+          1.8752581670000055,
+          2.0664988750000006,
+          2.1164659169999993,
+          2.066720457999999,
+          2.2672061669999977,
+          2.5328109999999953
+        ]
+      },
+      "llm_usage": {
+        "input_tokens": 88658,
+        "cached_input_tokens": 68608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1013,
+        "reasoning_output_tokens": 420
+      },
+      "jev_usage": {
+        "input_tokens": 19140,
+        "output_tokens": 1487
+      },
+      "model_verified": true,
+      "revision": "modes-pilot-3",
+      "formal_benchmark": false,
+      "modes": [
+        "realtime"
+      ]
+    },
+    {
+      "case": "portfolio",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 64.610759708,
+      "usd": 0.20365351999999998,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 132816,
+        "cached_input_tokens": 98816,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1372,
+        "reasoning_output_tokens": 361
+      },
+      "jev_usage": {
+        "input_tokens": 16360,
+        "output_tokens": 1772
+      },
+      "model_verified": true,
+      "revision": "modes-pilot-3",
+      "formal_benchmark": false,
+      "modes": [
+        "step",
+        "step",
+        "step"
+      ]
+    },
+    {
+      "case": "documentation",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 125.73781424999999,
+      "usd": null,
+      "known_usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "observed_source": false,
+          "source_link": false,
+          "read_version": false,
+          "write_version": false,
+          "arguments": false,
+          "returns": false
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 10614,
+        "output_tokens": 1832
+      },
+      "model_verified": true,
+      "interrupted": true,
+      "timed_out": false,
+      "max_request_input_tokens": 63826,
+      "revision": "simple-cycle-1",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "scope_boundary",
+          "seconds": 9.443,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [
+        "Current page is outside the delegated URL scope: https://…"
+      ],
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "note": "Operator ended development attempt to repair a reproduced parsing defect. No final answer or complete LLM billing; total USD remains unknown."
+    },
+    {
+      "case": "game",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 79.314196083,
+      "usd": 0.11271301000000002,
+      "known_usd": 0.11271301000000002,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "rescues": true
+        },
+        "game_score": 12,
+        "game_missed": 0,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          2.4336377499999955,
+          1.7474252920000026,
+          2.0518949169999985,
+          2.0836822499999954,
+          2.1335105409999997,
+          2.416469541000005,
+          2.3662215840000016,
+          2.0829023750000033,
+          2.0495027080000057,
+          2.234542624999989,
+          1.9996191250000095,
+          1.7829905419999932
+        ]
+      },
+      "llm_usage": {
+        "input_tokens": 70158,
+        "cached_input_tokens": 50944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 737,
+        "reasoning_output_tokens": 220
+      },
+      "jev_usage": {
+        "input_tokens": 17605,
+        "output_tokens": 1383
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 18720,
+      "revision": "simple-cycle-1",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "realtime",
+          "period_ms": 100,
+          "recheck_target": false,
+          "status": "checkpoint",
+          "seconds": 31.153,
+          "counts": {
+            "decisions": 14,
+            "actions": 13,
+            "skipped_actions": 0
+          },
+          "warnings": [
+            {
+              "code": "decision_slow",
+              "count": 14,
+              "latest": {
+                "code": "decision_slow",
+                "message": "Decision took longer than the configured cycle",
+                "seconds": 1.13,
+                "period_ms": 100
+              }
+            }
+          ]
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "latest_issue",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 256.756933958,
+      "usd": 1.1651875499999997,
+      "known_usd": 1.1651875499999997,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 1882454,
+        "cached_input_tokens": 1801856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6092,
+        "reasoning_output_tokens": 2412
+      },
+      "jev_usage": {
+        "input_tokens": 5075,
+        "output_tokens": 479
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 90959,
+      "revision": "simple-cycle-1",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 5.987,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [
+        "Current page is outside the delegated URL scope: https://…",
+        "Current page is outside the delegated URL scope: https://…"
+      ],
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "note": "Outer Sol recovered from native URL-elision parsing failures; end-to-end success is not successful low-cost delegation."
+    },
+    {
+      "case": "portfolio",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 34.67687095799998,
+      "usd": 0.108560522,
+      "known_usd": 0.108560522,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 53619,
+        "cached_input_tokens": 33024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 643,
+        "reasoning_output_tokens": 160
+      },
+      "jev_usage": {
+        "input_tokens": 2641,
+        "output_tokens": 238
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 20291,
+      "revision": "simple-cycle-1",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.418,
+          "counts": {
+            "decisions": 1,
+            "actions": 0,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "documentation",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 169.14765791699995,
+      "usd": 0.715834668,
+      "known_usd": 0.715834668,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 820457,
+        "cached_input_tokens": 737920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4391,
+        "reasoning_output_tokens": 2115
+      },
+      "jev_usage": {
+        "input_tokens": 64254,
+        "output_tokens": 5358
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 64255,
+      "revision": "simple-cycle-url-elision",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 13.361,
+          "counts": {
+            "decisions": 3,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 4.424,
+          "counts": {
+            "decisions": 1,
+            "actions": 0,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "latest_issue",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 237.270907542,
+      "usd": 0.945694872,
+      "known_usd": 0.945694872,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 1128430,
+        "cached_input_tokens": 1024000,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5530,
+        "reasoning_output_tokens": 2203
+      },
+      "jev_usage": {
+        "input_tokens": 185116,
+        "output_tokens": 24314
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 101286,
+      "revision": "simple-cycle-url-elision",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "execution_error",
+          "seconds": 5.023,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": [
+            {
+              "code": "execution_error",
+              "count": 1,
+              "latest": {
+                "code": "execution_error",
+                "message": "No web accessibility area is currently visible"
+              }
+            }
+          ]
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "needs_input",
+          "seconds": 5.993,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.55,
+          "counts": {
+            "decisions": 1,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 1.934,
+          "counts": {
+            "decisions": 1,
+            "actions": 0,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "step_budget",
+          "seconds": 6.58,
+          "counts": {
+            "decisions": 3,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 4.609,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.71,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 4.443,
+          "counts": {
+            "decisions": 2,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "scope_boundary",
+          "seconds": 2.445,
+          "counts": {
+            "decisions": 1,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 1.17,
+          "counts": {
+            "decisions": 1,
+            "actions": 0,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.401,
+          "counts": {
+            "decisions": 2,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.965,
+          "counts": {
+            "decisions": 2,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 3.872,
+          "counts": {
+            "decisions": 2,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "research",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 181.73661716699996,
+      "usd": 0.6962477760000001,
+      "known_usd": 0.6962477760000001,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": {
+        "input_tokens": 632794,
+        "cached_input_tokens": 529152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3184,
+        "reasoning_output_tokens": 1063
+      },
+      "jev_usage": {
+        "input_tokens": 150928,
+        "output_tokens": 19549
+      },
+      "model_verified": true,
+      "interrupted": false,
+      "timed_out": false,
+      "max_request_input_tokens": 88974,
+      "revision": "simple-cycle-url-elision",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "needs_input",
+          "seconds": 3.598,
+          "counts": {
+            "decisions": 1,
+            "actions": 0,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "execution_error",
+          "seconds": 2.728,
+          "counts": {
+            "decisions": 1,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": [
+            {
+              "code": "execution_error",
+              "count": 1,
+              "latest": {
+                "code": "execution_error",
+                "message": "No web accessibility area is currently visible"
+              }
+            }
+          ]
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "step_budget",
+          "seconds": 48.59,
+          "counts": {
+            "decisions": 16,
+            "actions": 16,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        },
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "checkpoint",
+          "seconds": 6.996,
+          "counts": {
+            "decisions": 2,
+            "actions": 1,
+            "skipped_actions": 0
+          },
+          "warnings": []
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "documentation",
+      "seed": 7,
+      "arm": "hybrid",
+      "seconds": 66.893375,
+      "usd": null,
+      "known_usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "observed_source": true,
+          "source_link": false,
+          "read_version": false,
+          "write_version": false,
+          "arguments": false,
+          "returns": false
+        },
+        "reaction_seconds": []
+      },
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 17249,
+        "output_tokens": 2382
+      },
+      "model_verified": true,
+      "interrupted": true,
+      "timed_out": false,
+      "max_request_input_tokens": 33464,
+      "revision": "simple-cycle-excerpt-pilot",
+      "formal_benchmark": false,
+      "stages": [
+        {
+          "mode": "step",
+          "period_ms": null,
+          "recheck_target": true,
+          "status": "execution_error",
+          "seconds": 14.181,
+          "counts": {
+            "decisions": 2,
+            "actions": 2,
+            "skipped_actions": 0
+          },
+          "warnings": [
+            {
+              "code": "execution_error",
+              "count": 1,
+              "latest": {
+                "code": "execution_error",
+                "message": "No web accessibility area is currently visible"
+              }
+            }
+          ]
+        }
+      ],
+      "delegation_errors": [],
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "note": "Operator ended development attempt to repair a reproduced parsing defect. No final answer or complete LLM billing; total USD remains unknown."
+    }
+  ],
+  "limitations": [
+    "Development functional runs, not a frozen paired price or general-success claim.",
+    "The game uses accessible text and discrete clicks, not pixels or held keys.",
+    "The live control smoke verifies stop, warnings and mode switching; it does not measure outer-host USD.",
+    "Previously failed native realtime baseline was not rerun."
+  ],
+  "current_revision": "simple-cycle-evidence",
+  "implementation": {
+    "cycle": "wait until due -> observe -> Jev -> execute -> observe result -> next cycle",
+    "host_parameters": [
+      "mode",
+      "period_ms",
+      "recheck_target"
+    ],
+    "page_changes_discard_decisions": false,
+    "automatic_decision_expiry": false,
+    "separate_observer": false,
+    "warnings": "merged count and latest detail; no extra model or UI calls"
+  },
+  "historical_progress_observation": {
+    "case": "game",
+    "revision": "modes-pilot-3",
+    "read_via": "stage --status while execution was running",
+    "status": "running",
+    "mode": "realtime",
+    "phase": "deciding",
+    "current_title": "Request 8 of 12, Value: 1",
+    "counts": {
+      "decisions": 10,
+      "actions": 7,
+      "discarded_decisions": 2,
+      "sources": 1
+    },
+    "last_discard": {
+      "reason": "page_changed"
+    },
+    "note": "Observed through the external progress interface before the stage returned. No raw AX or model calls were needed for this read."
+  },
+  "live_control_verification": {
+    "stop_acknowledged": true,
+    "stopped_status": "stopped",
+    "actions_before_stop": 1,
+    "actions_after_stop": 1,
+    "pending_decision_returned_without_action": true,
+    "next_mode": "step",
+    "next_status": "checkpoint",
+    "evidence_preserved": true,
+    "jev_usage_stop": {
+      "input_tokens": 1749,
+      "output_tokens": 178
+    },
+    "jev_usage_next": {
+      "input_tokens": 839,
+      "output_tokens": 101
+    },
+    "progress_observed_while_running": {
+      "status": "running",
+      "mode": "realtime",
+      "goal": "Start the Rescue Dispatch game and dispatch the matching tool for each visible request. Only use game controls.",
+      "yield_when": "The final game results are visible.",
+      "period_ms": 100,
+      "recheck_target": false,
+      "phase": "deciding",
+      "elapsed_seconds": 4.6,
+      "current": {
+        "url": "http://localhost/control-smoke",
+        "title": "Request 1 of 12, Value: 1",
+        "observed_at": "2026-09-21T09:51:39.229132+00:00"
+      },
+      "counts": {
+        "decisions": 2,
+        "actions": 1,
+        "skipped_actions": 0,
+        "sources": 1
+      },
+      "recent_actions": [
+        {
+          "action": "click",
+          "label": "Start game",
+          "url": "http://localhost/control-smoke"
+        }
+      ],
+      "limits": {
+        "decisions": 20,
+        "seconds": 110
+      },
+      "warnings": [
+        {
+          "code": "decision_slow",
+          "count": 1,
+          "latest": {
+            "code": "decision_slow",
+            "message": "Decision took longer than the configured cycle",
+            "seconds": 1.704,
+            "period_ms": 100
+          }
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "s2",
+          "url": "http://localhost/control-smoke",
+          "title": "Request 1 of 12, Value: 1"
+        }
+      ],
+      "attention": null
+    },
+    "host": "Direct external Skill CLI control smoke; no outer model cost measured"
+  }
+}

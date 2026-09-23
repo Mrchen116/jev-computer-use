@@ -43,6 +43,7 @@ class NativeCUA:
         self.responses = queue.Queue()
         self.sequence = 0
         self.tool_calls = 0
+        self.request_meta = None
 
         def read():
             try:
@@ -89,6 +90,8 @@ class NativeCUA:
         self.send({'jsonrpc': '2.0', 'id': request['id'], 'result': result})
 
     def request(self, method, params):
+        if method == 'tools/call' and self.request_meta:
+            params = {**params, '_meta': self.request_meta}
         self.sequence += 1
         self.send({'jsonrpc': '2.0', 'id': self.sequence, 'method': method, 'params': params})
         while True:

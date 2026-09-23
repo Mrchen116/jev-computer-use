@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jev-computer-use"
-version = "0.2.0"
+version = "0.3.0"
 description = "Task-driven macOS computer use with Jev decisions and on-demand LLM help"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -15,7 +15,7 @@ classifiers = ["Development Status :: 3 - Alpha", "Operating System :: MacOS :: 
 dependencies = []
 
 [project.scripts]
-jev-computer-use = "jev_computer_use.cli:main"
+jev-computer-use = "jev_computer_use.task_cli:main"
 
 [project.urls]
 Repository = "https://github.com/Mrchen116/jev-computer-use"

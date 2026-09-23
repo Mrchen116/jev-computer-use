@@ -1,0 +1,26 @@
+{
+  "reviewed_on": "2026-09-22",
+  "paired_report": "multisite-frozen.json",
+  "game_report": "realtime-final.json",
+  "paired_answers_reviewed": 16,
+  "game_answers_reviewed": 2,
+  "source_hashes_match": true,
+  "model_and_cost_telemetry_verified": true,
+  "engineering_target_met": true,
+  "latest_issue_reference_unchanged_after_run": true,
+  "latest_issue_number": 298,
+  "copied_auth_files_remaining": 0,
+  "publication_scan": {
+    "files_including_untracked": 76,
+    "credential_or_private_path_findings": 0
+  },
+  "offline_project_tests": 72,
+  "offline_evaluator_tests": 9,
+  "copied_skill_without_site_packages": "passed",
+  "notes": [
+    "Final answers and observed tool inventories reviewed; observed hosts stayed within authorized task sites.",
+    "Only native UI, delegation and retained-evidence tools appeared in candidate calls. Baseline screenshots and grounded deterministic batching remained available.",
+    "Two real-time hybrid attempts passed 12/12. Historical native real-time failure was not rerun.",
+    "Native journals, UI evidence, exact frozen source archives and reference snapshots remain private."
+  ]
+}

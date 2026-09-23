@@ -1,81 +1,106 @@
 # Architecture
 
-The primary product is a self-contained Skill. The host agent owns language reasoning and conversation context. A live Python worker owns the Jev/CUA execution loop. The small handoff protocol is independent of the host model and does not invoke a nested agent.
+The outer agent is System Two. It owns user intent, reasoning, authorization,
+new text, intervention and final verification. Jev is System One: it sees the
+whole task and selects concrete operations from the current interface. Delegation
+is worthwhile for sustained interaction, not one click or continuous reasoning.
+
+The caller workflow is the [Skill](../skills/jev-computer-use/SKILL.md);
+setup and optional controls are in its [reference](../skills/jev-computer-use/references/tasks.md).
+Generic interaction and handoff rules live in `tasks.py`, rather than being
+regenerated inside each outer-agent delegation.
 
 ```mermaid
 sequenceDiagram
-    participant U as User
-    participant A as Host agent
-    participant S as Skill
-    participant P as Python worker
+    participant A as Outer agent
+    participant R as Task runner
     participant J as Jev
-    participant C as Native CUA
-    U->>A: Natural-language task
-    A->>S: Read invocation and handoff contract
-    S-->>A: Bundled runner and response protocol
-    A->>P: Start task with relevant facts
-    P->>C: List applications
-    loop Until verified, stopped or bounded out
-        P->>C: Observe current state
-        P->>J: Task + current evidence + factual history + action menu
-        J-->>P: Selected action and probabilities
-        opt Text or reasoning is needed
-            P-->>A: needs_host(id, purpose, state, fields)
-            Note over P: Paused; CUA session remains alive
-            A->>P: Matching id + typed answer
-        end
-        P->>J: Risk check for actual mutation and parameters
-        opt Authorization review needed
-            P-->>A: Concrete action to review
-            opt Existing authorization is insufficient
-                A->>U: Ask for the missing authorization
-                U-->>A: Decision
+    participant C as Native Computer Use
+    A->>R: Whole task, mode, optional exact texts
+    loop Sequential step or realtime cycle
+        R->>C: Full current accessibility observation
+        R->>J: Task + all concise history + UI + continuation/action questions
+        J-->>R: Continue score and concrete action choice
+        alt Continue with an executable action
+            opt Host-selected target recheck
+                R->>C: Check target and focus
             end
-            A->>P: Approve or decline
-        end
-        P->>C: Re-observe; execute only if fresh
-        C-->>P: Observed result
-        opt Jev proposes done
-            P-->>A: Current evidence and all task requirements
-            A->>P: Verdict + answer + exact quote
-            P->>C: Re-observe; reject stale evidence
+            R->>C: Execute selected action
+            C-->>R: Actual result
+            R->>R: Persist concise history and full private log
+        else Pause, uncertainty or help
+            R-->>A: Current full UI, concise history and shared app binding
         end
     end
-    P-->>A: Completed answer or explicit incomplete/blocked status
-    A-->>U: Final answer
+    A->>A: Inspect, reason or verify
+    opt Native takeover needed
+        A->>C: Continue through the existing app object
+        C-->>A: Updated observation (native diff when available)
+    end
+    A->>R: Resume same task with guidance and/or prepared text
 ```
 
-The diagram shows conditional calls. App selection/view changes do not require risk inference. Ordinary actions execute without a host response. Native runtime permission forms are also handed to the host for a real user decision; they are not implied by model confidence.
+## Modules
 
-## The host interface
+- `computer.py`: full native observations, app inventory, supported control
+  actions, focused text operations and execution. Uses the existing AX role
+  parser without inheriting page filtering or control pagination.
+- `tasks.py`: batched continuation and next-action choices, exhaustive group selection above 255 options, cycle coordination, host handoffs,
+  complete step history, progress, journal and persistent resumption.
+- `task_cli.py`: default shell/package entrypoint and MCP tool schema.
+- `mcp.py`: native transport, optional `delegate_task` and retained observation reads, using the same runner. Jev execution and host native actions share one CUA session and app binding. The first handoff replays native method documentation if the host has not received it.
+- `control.py`: minimum cycle spacing without queued catch-up.
+- `runtime.py`: installed native CUA transport; no model dispatch or permission bypass.
+- `models.py`: typed Jev request/response and actual token accounting.
 
-The Skill is the human/agent entrypoint, not a second executing service. Its `scripts/run.py` starts the worker or handles `status`, `respond` and `stop`. All source code lives beside it in `scripts/jev_computer_use`; setuptools packages that same source.
+The context contains whole intent, all concise steps, the complete current AX
+content in compact structural syntax (the original remains verbatim in the log),
+named exact input texts and warnings. UI data is not host instruction. Supported
+actions are generated from observed roles/focus, not inferred application routes.
+There is no collection or evidence-sufficiency decision in the generic executor.
 
-`--exchange-dir` selects a new empty private directory. `event.json` is atomically replaced with `running`, `needs_host` or a terminal status. A pending event contains a unique request ID, purpose, instruction, relevant state and required scalar fields. `respond` validates and publishes `reply.json`. The worker consumes it once, validates again, removes it and resumes. Only one host may respond to a run. Wrong/stale IDs and field types cannot resume execution.
+Inputs are optional host-authored text/purpose pairs. Focus makes replace/insert
+options available; Jev selects them. The code never fills by matching a field
+label to a prepared dictionary, and input does not automatically submit.
+Native input options quote immediately preceding AX sibling text when available;
+the code does not claim it is a semantic label. Missing text does not remove a
+task requirement. Readonly fields remain clickable but have no value-assignment option.
 
-The process remains alive while waiting, preserving app/control context in memory. It never reloads a checkpoint and blindly replays the last mutation. Every wait has a timeout; help and decision budgets are bounded. `stop` is cooperative: a pending native call may finish, but cancellation is checked before the next mutation or while waiting for help. If the worker crashes, it is not resumable: inspect the UI before a new run. The retained shell session is the source of process-exit/error information.
+The first question can continue, request terminal review, or ask for reasoning
+when the current interface has reached an unresolved comparison. It does not
+pause merely because the whole task needs reasoning later. This gate runs before
+the next-action choice can execute, even if that second answer proposes a click.
+The continuation threshold is a model-uncertainty handoff heuristic. Native AX may
+retain controls under an overlay, and a high continuation score has occurred after
+a terminal failure. It is neither a reliable terminal detector nor an occlusion check.
 
-Requests are private IPC, **not metadata-only logs**. The mode-0700 directory has mode-0600 messages. Consumed replies are removed, pending evidence is replaced by the next state, and the final answer remains for the host to consume. The host removes its exchange/response files once the worker exits. Reports remain metadata-only unless full tracing is requested.
+Progress atomically includes all concise history. The journal stores complete
+observations, model requests/responses and action effects linked by step number.
+A private checkpoint retains history, texts, application and actual token totals
+across process handoffs. A directory lock prevents concurrent writers for a task.
+The host must also avoid concurrent controllers across different task directories.
 
-## Responsibilities
+Handoffs return concise state/history and the full latest interface directly.
+MCP sends the tree once as plain text plus metadata and the existing app binding;
+the caller can continue in that native session without rebinding or navigating.
+CLI returns the same UI inline but cannot transfer JS variables across processes.
+The physical app remains open in both cases. Execution errors mark the last
+observation as needing refresh before further action.
 
-| Module | Owns |
-| --- | --- |
-| `SKILL.md` | Invocation, host responsibilities, authorization and evidence interpretation |
-| `cli.py` | Budgets, decision loop, help triggers, confirmation and completion |
-| `host.py` | Live host handoffs, typed ID-bound replies, waits and cancellation; no model execution |
-| `desktop.py` | App discovery, AX roles, current control menu, scopes/paging, mutations and fill verification |
-| `runtime.py` | Installed manifest, stdio JSON-RPC, native permission callback and process lifecycle |
-| `models.py` | Jev HTTP/validation; opt-in standalone Codex text helper |
-| `state.py` | Last-six-step factual state and metadata report projection |
-| `doctor.py` | Read-only prerequisites check; Codex CLI required only in standalone mode |
+Earlier screens can be read by exact ID or literal text search from the private
+log. Raw diffs and full observations are omitted from routine progress polls.
 
-The worker uses `Desktop.observe()`, `execute(action, value)` and `close()` without knowing MCP framing. Host mode and optional `--helper codex` implement the same text-help boundary; only the latter starts `codex exec`. The host-request count is not a measured LLM invocation/token count, and its wait duration includes the host's tool scheduling and other work.
+No exception triggers automatic mutation replay. A cooperative stop after an
+in-flight model response prevents its action. Completion is always an explicit
+outer-agent verdict. Logs and checkpoints are private task data, not release artifacts.
 
-## Trade-offs and verification
+## Historical implementations
 
-One flat action-choice question couples operation and target. A separate risk question covers the actual mutation after text or action help. No untested speculative multihead policy was added.
+`stages.py`, `collection.py`, `evidence.py`, `stage_cli.py` and their tests
+remain for the already-published web-stage experiment. MCP exposes them only with
+`--legacy-stages`. The older `cli.py` / `host.py` discovery worker can still be
+invoked as a Python module for historical reproduction. Neither is the default
+Skill/package route. Their measured performance does not validate the redesigned
+general task loop.
 
-Input text is produced on demand using the outer conversation, rather than requiring a prefilled slot list. This serves exploratory tasks, but introduces handoff latency and shares more state than a tightly scoped label-only runner. Exact completion quotes and a fresh read prove that evidence was observed; they do not prove that the host interpreted scope or ordering correctly.
-
-Protocol tests replace Jev/CUA with scripted boundaries while retaining the live wait/reply mechanism. A guard makes constructing the internal Codex helper fail in the host-mode test. Native/paid samples separately test real runtime and model behavior. Other shell-capable agents can implement this protocol, but only the tested hosts are claimed as verified. The current desktop integration remains macOS/Codex-specific and text-first.
+The Jev model view compacts static AX syntax without relevance filtering. Exact saved-screen IDs let the host batch log reads; see [context and handoff investigation](context-and-handoff.md).

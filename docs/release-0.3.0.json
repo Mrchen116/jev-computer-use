@@ -1,0 +1,33 @@
+{
+  "package_version": "0.3.0",
+  "date": "2026-09-23",
+  "platform": "macOS",
+  "python": "3.9.6",
+  "project_tests": 115,
+  "evaluator_tests": 22,
+  "copied_skill_help": true,
+  "copied_skill_doctor": {
+    "runtime_found": true,
+    "key_file_found": true
+  },
+  "copied_skill_mcp_discovery": {
+    "success": true,
+    "tools": [
+      "js",
+      "js_reset",
+      "delegate_task",
+      "read_task_history"
+    ]
+  },
+  "wheel_built": true,
+  "wheel_sha256": "590518cd8de270ad5ce93a172a4b43decd3478448eec7efacb5315054cbfb044",
+  "isolated_wheel_cli_help": true,
+  "installer_preserves_existing_installation_and_key": true,
+  "new_key_mode": "0600",
+  "limitations": [
+    "Package/setup validation does not establish desktop-task success or API availability.",
+    "No new paid UI benchmark was run for documentation and packaging edits.",
+    "Native-app permissions are required; the TextEdit follow-up remained blocked.",
+    "Prior real-run results and CLI-version limitations are linked from evals/README.md."
+  ]
+}

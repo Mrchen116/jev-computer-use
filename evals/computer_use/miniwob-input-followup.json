@@ -1,0 +1,855 @@
+{
+  "manifest": {
+    "created_at": "2026-09-22T08:36:04.117612+00:00",
+    "suite": "miniwob",
+    "protocol": "general",
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "cases": [
+      "click-checkboxes-large",
+      "multi-layouts",
+      "book-flight"
+    ],
+    "arms": [
+      "hybrid"
+    ],
+    "rates_per_million": {
+      "sol_input": 4.0,
+      "sol_cached": 0.4,
+      "sol_write": 5.0,
+      "sol_output": 20.0,
+      "jev_input": 0.042,
+      "jev_output": 0.0
+    },
+    "git_head": "b25da64d6cb15e0e8aced155b5d35cfa9b350a30",
+    "codex_version": "codex-cli 0.153.4",
+    "source_sha256": {
+      "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+      "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+      "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+      "evals/computer_use/miniwob_cases.py": "d38e0d8b1fd67541dc5e7f87bed09e22019b0f76206a366b57a895a74b4e0cbd",
+      "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+      "evals/computer_use/run.py": "37a5a1f4f7db6c792a91522c5f0265734a18533aad564218ada5862d6eaf489d",
+      "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+      "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+      "evals/computer_use/test_miniwob.py": "9e49098cc8ddc1c2560dbc878cc40e9eb17bf9e98ae0250db6ac15e632d7e374",
+      "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+      "skills/jev-computer-use/SKILL.md": "33347f2b557bbc56e370188c3f21cfab648423fb40a4973e193bc67b3a983328",
+      "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+      "skills/jev-computer-use/references/tasks.md": "27339ebe814d2895e8693e6425c87734d7fdeedffe446e8abf15ea91073c689e",
+      "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "496f4c519a348d835062e86b1e3590fc60de59ff2418598aabb96954fea18a2b",
+      "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+      "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+      "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+      "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "6a6e98b2cb28c0b908594c6b30f17454014f518414549a3dedb0adf7e2b9d7b7",
+      "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+      "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "90db58a2bbfd2388f423c553124afd2a7b5239b40a6a0685d5b7742051bca0b0",
+      "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "5bfc94cc18dcdd28713c5d843ad3061bdf9628fc820cf4112eb868ef181909d5",
+      "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "cd763a21e560534b2a496dfc07632ef95fb78029c99babbd5664b1175246773d",
+      "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+      "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+      "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "a55010bc5bb74c4e010d3215e852e1b11e64ca693012676c06c7a8eeec9780f3",
+      "skills/jev-computer-use/scripts/jev_computer_use/models.py": "d8c8188b8b2a229f1df8922281a01ca60a4db35d07ff4547197a0bd8a68bad6e",
+      "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+      "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "ad50995aa59049950e20afd5f6d62cb962cccd30763cec39e11526aa861f94ae",
+      "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+      "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+      "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+      "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "e36fcc10d2ca51bc73aa8756042ffc54a62ec926cb8e0369eb9b26c1c35aa05f",
+      "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "ede57499c02d8e79b17d393144869fbb1ab28cfd1fdb1683744a1bc52b932c30"
+    },
+    "miniwob": {
+      "upstream": "https://github.com/Farama-Foundation/miniwob-plusplus",
+      "revision": "33c3b4ddef8c6eb67c57a29663d844b1eda7e614",
+      "html_tree_sha256": "f53f8a5671fb9d0b89781ec237f2588a446d8414073e81abf4e02289c1eeb50e",
+      "deadline_ms": 300000,
+      "score": "first official raw reward == 1.0, exactly one episode",
+      "variant": "native accessibility, relaxed deadline; not standard leaderboard protocol",
+      "reset": "harness clicks native START before agent launch; visible utterance supplied",
+      "tasks": {
+        "click-checkboxes-large": {
+          "minimum_operations": 6,
+          "original_deadline_ms": 20000
+        },
+        "multi-layouts": {
+          "minimum_operations": 4,
+          "original_deadline_ms": 20000
+        },
+        "book-flight": {
+          "minimum_operations": 5,
+          "original_deadline_ms": 30000
+        }
+      }
+    }
+  },
+  "source_hashes_match": true,
+  "runs": [
+    {
+      "case": "click-checkboxes-large",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 50.608678209,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.311530875,
+      "max_request_input_tokens": 26868,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 45418,
+        "cached_input_tokens": 18432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 341,
+        "reasoning_output_tokens": 33
+      },
+      "jev_usage": {
+        "input_tokens": 38513,
+        "output_tokens": 5417
+      },
+      "usd": 0.123754346,
+      "known_usd": 0.123754346,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8756833333333334,
+        "reason": null,
+        "episode_seconds": 37.295,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 8,
+          "input": 7,
+          "keydown": 1
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 62,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          8
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 12.453
+      },
+      "jev_calls": 9,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 8
+      },
+      "jev_executed_operations": 8,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.1221368,
+      "jev_usd": 0.001617546
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 68.377699125,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 13.990289916999998,
+      "max_request_input_tokens": 27023,
+      "llm_requests": 3,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 64660,
+        "cached_input_tokens": 37248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 735,
+        "reasoning_output_tokens": 95
+      },
+      "jev_usage": {
+        "input_tokens": 34724,
+        "output_tokens": 4885
+      },
+      "usd": 0.140705608,
+      "known_usd": 0.140705608,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8118466666666666,
+        "reason": null,
+        "episode_seconds": 56.446,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for drama movies directed by Holloway from year 2011.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 55,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          7
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 11.450000000000001
+      },
+      "jev_calls": 8,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 4,
+        "replace": 3
+      },
+      "jev_executed_operations": 7,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.13924720000000002,
+      "jev_usd": 0.0014584080000000002
+    },
+    {
+      "case": "book-flight",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 89.21945050000002,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.883054791999996,
+      "max_request_input_tokens": 35150,
+      "llm_requests": 6,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 185270,
+        "cached_input_tokens": 149248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 830,
+        "reasoning_output_tokens": 96
+      },
+      "jev_usage": {
+        "input_tokens": 52601,
+        "output_tokens": 6388
+      },
+      "usd": 0.222596442,
+      "known_usd": 0.222596442,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.72746,
+        "reason": null,
+        "episode_seconds": 81.762,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 9,
+          "input": 2,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 70,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          7,
+          1
+        ],
+        "outcomes": [
+          "help_reasoning",
+          "help_reasoning"
+        ],
+        "jev_seconds": 16.223
+      },
+      "jev_calls": 10,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 6,
+        "replace": 2
+      },
+      "jev_executed_operations": 8,
+      "outer_ui_action_calls": 3,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": false,
+      "sol_usd": 0.2203872,
+      "jev_usd": 0.002209242
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 67.22875612499996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.311709959000012,
+      "max_request_input_tokens": 27765,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 46333,
+        "cached_input_tokens": 18432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 400,
+        "reasoning_output_tokens": 50
+      },
+      "jev_usage": {
+        "input_tokens": 56363,
+        "output_tokens": 7460
+      },
+      "usd": 0.129344046,
+      "known_usd": 0.129344046,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.84967,
+        "reason": null,
+        "episode_seconds": 45.1,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select 8F7cug, DW, 3HK, MC0ZWRz, hP2pD, balppEZ, oI1B, jx4Q6, YT0peP, hv and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 10,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 83,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          11
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 14.242999999999999
+      },
+      "jev_calls": 12,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 11
+      },
+      "jev_executed_operations": 11,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.1269768,
+      "jev_usd": 0.002367246
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 65.70813508399999,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.804257916999973,
+      "max_request_input_tokens": 27038,
+      "llm_requests": 3,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 64654,
+        "cached_input_tokens": 37248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 683,
+        "reasoning_output_tokens": 60
+      },
+      "jev_usage": {
+        "input_tokens": 34720,
+        "output_tokens": 4885
+      },
+      "usd": 0.13964144,
+      "known_usd": 0.13964144,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8218133333333333,
+        "reason": null,
+        "episode_seconds": 53.457,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for saga movies directed by Hale from year 1984.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 3
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 55,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          7
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 12.393999999999998
+      },
+      "jev_calls": 8,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 4,
+        "insert": 3
+      },
+      "jev_executed_operations": 7,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.1381832,
+      "jev_usd": 0.00145824
+    },
+    {
+      "case": "book-flight",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 90.58257079100002,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.150401208000005,
+      "max_request_input_tokens": 33339,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 108860,
+        "cached_input_tokens": 75008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 852,
+        "reasoning_output_tokens": 225
+      },
+      "jev_usage": {
+        "input_tokens": 61510,
+        "output_tokens": 7834
+      },
+      "usd": 0.18503462,
+      "known_usd": 0.18503462,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "official_raw_reward_one": false,
+          "single_episode": false
+        },
+        "raw_reward": -1,
+        "time_scaled_reward": -1,
+        "reason": null,
+        "episode_seconds": 74.391,
+        "episodes_started": 2,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Plattsburgh, NY to: FNL on 12/01/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 8,
+          "input": 2,
+          "keydown": 1
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 82,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          7,
+          3
+        ],
+        "outcomes": [
+          "help_reasoning",
+          "help_reasoning"
+        ],
+        "jev_seconds": 18.926
+      },
+      "jev_calls": 12,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 8,
+        "replace": 2
+      },
+      "jev_executed_operations": 10,
+      "outer_ui_action_calls": 1,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": false,
+      "sol_usd": 0.1824512,
+      "jev_usd": 0.00258342
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 33,
+      "arm": "hybrid",
+      "seconds": 79.05144591600003,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 8.003062624999984,
+      "max_request_input_tokens": 28146,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 46716,
+        "cached_input_tokens": 18432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 345,
+        "reasoning_output_tokens": 27
+      },
+      "jev_usage": {
+        "input_tokens": 62537,
+        "output_tokens": 8211
+      },
+      "usd": 0.13003535400000002,
+      "known_usd": 0.13003535400000002,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.7904566666666667,
+        "reason": null,
+        "episode_seconds": 62.863,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select hyK, bs, QK6cNs, zrt9Ff6, l8f0bGy, X6W5r, ThTJr, VkEp, WMIYM, ZTdCm, IYNJy and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 12,
+          "input": 11,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 90,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          12
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 19.01
+      },
+      "jev_calls": 13,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 12
+      },
+      "jev_executed_operations": 12,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.12740880000000002,
+      "jev_usd": 0.002626554
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 33,
+      "arm": "hybrid",
+      "seconds": 69.83528462499999,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 9.813176792000036,
+      "max_request_input_tokens": 29320,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 92274,
+        "cached_input_tokens": 62336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 799,
+        "reasoning_output_tokens": 57
+      },
+      "jev_usage": {
+        "input_tokens": 39523,
+        "output_tokens": 5517
+      },
+      "usd": 0.16232636599999997,
+      "known_usd": 0.16232636599999997,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.80441,
+        "reason": null,
+        "episode_seconds": 58.677,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for thriller movies directed by Slater from year 1993.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 60,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          1,
+          6
+        ],
+        "outcomes": [
+          "help_input",
+          "review_completion"
+        ],
+        "jev_seconds": 10.645000000000001
+      },
+      "jev_calls": 9,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 4,
+        "replace": 3
+      },
+      "jev_executed_operations": 7,
+      "outer_ui_action_calls": 0,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": true,
+      "sol_usd": 0.1606664,
+      "jev_usd": 0.0016599660000000001
+    },
+    {
+      "case": "book-flight",
+      "seed": 33,
+      "arm": "hybrid",
+      "seconds": 98.915952167,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.648377792000019,
+      "max_request_input_tokens": 36423,
+      "llm_requests": 6,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 176278,
+        "cached_input_tokens": 120704,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 804,
+        "reasoning_output_tokens": 113
+      },
+      "jev_usage": {
+        "input_tokens": 55001,
+        "output_tokens": 7111
+      },
+      "usd": 0.28896764199999997,
+      "known_usd": 0.28896764199999997,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.6986866666666667,
+        "reason": null,
+        "episode_seconds": 90.394,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the cheapest one-way flight from: SHV to: TYS on 10/27/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 10,
+          "input": 2,
+          "keydown": 1
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 77,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          7,
+          2
+        ],
+        "outcomes": [
+          "help_reasoning",
+          "review_completion"
+        ],
+        "jev_seconds": 14.154
+      },
+      "jev_calls": 11,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "jev_action_types": {
+        "click": 7,
+        "replace": 2
+      },
+      "jev_executed_operations": 9,
+      "outer_ui_action_calls": 3,
+      "vision_used": false,
+      "completion_without_outer_ui_actions": false,
+      "sol_usd": 0.28665759999999996,
+      "jev_usd": 0.002310042
+    }
+  ],
+  "summary": {
+    "all": {
+      "runs": 9,
+      "completed": 8,
+      "seconds": 679.5279725419999,
+      "usd": 1.5224058640000002,
+      "sol_usd": 1.5041152000000002,
+      "jev_usd": 0.018290663999999998,
+      "jev_executed_operations": 79,
+      "outer_ui_action_calls": 7,
+      "completion_without_outer_ui_actions": 6
+    },
+    "by_case": {
+      "click-checkboxes-large": {
+        "runs": 3,
+        "completed": 3,
+        "seconds": 196.88888025,
+        "usd": 0.38313374600000005,
+        "sol_usd": 0.37652240000000003,
+        "jev_usd": 0.006611346000000001,
+        "jev_executed_operations": 31,
+        "outer_ui_action_calls": 0,
+        "completion_without_outer_ui_actions": 3
+      },
+      "multi-layouts": {
+        "runs": 3,
+        "completed": 3,
+        "seconds": 203.92111883399997,
+        "usd": 0.44267341399999993,
+        "sol_usd": 0.4380968,
+        "jev_usd": 0.004576614,
+        "jev_executed_operations": 21,
+        "outer_ui_action_calls": 0,
+        "completion_without_outer_ui_actions": 3
+      },
+      "book-flight": {
+        "runs": 3,
+        "completed": 2,
+        "seconds": 278.7179734580001,
+        "usd": 0.6965987039999999,
+        "sol_usd": 0.689496,
+        "jev_usd": 0.007102704,
+        "jev_executed_operations": 27,
+        "outer_ui_action_calls": 7,
+        "completion_without_outer_ui_actions": 0
+      }
+    },
+    "development_seeds": {
+      "runs": 6,
+      "completed": 5,
+      "seconds": 431.72528983399997,
+      "usd": 0.941076502,
+      "sol_usd": 0.9293824000000002,
+      "jev_usd": 0.011694102,
+      "jev_executed_operations": 51,
+      "outer_ui_action_calls": 4,
+      "completion_without_outer_ui_actions": 4
+    },
+    "new_seed_33": {
+      "runs": 3,
+      "completed": 3,
+      "seconds": 247.80268270800002,
+      "usd": 0.581329362,
+      "sol_usd": 0.5747327999999999,
+      "jev_usd": 0.006596562,
+      "jev_executed_operations": 28,
+      "outer_ui_action_calls": 3,
+      "completion_without_outer_ui_actions": 2
+    },
+    "telemetry_verified": true,
+    "cost_saving": null
+  },
+  "interpretation": "Hybrid-only, relaxed 300-second MiniWoB subset, official first raw reward must equal 1. No baseline comparison or standard leaderboard claim. Completion without outer UI actions still includes Sol planning, prepared inputs, guidance and final verification. Jev operations count runner actions; outer UI action calls may contain multiple actions, so their ratio is not an action-share percentage."
+}

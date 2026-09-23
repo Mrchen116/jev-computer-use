@@ -1,0 +1,360 @@
+{
+  "manifest": {
+    "created_at": "2026-09-22T07:20:57.877232+00:00",
+    "suite": "live",
+    "protocol": "general",
+    "seeds": [
+      257
+    ],
+    "cases": [
+      "documentation",
+      "research"
+    ],
+    "arms": [
+      "hybrid"
+    ],
+    "rates_per_million": {
+      "sol_input": 4.0,
+      "sol_cached": 0.4,
+      "sol_write": 5.0,
+      "sol_output": 20.0,
+      "jev_input": 0.042,
+      "jev_output": 0.0
+    },
+    "git_head": "b25da64d6cb15e0e8aced155b5d35cfa9b350a30",
+    "codex_version": "codex-cli 0.153.4",
+    "source_sha256": {
+      "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+      "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+      "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+      "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+      "evals/computer_use/run.py": "bff1035e7b4082b18837ee8ccf5d6ad2a64e39a46f707902d87731d9c13ee3e8",
+      "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+      "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+      "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+      "skills/jev-computer-use/SKILL.md": "ccb045ee4cf8f3a0726869d897909f3fcb346526d0006f8e91fb53e449d49187",
+      "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+      "skills/jev-computer-use/references/tasks.md": "952a72343a58ef5174becefdd5f659d2a08919c642cec366f56e126f963e04cf",
+      "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "496f4c519a348d835062e86b1e3590fc60de59ff2418598aabb96954fea18a2b",
+      "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+      "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+      "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+      "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "db3f62a9cc74a337d207d760d531dca7a4598fbf476dd35ad4f52c87e4f729bd",
+      "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+      "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "90db58a2bbfd2388f423c553124afd2a7b5239b40a6a0685d5b7742051bca0b0",
+      "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "5bfc94cc18dcdd28713c5d843ad3061bdf9628fc820cf4112eb868ef181909d5",
+      "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "cd763a21e560534b2a496dfc07632ef95fb78029c99babbd5664b1175246773d",
+      "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+      "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+      "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "533ad23a08a2fb01f70f3c161cee7d6408e4df2c09af643cecb2642fa4420a9a",
+      "skills/jev-computer-use/scripts/jev_computer_use/models.py": "d8c8188b8b2a229f1df8922281a01ca60a4db35d07ff4547197a0bd8a68bad6e",
+      "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+      "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "ad50995aa59049950e20afd5f6d62cb962cccd30763cec39e11526aa861f94ae",
+      "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+      "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+      "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+      "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "82a25de8472dfc97730269a9dc752afb6cd177bcd2f1f4bdcbb5c6507fcb4a0f",
+      "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "6da547503980481333b218f49704cfa8e525ab72c1648330ad75ec604bc43574"
+    }
+  },
+  "source_hashes_match": true,
+  "runs": [
+    {
+      "case": "documentation",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 94.87155733399982,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.053710207999984,
+      "max_request_input_tokens": 47332,
+      "llm_requests": 8,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 285167,
+        "cached_input_tokens": 244480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1711,
+        "reasoning_output_tokens": 606
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.29476,
+      "known_usd": 0.29476,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 6,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 257,
+      "arm": "baseline",
+      "seconds": 128.80983041699983,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.836699667000175,
+      "max_request_input_tokens": 81809,
+      "llm_requests": 12,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 569840,
+        "cached_input_tokens": 494080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2313,
+        "reasoning_output_tokens": 963
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.546932,
+      "known_usd": 0.546932,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 10,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 173.525302416,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 10.561731208000001,
+      "max_request_input_tokens": 57627,
+      "llm_requests": 11,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 403622,
+        "cached_input_tokens": 352512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3473,
+        "reasoning_output_tokens": 1772
+      },
+      "jev_usage": {
+        "input_tokens": 28229,
+        "output_tokens": 3605
+      },
+      "usd": 0.4160904180000001,
+      "known_usd": 0.4160904180000001,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 46,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          5
+        ],
+        "outcomes": [
+          "context_capacity"
+        ],
+        "jev_seconds": 8.329
+      },
+      "jev_calls": 5,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 159.870002625,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.4952116250000245,
+      "max_request_input_tokens": 64202,
+      "llm_requests": 12,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 465604,
+        "cached_input_tokens": 407296,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2824,
+        "reasoning_output_tokens": 882
+      },
+      "jev_usage": {
+        "input_tokens": 15021,
+        "output_tokens": 1753
+      },
+      "usd": 0.453261282,
+      "known_usd": 0.453261282,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 32,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          1,
+          0
+        ],
+        "outcomes": [
+          "execution_error",
+          "execution_error"
+        ],
+        "jev_seconds": 3.05
+      },
+      "jev_calls": 2,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [
+        "Jev clicked the Chrome New Tab control despite the same-tab instruction; the new blank tab was detected by the scope guard and the host recovered. No personal content or irreversible action was observed."
+      ],
+      "cost_verified": true
+    }
+  ],
+  "baseline_reuse": {
+    "report": "multisite-frozen.json",
+    "report_sha256": "e596b8a144435a6f4dc3b20052ae24fae06fb60fed3b8eda9d0ac1579247bbba",
+    "created_at": "2026-09-21T18:53:48.083831+00:00",
+    "runs": 2,
+    "latest_issue_reference_unchanged": false,
+    "case_definitions_and_judges": "Unchanged; current observation parser additionally accepts general-task journals",
+    "limitations": [
+      "Historical, not contemporaneous paired baseline",
+      "Public websites and runtime latency can change between runs",
+      "Seeds label repetitions of the same public tasks, not independent websites"
+    ]
+  },
+  "summary": {
+    "cases": [
+      {
+        "case": "documentation",
+        "baseline": {
+          "completed": 1,
+          "runs": 1,
+          "mean_seconds": 94.87155733399982,
+          "mean_usd": 0.29476
+        },
+        "hybrid": {
+          "completed": 1,
+          "runs": 1,
+          "mean_seconds": 173.525302416,
+          "mean_usd": 0.4160904180000001
+        },
+        "cost_saving": -0.41162443343737287
+      },
+      {
+        "case": "research",
+        "baseline": {
+          "completed": 1,
+          "runs": 1,
+          "mean_seconds": 128.80983041699983,
+          "mean_usd": 0.546932
+        },
+        "hybrid": {
+          "completed": 1,
+          "runs": 1,
+          "mean_seconds": 159.870002625,
+          "mean_usd": 0.453261282
+        },
+        "cost_saving": 0.1712657478443389
+      }
+    ],
+    "totals": {
+      "baseline": {
+        "completed": 2,
+        "runs": 2,
+        "seconds": 223.68138775099965,
+        "usd": 0.841692,
+        "game_median_reaction_seconds": null
+      },
+      "hybrid": {
+        "completed": 2,
+        "runs": 2,
+        "seconds": 333.39530504100003,
+        "usd": 0.8693517000000001,
+        "game_median_reaction_seconds": null
+      }
+    },
+    "cost_saving": -0.032862020786701196,
+    "telemetry_verified": false,
+    "engineering_target_met": false
+  },
+  "manual_audit": {
+    "handoff_binding": "Verified: outer native actions reused jevComputer without getApp after delegation",
+    "wrapper_truncation": "Documentation handoff returned 38280 tokens; default functions.exec output budget truncated it and the host made three history reads",
+    "source_snapshots": "Retained privately under /tmp/jev-live-handoff-29; candidate source archived separately",
+    "reference_note": "Latest issue reference is irrelevant to these two documentation-only cases",
+    "status": "Development failure retained; final answers passed but handoff waste and one scope violation remain"
+  }
+}

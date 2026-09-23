@@ -1,0 +1,176 @@
+{
+  "baseline_reuse": {
+    "report": "multisite-frozen.json",
+    "cases": 4,
+    "repetitions": 2,
+    "runs": 8,
+    "completed": 8,
+    "usd": 3.3710568,
+    "seconds": 902.365541792
+  },
+  "general_protocol_attempts": [
+    {
+      "run": 18,
+      "reason": "Interrupted for native documentation handoff repair",
+      "case": "latest_issue",
+      "seed": 211,
+      "seconds": 270.243850792,
+      "interrupted": true,
+      "timed_out": false,
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 9123,
+        "output_tokens": 1182
+      },
+      "usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "opened_issue": true,
+          "title": false,
+          "number": false,
+          "date": false,
+          "url": false
+        },
+        "reaction_seconds": []
+      }
+    },
+    {
+      "run": 19,
+      "reason": "Interrupted because active Chrome window left the authorized evaluation scope",
+      "case": "latest_issue",
+      "seed": 211,
+      "seconds": 179.273403417,
+      "interrupted": true,
+      "timed_out": false,
+      "llm_usage": null,
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": null,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": false,
+        "checks": {
+          "opened_issue": false,
+          "title": false,
+          "number": false,
+          "date": false,
+          "url": false
+        },
+        "reaction_seconds": []
+      }
+    }
+  ],
+  "comparison_status": "incomplete; interrupted attempts do not establish savings",
+  "native_baseline_rerun": false,
+  "compact_history_iteration": {
+    "run": 23,
+    "planned": 8,
+    "started": 3,
+    "completed_answer_checks": 2,
+    "results": [
+      {
+        "case": "documentation",
+        "seed": 211,
+        "seconds": 193.774556875,
+        "timed_out": false,
+        "interrupted": false,
+        "llm_usage": {
+          "input_tokens": 338929,
+          "cached_input_tokens": 288640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3090,
+          "reasoning_output_tokens": 1295
+        },
+        "jev_usage": {
+          "input_tokens": 41969,
+          "output_tokens": 5064
+        },
+        "usd": null,
+        "known_usd": 0.380174698,
+        "unmetered_jev_calls": 1,
+        "judge": {
+          "success": true,
+          "checks": {
+            "observed_source": true,
+            "source_link": true,
+            "read_version": true,
+            "write_version": true,
+            "arguments": true,
+            "returns": true
+          },
+          "reaction_seconds": []
+        }
+      },
+      {
+        "case": "research",
+        "seed": 211,
+        "seconds": 300.013633375,
+        "timed_out": true,
+        "interrupted": false,
+        "llm_usage": {
+          "input_tokens": 925740,
+          "cached_input_tokens": 810368,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3998,
+          "reasoning_output_tokens": 1527
+        },
+        "jev_usage": {
+          "input_tokens": 136691,
+          "output_tokens": 14340
+        },
+        "usd": null,
+        "known_usd": 0.8713362219999999,
+        "unmetered_jev_calls": 2,
+        "judge": {
+          "success": false,
+          "checks": {
+            "pytest_visited": true,
+            "pytest_facts": false,
+            "ruff_visited": true,
+            "ruff_facts": false,
+            "mypy_visited": true,
+            "mypy_facts": false
+          },
+          "reaction_seconds": []
+        }
+      },
+      {
+        "case": "latest_issue",
+        "seed": 211,
+        "seconds": 298.291155417,
+        "timed_out": false,
+        "interrupted": false,
+        "llm_usage": {
+          "input_tokens": 1096541,
+          "cached_input_tokens": 986240,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5401,
+          "reasoning_output_tokens": 2953
+        },
+        "jev_usage": {
+          "input_tokens": 86019,
+          "output_tokens": 9556
+        },
+        "usd": 0.9473327979999999,
+        "known_usd": 0.9473327979999999,
+        "unmetered_jev_calls": 0,
+        "judge": {
+          "success": true,
+          "checks": {
+            "opened_issue": true,
+            "title": true,
+            "number": true,
+            "date": true,
+            "url": true
+          },
+          "reaction_seconds": []
+        }
+      }
+    ],
+    "stopped_reason": "Research timed out; subsequent starting-page verification failed before model launch. Not an accepted comparison. Frozen source and all failures retained privately."
+  }
+}

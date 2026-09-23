@@ -1,0 +1,570 @@
+{
+  "scope": "R07 versus R12 hybrid prompts; same Sol/medium harness and seeds, separate batches.",
+  "documents": {
+    "skills/jev-computer-use/SKILL.md": {
+      "before": {
+        "lines": 226,
+        "words": 2269,
+        "bytes": 15653
+      },
+      "after": {
+        "lines": 67,
+        "words": 612,
+        "bytes": 4248
+      }
+    },
+    "skills/jev-computer-use/references/tasks.md": {
+      "before": {
+        "lines": 235,
+        "words": 2024,
+        "bytes": 14324
+      },
+      "after": {
+        "lines": 70,
+        "words": 411,
+        "bytes": 3315
+      }
+    }
+  },
+  "before": {
+    "runs": [
+      {
+        "run": "book-flight-11-hybrid",
+        "first_input_tokens": 19056,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 365,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 802,
+        "initial_argument_chars": 1414,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome window on the localhost flight-booking demo. Follow the displayed instruction: Book the shortest one-way flight from Emmonak, AK to Steamboat Springs, CO on 11/19/2016. Use accessibility text only. Stay exclusively in this window and localhost demo. Do not click START after termination, reload, close the tab, or begin another episode. Navigate and fill the routine search fields, then return before choosing among flight alternatives because shortest-duration comparison must be handled by the caller. If there is no comparison remaining and a clear submit/booking operation remains after a specific choice later supplied, continue only as guided. Stop immediately when reward appears and hand back for verification.",
+        "initial_argument_fields": [
+          "guidance",
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 2,
+        "initial_input_count": 3,
+        "decision_records": 9,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "c38f7630007e6174388660c978e7ace516c7e289c223e4188da790cb87b2404b",
+          "session": "37ca18621771bcc9672fbf919c1fb8f6be9df4c56e454871318d8a0eef835c5d",
+          "result.json": "1829d72001905ab99702860d5b89de7a1937c255c94b765d2bee738a2dc0585e"
+        }
+      },
+      {
+        "run": "book-flight-22-hybrid",
+        "first_input_tokens": 19052,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 368,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 755,
+        "initial_argument_chars": 1455,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-open dedicated Google Chrome localhost demo. Follow the page instruction: Book the shortest one-way flight from Plattsburgh, NY to FNL on 12/01/2016. Use accessibility text only. Stay exclusively in this existing window and localhost page. Do not reload, close the tab, click START after termination, or begin another episode. Navigate and fill the routine booking controls, but when flight alternatives and their durations are visible, return before choosing so the caller can compare and select the shortest. If there is only one unambiguous flight or no comparison is needed, continue through completion. Stop immediately when a reward appears and return the full latest interface for verification.",
+        "initial_argument_fields": [
+          "guidance",
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "b9f6cbd0184891116139ecb4be6c7dff3befa9cab88832646b20235e5fa16951",
+          "session": "7f2e904b779ba483a0fd6bde2df6a248087cd16e3f845f1cc0daff90ea461719",
+          "result.json": "d83182a292017607c689ae7c14dd6a85db1c6fdf23be1bd36362ea51f7e10488"
+        }
+      },
+      {
+        "run": "book-flight-66-hybrid",
+        "first_input_tokens": 19053,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 340,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 719,
+        "initial_argument_chars": 1292,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-open dedicated Google Chrome localhost demo. Follow the page instruction: Book the shortest one-way flight from Pasco, WA to Santa Ana, CA on 10/22/2016. Use accessibility text only. Stay exclusively in this window and localhost demo. Do not reload, close the tab, click START after termination, or start another episode. Stop once the flight alternatives and their durations are visible, before selecting among them, because the caller will compare durations. If the shortest option is somehow unambiguous and no comparison is required, you may proceed through routine fields but still return before any final booking/selection action that commits the alternative.",
+        "initial_argument_fields": [
+          "guidance",
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "41ed6075866ac68ab9f92cdb62872b98d596f97759d5fcf3b5dd21eeaf6875e9",
+          "session": "8e95fa45dedcfa9debe0e246e9670417789595178cb8330ce787a952f138c217",
+          "result.json": "e192f44fb4764334362630dd05c32bc977d03d9ac92c96f7d0615e62794bf295"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-11-hybrid",
+        "first_input_tokens": 19078,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 249,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 597,
+        "initial_argument_chars": 786,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome localhost demo window. Follow the page instruction: Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit. Use accessibility text only. Stay exclusively in this existing localhost demo window. Do not create windows, inspect other tabs/apps/files/accounts/settings, reload, close the tab, or click START after termination. Select exactly those checkboxes, click Submit once, and stop as soon as the reward appears. Return the complete current interface and terminal reward evidence for verification.",
+        "initial_argument_fields": [
+          "max_seconds",
+          "max_steps",
+          "min_continue_probability",
+          "mode",
+          "recheck_target",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 9,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "6c215f8b0de41ffc9e3f9fc3e3a6df15d7c52c3111d4780c5515164359055ad8",
+          "session": "5f9c3975e9bbc709cc3e99db757202fa8bfdd44a088256300d0ceb9fbf9c4783",
+          "result.json": "0411adbac35c2dc2e35d006cb182bf2b142884c36dad58f0726d36c0c80fcd0c"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-22-hybrid",
+        "first_input_tokens": 19096,
+        "first_cached_input_tokens": 4480,
+        "first_output_tokens": 283,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 736,
+        "initial_argument_chars": 872,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome window on the localhost demo. Follow the page instruction: Select 8F7cug, DW, 3HK, MC0ZWRz, hP2pD, balppEZ, oI1B, jx4Q6, YT0peP, hv and click Submit. Use accessibility text only. Stay exclusively in this existing window and localhost page. Do not open or close windows/tabs, reload, inspect anything else, use screenshots, page source, DOM evaluation, developer tools, network, files, or hidden state. Select exactly the requested checkboxes, submit once, and stop immediately when the reward appears. The START overlay may reappear after termination; do not click it or begin another episode. Return the terminal interface and reward for verification.",
+        "initial_argument_fields": [
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 12,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "8391e5fbe33b819448e5bcd0baf9606411af4fdb2242cd182cdeeb90901581e6",
+          "session": "53999ef86afb65c535797815e83417818a05f8e62bf39a7d588dce93585218bc",
+          "result.json": "2dfac14ab517efda654ceeabcf3be49b266d8f689ed39d162e729ba4b4c7dbd9"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-66-hybrid",
+        "first_input_tokens": 19095,
+        "first_cached_input_tokens": 9600,
+        "first_output_tokens": 250,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 538,
+        "initial_argument_chars": 696,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome window on the localhost demo. Use accessibility text only. Follow the displayed instruction: Select pgDHBa, lsvS7i, 0koY, BYnzH, kNcHh, jW, tszSRE1, OpmpMgp, xH0bn, KilnY and click Submit. Select exactly those checkboxes, then click Submit. When reward appears, the episode has ended: stop immediately. Do not click the START overlay if it reappears, do not reload, and do not start another episode. Stay exclusively in the current localhost page/window.",
+        "initial_argument_fields": [
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "recheck_target",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 12,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "9be91fdf9ee9baade701774473bb431bd01ab41237867b9804ae175c1133c4ac",
+          "session": "58f828040d60c850795cb1fd59f0874078654b8e98fa449142382403bdd2ee2e",
+          "result.json": "d7471f1467ea1dc05d02c35dee4ac730b25e2fb74f5ba1d8ff60b992559930cf"
+        }
+      },
+      {
+        "run": "multi-layouts-11-hybrid",
+        "first_input_tokens": 19052,
+        "first_cached_input_tokens": 4480,
+        "first_output_tokens": 269,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 552,
+        "initial_argument_chars": 924,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome localhost demo. Follow the instruction displayed at the top: Search for drama movies directed by Holloway from year 2011. Use accessibility text only. Stay exclusively in this window and localhost demo. Do not open or close tabs/windows, reload, click START after termination, or start another episode. Operate the visible simulated movie search controls to satisfy all filters and submit/search. When a reward appears, stop immediately and hand back for verification.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "recheck_target",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "acbc60a536e163e699f3bd1dbd73f32339734c3d7fc16fe3efe976d4e69d8cfe",
+          "session": "a9d4b4358f1b7b18e80ceb302a16dfa44c4c26ac7df0e95f5e96722efea16e96",
+          "result.json": "971e57f375cb8747788b1c1a2de29db3c9b2055d11c476e331439278df43d62c"
+        }
+      },
+      {
+        "run": "multi-layouts-22-hybrid",
+        "first_input_tokens": 19051,
+        "first_cached_input_tokens": 4480,
+        "first_output_tokens": 262,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 523,
+        "initial_argument_chars": 881,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-open dedicated localhost demo Chrome window. Follow the page instruction: Search for saga movies directed by Hale from year 1984. Use accessibility text only. Stay exclusively in the current dedicated window and localhost demo. When the reward appears, the episode is over: stop immediately. Do not click the START overlay if it reappears, do not reload, and do not start another episode. Report the observed reward and concise evidence of the selected search criteria.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "recheck_target",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "d05de4f8c00f913bc347bd28914811ec6dcb3c69a49edd60b5dec462b9e1e724",
+          "session": "f736d85eb3f83cf299ec5e3be6cd026764a4f19a70ace7889e8ba650a43f47df",
+          "result.json": "3d5063b7b664c29cf85becf2c4d0081cde76e22d5eeac955c4095ee952098e79"
+        }
+      },
+      {
+        "run": "multi-layouts-66-hybrid",
+        "first_input_tokens": 19051,
+        "first_cached_input_tokens": 9600,
+        "first_output_tokens": 295,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 714,
+        "initial_argument_chars": 1073,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-bound dedicated Google Chrome localhost demo. Follow the page instruction: Search for saga movies directed by Clay from year 2009. Use accessibility text only. Stay exclusively in the existing dedicated Chrome window and localhost demo. Do not create windows, inspect other tabs/apps/files/accounts/settings, use screenshots, page source, DOM evaluation, network, devtools, hidden state, or fixture/backend access. After any UI change, use fresh observations. When the reward appears, the episode has ended: return for verification and stop. The START overlay may reappear automatically; do not click it, reload, or start another episode. Do not close the tab.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "3bba08f07f8c829c5dd23eb3fa9f521125511642ded4959e17e37acdc30a8ffd",
+          "session": "b587c9e3d2be0b9f1aa33bacfaa7bf43c88b6b2d2186d157625c68516b65250d",
+          "result.json": "fdf0eb135abd6e3d3ee3028495cc57bac32492a71ade83b613777e61ff1204f2"
+        }
+      }
+    ],
+    "all": {
+      "runs": 9,
+      "first_input_tokens": 19064.88888888889,
+      "first_cached_input_tokens": 3626.6666666666665,
+      "first_output_tokens": 297.8888888888889,
+      "first_reasoning_tokens": 0,
+      "initial_task_chars": 659.5555555555555,
+      "initial_argument_chars": 1043.6666666666667,
+      "delegations": 1.1111111111111112
+    },
+    "uninterrupted_cases": {
+      "runs": 6,
+      "first_input_tokens": 19070.5,
+      "first_cached_input_tokens": 5440,
+      "first_output_tokens": 268,
+      "first_reasoning_tokens": 0,
+      "initial_task_chars": 610,
+      "initial_argument_chars": 872,
+      "delegations": 1
+    }
+  },
+  "after": {
+    "runs": [
+      {
+        "run": "book-flight-11-hybrid",
+        "first_input_tokens": 16567,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 211,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 237,
+        "initial_argument_chars": 578,
+        "initial_task": "Complete the current MiniWoB++ episode by booking the shortest one-way flight from Emmonak, AK to Steamboat Springs, CO on 11/19/2016. Stop as soon as the episode terminates and a reward appears; do not click the START overlay afterward.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 8,
+        "source_sha256": {
+          "events.jsonl": "820a669f51293c2b20ef6e1224c9afd293daae7be5c9d0cc7a24ae46fd6aeb2e",
+          "session": "9d0c0d64f95f6651f668669fe87334182dacaf650a5f4cf9b34366528f1618f6",
+          "result.json": "44bb79e5a19d8f77618ca3e88aff810dd3c8453cddbdd45fe134af3e7acb1d17"
+        }
+      },
+      {
+        "run": "book-flight-22-hybrid",
+        "first_input_tokens": 16563,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 214,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 282,
+        "initial_argument_chars": 606,
+        "initial_task": "Complete the current MiniWoB++ episode in the already-open localhost flight-booking page. Follow the displayed instruction: book the shortest one-way flight from Plattsburgh, NY to FNL on 12/01/2016. Stop when the episode terminates and the reward appears; do not click START again.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 2,
+        "decisions_with_code_owned_reasoning_gate": 2,
+        "source_sha256": {
+          "events.jsonl": "d607d0e1d1e9b55408e33733290a2273ea846d8ef4c603d7b2d1cbfa10e1a97a",
+          "session": "011c3752bbc1e9e6e9171f661af9389f62bc187d3ffcc3418cff0a0dcf5e8c9b",
+          "result.json": "3734749028532fbb5427c1df765a82ae36cb5f59b043a41c6225d3e6b3794978"
+        }
+      },
+      {
+        "run": "book-flight-66-hybrid",
+        "first_input_tokens": 16564,
+        "first_cached_input_tokens": 9472,
+        "first_output_tokens": 213,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 253,
+        "initial_argument_chars": 586,
+        "initial_task": "Complete the current MiniWoB++ episode by following the displayed instruction: book the shortest one-way flight from Pasco, WA to Santa Ana, CA on 10/22/2016. Stop once the episode terminates and reward appears; do not click the START overlay afterward.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 8,
+        "source_sha256": {
+          "events.jsonl": "539b790053099f32bb98147ac2bc13229e8aafcae42656f0fbac4ed89b2d5836",
+          "session": "105b94f0a50940052927d8d384b2a31004dd3ea4873463d24dc433d8cb46e21f",
+          "result.json": "1737913f643898c99ddd653819085563607a94fca732dd43dec70f34a106d534"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-11-hybrid",
+        "first_input_tokens": 16589,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 197,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 374,
+        "initial_argument_chars": 527,
+        "initial_task": "Complete exactly one MiniWoB++ episode in the already-open dedicated Chrome localhost demo. Follow the displayed instruction: select checkboxes labeled ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt, then click Submit. Stop as soon as the reward appears; do not click the START overlay afterward or begin another episode. Use accessibility text only and remain in this window.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 9,
+        "decisions_with_code_owned_reasoning_gate": 9,
+        "source_sha256": {
+          "events.jsonl": "25b00297790c362268129a96c93ac6b3812ffc617611fc79299e4651e2173258",
+          "session": "1473140a595d6695ad6f0f94716510db5b9af46b6f5b7065df414d92466486e1",
+          "result.json": "d164dccd765d2c072b0e8dfc41dc01d25acd9691fe185007552079d65c20bb9a"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-22-hybrid",
+        "first_input_tokens": 16607,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 211,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 323,
+        "initial_argument_chars": 476,
+        "initial_task": "Complete the current MiniWoB++ episode in the already-bound dedicated Chrome window at the localhost demo. Select exactly these checkbox labels: 8F7cug, DW, 3HK, MC0ZWRz, hP2pD, balppEZ, oI1B, jx4Q6, YT0peP, hv. Then click Submit. Stop as soon as the episode terminates and the reward appears; do not click START afterward.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 12,
+        "decisions_with_code_owned_reasoning_gate": 12,
+        "source_sha256": {
+          "events.jsonl": "6972e6649909c124bcb12b1ec64300dbf99c6490f2064740b195aa2d58699af6",
+          "session": "4e2e07f6959fa23f2d6855b5a8e9a79ced03c59dedcad43ae3f2d4cdd9abddb3",
+          "result.json": "5138e07d0ef1ba5a1f730ea09d024fca994c115817a862d83dfc3ed685497f09"
+        }
+      },
+      {
+        "run": "click-checkboxes-large-66-hybrid",
+        "first_input_tokens": 16553,
+        "first_cached_input_tokens": 9472,
+        "first_output_tokens": 216,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 371,
+        "initial_argument_chars": 524,
+        "initial_task": "Complete the current MiniWoB++ episode in the already-bound dedicated Chrome window. Follow the displayed instruction: select exactly pgDHBa, lsvS7i, 0koY, BYnzH, kNcHh, jW, tszSRE1, OpmpMgp, xH0bn, KilnY, then click Submit. Stop as soon as the reward appears; do not click START or begin another episode. Use accessibility text only and remain within the localhost demo.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 0,
+        "decision_records": 12,
+        "decisions_with_code_owned_reasoning_gate": 12,
+        "source_sha256": {
+          "events.jsonl": "97c6970291e1ea640a5e10153eb0e4810bfef4fccf579a7832dab8a2980a31f9",
+          "session": "2ebb2ec82da7ff149286e90583013ed8bb3e6945b4e177c7c78cdebd5b5d4d53",
+          "result.json": "2b19bd110b6148a07afceedc5af95c41b3e67997fd06c11a20112ce6e95dc05b"
+        }
+      },
+      {
+        "run": "multi-layouts-11-hybrid",
+        "first_input_tokens": 16515,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 203,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 280,
+        "initial_argument_chars": 614,
+        "initial_task": "Complete the single active MiniWoB++ episode in the already-bound dedicated Chrome window. Follow the displayed instruction: Search for drama movies directed by Holloway from year 2011. Stop immediately when the episode terminates and reward appears; do not click START afterward.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 0,
+        "decisions_with_code_owned_reasoning_gate": 0,
+        "source_sha256": {
+          "events.jsonl": "d420b083dacf2b10ef4b72c7c975ff6e1f6e3ee9e8dcc78aae9db2aab9c53d63",
+          "session": "4fd89487f69f71af2e9310b1ffd2ad57fab4b27a75a288225e542f721c187b21",
+          "result.json": "0aad75d11f203ade23d5d93470e9cf9119cf8c1f770b95975cebf406af60b3ca"
+        }
+      },
+      {
+        "run": "multi-layouts-22-hybrid",
+        "first_input_tokens": 16562,
+        "first_cached_input_tokens": 0,
+        "first_output_tokens": 234,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 368,
+        "initial_argument_chars": 727,
+        "initial_task": "Complete the current MiniWoB++ episode in the already-bound dedicated Chrome window. Follow the displayed instruction: Search for saga movies directed by Hale from year 1984. Stop as soon as the episode terminates and a reward appears; do not click the START overlay afterward or begin another episode. Use accessibility text only and remain within the localhost demo.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 7,
+        "decisions_with_code_owned_reasoning_gate": 7,
+        "source_sha256": {
+          "events.jsonl": "d8394e393dee38a3c220ab4fde6da92df3fde208441d5ebefd8133d762966dc6",
+          "session": "cc8097c8e4fc1b0193e98c495d6cacded05262cf238e35dd8969433d672ebca4",
+          "result.json": "2c7725a628d80e01892ffe3fc0db581ff30e0f0ce269a03935f17977391ad4ad"
+        }
+      },
+      {
+        "run": "multi-layouts-66-hybrid",
+        "first_input_tokens": 16562,
+        "first_cached_input_tokens": 4480,
+        "first_output_tokens": 212,
+        "first_reasoning_tokens": 0,
+        "initial_task_chars": 294,
+        "initial_argument_chars": 646,
+        "initial_task": "Complete the currently active MiniWoB++ episode in the already-bound dedicated Chrome localhost demo. Follow the displayed instruction: Search for saga movies directed by Clay from year 2009. Stop as soon as the episode terminates and a reward appears; do not click the START overlay afterward.",
+        "initial_argument_fields": [
+          "input_texts",
+          "max_seconds",
+          "max_steps",
+          "mode",
+          "state_dir",
+          "task"
+        ],
+        "delegations": 1,
+        "initial_input_count": 3,
+        "decision_records": 8,
+        "decisions_with_code_owned_reasoning_gate": 8,
+        "source_sha256": {
+          "events.jsonl": "f7ea08199e56477aad55bf4c1d0244c10b3923e2afde863767d1879157999beb",
+          "session": "0dc6cb7cf9e99cc15d52db982380f1f07748601aa4df0e870f4f3bddee7fce84",
+          "result.json": "16fbb570901b527358a76a40543a57b14a70025157f6710f8fe7db70c7ca127a"
+        }
+      }
+    ],
+    "all": {
+      "runs": 9,
+      "first_input_tokens": 16564.666666666668,
+      "first_cached_input_tokens": 2602.6666666666665,
+      "first_output_tokens": 212.33333333333334,
+      "first_reasoning_tokens": 0,
+      "initial_task_chars": 309.1111111111111,
+      "initial_argument_chars": 587.1111111111111,
+      "delegations": 1
+    },
+    "uninterrupted_cases": {
+      "runs": 6,
+      "first_input_tokens": 16564.666666666668,
+      "first_cached_input_tokens": 2325.3333333333335,
+      "first_output_tokens": 212.16666666666666,
+      "first_reasoning_tokens": 0,
+      "initial_task_chars": 335,
+      "initial_argument_chars": 585.6666666666666,
+      "delegations": 1
+    }
+  },
+  "limitations": [
+    "First response tokens include commentary, tool arguments and any reasoning, not only delegation JSON.",
+    "These are reused development tasks, not independent held-out generalization evidence.",
+    "Elapsed time and cache hits vary between batches; shorter prompts alone do not establish causality."
+  ]
+}

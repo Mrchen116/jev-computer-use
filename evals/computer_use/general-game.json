@@ -1,0 +1,240 @@
+{
+  "manifest": {
+    "created_at": "2026-09-22T04:57:42.534991+00:00",
+    "suite": "live",
+    "protocol": "general",
+    "seeds": [
+      211,
+      257
+    ],
+    "cases": [
+      "game"
+    ],
+    "arms": [
+      "hybrid"
+    ],
+    "rates_per_million": {
+      "sol_input": 4.0,
+      "sol_cached": 0.4,
+      "sol_write": 5.0,
+      "sol_output": 20.0,
+      "jev_input": 0.042,
+      "jev_output": 0.0
+    },
+    "git_head": "b25da64d6cb15e0e8aced155b5d35cfa9b350a30",
+    "codex_version": "codex-cli 0.153.4",
+    "source_sha256": {
+      "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+      "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+      "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+      "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+      "evals/computer_use/run.py": "bff1035e7b4082b18837ee8ccf5d6ad2a64e39a46f707902d87731d9c13ee3e8",
+      "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+      "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+      "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+      "skills/jev-computer-use/SKILL.md": "206d44782bb21fdfa31598033b733c27b6a53880a9f475f8cd63c39660071ab9",
+      "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+      "skills/jev-computer-use/references/tasks.md": "e3f67dcf6337205e794db6fc8ad34f471f8269e056428190c37106ec8b58fc28",
+      "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "496f4c519a348d835062e86b1e3590fc60de59ff2418598aabb96954fea18a2b",
+      "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+      "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+      "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+      "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "db3f62a9cc74a337d207d760d531dca7a4598fbf476dd35ad4f52c87e4f729bd",
+      "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+      "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "90db58a2bbfd2388f423c553124afd2a7b5239b40a6a0685d5b7742051bca0b0",
+      "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "5bfc94cc18dcdd28713c5d843ad3061bdf9628fc820cf4112eb868ef181909d5",
+      "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "cd763a21e560534b2a496dfc07632ef95fb78029c99babbd5664b1175246773d",
+      "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+      "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+      "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "c9914633f1ddbea734c7cc41cae3fdcb5ee7e01d826cceb32a79d5d52602727d",
+      "skills/jev-computer-use/scripts/jev_computer_use/models.py": "d8c8188b8b2a229f1df8922281a01ca60a4db35d07ff4547197a0bd8a68bad6e",
+      "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "ad50995aa59049950e20afd5f6d62cb962cccd30763cec39e11526aa861f94ae",
+      "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+      "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+      "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+      "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "9db45088a8a379fb009ae3dc9546cbaf612b70ed062467a87b508f80caa94d7a",
+      "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "fd21bc3522e98d123de2d55187b6dcc7052cb32db29497eefb4571eac5efb230"
+    }
+  },
+  "source_hashes_match": true,
+  "runs": [
+    {
+      "case": "game",
+      "seed": 211,
+      "arm": "hybrid",
+      "seconds": 117.220892667,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.935906167,
+      "max_request_input_tokens": 22051,
+      "llm_requests": 6,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 113811,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1080,
+        "reasoning_output_tokens": 226
+      },
+      "jev_usage": {
+        "input_tokens": 54984,
+        "output_tokens": 6662
+      },
+      "usd": 0.215575728,
+      "known_usd": 0.215575728,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "rescues": true
+        },
+        "game_score": 12,
+        "game_missed": 0,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          3.183728875,
+          2.6499615840000104,
+          3.217059750000004,
+          3.1329078330000044,
+          2.2498833750000102,
+          3.366577540999998,
+          2.8502019169999926,
+          2.798194875000007,
+          2.3855455420000027,
+          2.6993057500000077,
+          3.434590041000007,
+          3.4822487089999896
+        ]
+      },
+      "native_calls": 70,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          13
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 30.666999999999998
+      },
+      "jev_calls": 14,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "execution_config": {
+        "mode": "realtime",
+        "period_ms": 100,
+        "recheck_target": false,
+        "warnings": [
+          {
+            "code": "decision_exceeded_period",
+            "count": 14,
+            "message": "Jev decision took 2.165s, longer than the 100ms cycle target; no catch-up actions are queued"
+          }
+        ],
+        "elapsed_seconds": 44.903
+      }
+    },
+    {
+      "case": "game",
+      "seed": 257,
+      "arm": "hybrid",
+      "seconds": 108.92387358299999,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 7.095298041999996,
+      "max_request_input_tokens": 21671,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 94257,
+        "cached_input_tokens": 79872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 771,
+        "reasoning_output_tokens": 199
+      },
+      "jev_usage": {
+        "input_tokens": 54522,
+        "output_tokens": 6662
+      },
+      "usd": 0.107198724,
+      "known_usd": 0.107198724,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "finished": true,
+          "rescues": true
+        },
+        "game_score": 12,
+        "game_missed": 0,
+        "game_wrong": 0,
+        "reaction_seconds": [
+          3.5660899169999993,
+          2.9499770000000183,
+          2.582876542000008,
+          2.900336791000001,
+          3.466875541999997,
+          3.283170874999996,
+          3.8170070840000108,
+          3.282700792000014,
+          3.216973166999992,
+          3.33317120800001,
+          3.6332678750000014,
+          2.9153436249999913
+        ]
+      },
+      "native_calls": 70,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          13
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 32.246
+      },
+      "jev_calls": 14,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true,
+      "execution_config": {
+        "mode": "realtime",
+        "period_ms": 100,
+        "recheck_target": false,
+        "warnings": [
+          {
+            "code": "decision_exceeded_period",
+            "count": 14,
+            "message": "Jev decision took 2.379s, longer than the 100ms cycle target; no catch-up actions are queued"
+          }
+        ],
+        "elapsed_seconds": 47.732
+      }
+    }
+  ],
+  "native_baseline_rerun": false,
+  "baseline_note": "Historical native realtime attempt failed and had incomplete billing; no paired game savings claim.",
+  "scope": "Text-accessible semantic reaction game; independently advancing four-second deadlines; not a visual game benchmark.",
+  "summary": {
+    "completed": 2,
+    "runs": 2,
+    "seconds": 226.14476624999998,
+    "usd": 0.322774452,
+    "min_reaction_seconds": 2.2498833750000102,
+    "median_reaction_seconds": 3.200351020999996,
+    "max_reaction_seconds": 3.8170070840000108
+  }
+}

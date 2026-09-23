@@ -1,0 +1,24 @@
+name: Bug report
+description: Report an installation or execution problem without private traces.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: macOS, Python, Codex desktop / Computer Use versions, and CLI or MCP entrypoint.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and expected behavior
+      description: Use a public or synthetic task. Remove keys, private screen text and local usernames.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Include the sanitized error and handoff reason, not full UI/model logs.
+    validations:
+      required: true

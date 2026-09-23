@@ -1,3 +1,3 @@
-from .cli import main
+from .task_cli import main
 
 raise SystemExit(main())

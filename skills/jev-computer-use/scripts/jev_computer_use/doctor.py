@@ -21,6 +21,6 @@ def doctor(config=None, codex_command='codex', helper='external', key_file=None)
         checks['runtime_found'] = False
         checks['runtime_error'] = str(error)
     checks['note'] = ('Keep Codex desktop running. OS/app permissions and login are checked by actual use. '
-                      'A missing environment key can be entered at the hidden prompt.')
+                      'Provide a key through TYPESAFE_API_KEY, TYPESAFE_API_KEY_FILE or --key-file.')
     print(json.dumps(checks, indent=2))
     return 0 if checks['macos'] and (helper == 'external' or checks['codex_cli']) and checks['runtime_found'] else 1

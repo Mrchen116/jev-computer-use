@@ -13,3 +13,5 @@ llm-*.json
 .playwright-cli/
 .DS_Store
 *.log
+
+.ruff_cache/

@@ -1,46 +1,78 @@
-# Jev Computer Use：Skill + 执行代码
+# jev-computer-use
 
-给外层 Agent 一句任务：**Agent 调用 Skill，Skill 启动代码，Jev 选择动作，代码执行桌面操作。需要文字、推理帮助或完成核验时，交回同一个外层 Agent。**
+**让外层 Agent 负责思考，让 Jev 负责连续操作。**
 
-普通点击不经过外层 Agent 逐步转发。默认模式不会在内部另开 `codex exec`，外层 Agent 可以使用当前对话里已有的目标、资料和授权。不要求起始 URL，也不要求为每个网站写流程。
+[English](../README.md) · [安装指南](getting-started.md) · [Skill](../skills/jev-computer-use/SKILL.md) · [实测与复现](../evals/README.md)
 
-## 用户怎么用
+这是一个自包含的 **Skill + Python 执行器**。用户给出任务，外层 Agent 决定是否委派；
+Jev 根据完整任务、当前完整无障碍界面和每一步简洁历史选择下一步，代码直接执行。
+需要新文本、复杂推理或最终核验时，再交还外层 Agent。每次点击不经过 LLM 转发。
 
-请你的 Agent 从本仓库安装 `skills/jev-computer-use`，或者把整个目录复制到 Agent 的技能目录。Codex 的首次安装示例：
+```text
+用户 → 外层 Agent（System Two）→ Skill → Python ↔ Jev（System One）
+            ↑                            ↓
+       推理、输入、最终核验 ← 当前界面与进展 ← 原生 Computer Use
+```
+
+## 安装后直接提任务
+
+需要 **macOS、Python 3.9+、已启用 Computer Use 且保持运行的 Codex 桌面端，以及
+TypeSafe Jev API key**。Python 执行器没有第三方依赖，但不附带 Codex 原生运行时。
 
 ```sh
 git clone https://github.com/Mrchen116/jev-computer-use.git
-mkdir -p ~/.codex/skills
-cp -R jev-computer-use/skills/jev-computer-use ~/.codex/skills/
+cd jev-computer-use
+python3 scripts/install.py --configure-key
 ```
 
-已有同名技能时先检查再更新。新开 Agent 会话，让它发现技能，然后直接说：
+安装器通过隐藏输入接收 key，以 `0600` 权限保存到仓库外的
+`~/.config/jev-computer-use/api-key`，然后安装完整 Skill。已有安装或 key 不会被覆盖。
+已有 key 文件可省略 `--configure-key`，将文件路径告诉 Agent 即可，不要把密钥发进聊天。
 
-> 用 $jev-computer-use 去 https://mrchen116.github.io/ 找我的输入法项目，给我 GitHub 链接。
+重新开启 Agent 会话后说：
 
-> 用 $jev-computer-use 在我的网站找多 agent 项目，返回最新的一个 issue。
+> 用 $jev-computer-use 去 https://mrchen116.github.io/ 找语音输入项目，给我 GitHub 链接。
+> key 文件在 ~/.config/jev-computer-use/api-key。请使用专用浏览器窗口。
 
-如果对话里还没有你的网站等必要事实，Agent 会询问。用户不需要手写任务 JSON、按钮名单或模型提示词。Skill 内含完整 Python 代码，不需要 pip 安装。
+用户不需要生成 JSON、问题或操作列表。没有注册 MCP 时，Skill 使用 CLI；经常使用时建议
+按[安装指南](getting-started.md)注册 MCP，让 Jev 与外层共享原生会话和当前应用绑定。
+其他 Agent 可以调用 CLI，但仍依赖运行中的 Codex 原生 Computer Use。
 
-需要 macOS、Python 3.9+、保持开启且装有 Computer Use 的 Codex 桌面端，以及 TypeSafe key。通过运行环境的 `TYPESAFE_API_KEY` 或 `TYPESAFE_API_KEY_FILE` 配置；文件放在仓库外，权限设为 0600，不把 key 放进聊天或命令参数。外层 Agent 需要能运行持续进程、读写文件，并在执行器等待时回复。**换外层 Agent 不代表摆脱 Codex 桌面执行依赖**；目前实际宿主验收为 Codex，其他 Agent 尚未逐一实测。
+## 适合什么任务
 
-## 交接如何工作
+- **连续网页或应用操作：** `step` 模式逐步观察、判断和执行，适合导航及已知值表单。
+- **周期性响应：** `realtime` 模式由外层设置最小周期；实际响应仍受观察、推理和执行延迟影响。
+- **操作中夹杂推理：** Jev 推进可识别的交互，比较、计算、综合判断和新文本由外层处理。
+- **单次点击或主要靠推理：** 外层直接做更合适，委派本身也有开销。
 
-1. 外层 Agent 读取 Skill，传入用户任务及必要事实，启动一个持续执行的 worker。
-2. worker 从应用列表开始，连续运行观察 → Jev 决策 → 原生 CUA 执行。
-3. 需要帮助时暂停，返回请求 ID、类型、当前界面证据和所需回答字段。
-4. 外层 Agent 根据当前对话与证据给出输入、动作建议或核验结果，必要时向用户询问。
-5. 同一个 worker 接收回答，执行前重读界面；界面已变就重新决策，不执行旧动作。
-6. Jev 提议完成后，由外层 Agent 核对所有要求。证据仍然匹配才结束，最终答案由外层 Agent 给用户。
+不要求起始 URL，不预设各界面的路线。外层可以准备明确的输入值；Jev 决定聚焦哪个输入框、
+何时使用哪个值。输入与提交是独立动作。进展包含应用、窗口、全部简洁历史、用量和告警；
+交棒直接给当前完整界面，日志用于查旧界面和诊断。只有外层能确认整个任务已完成。
 
-求助与响应通过本机私有 JSON 文件交接，不要求宿主实现新的 MCP 服务，也不启动嵌套 LLM。默认最多 30 轮动作决策、20 次外层求助、每次等待 600 秒。求助等待时间不等于 LLM 推理耗时。
+## 实测结果
 
-## 边界与验证
+时间包含外层 Sol/medium 的启动、推理、交棒和最终回答；费用按外层 LLM 与 Jev 的实际
+计量 token 换算，不是订阅账户扣费。
 
-任务、当前 UI 内容和历史会发送给 Jev；相关证据也会交给外层 Agent。默认报告只有元数据，但临时交接目录包含私有上下文和最终答案，由宿主完成后清理。不要发布这些文件。风险模型与原文引用都不是完整授权或正确性保证。
+| 场景 | 完成情况 | 相对历史原生费用 | 总耗时 |
+| --- | --- | --- | --- |
+| MiniWoB：三类任务，各三个种子 | 9/9 | **降低 52.7%** | **减少 38.5%** |
+| 四个真实网站任务 | 4/4 | 降低 7.9% | **增加 12.3%** |
+| 自建即时小游戏 | 12/12 正确 | 不作配对结论 | 反应 1.21–1.52 秒 |
 
-支持可访问性控件点击、单行填写、滚动、快捷键和应用切换；不支持纯图像定位、拖拽、上传和任意多行编辑。原生后端主要在 Chrome 验证。没有受控实验支持“省多少费用”或“快多少倍”。
+MiniWoB 合计 **$1.049 / 374 秒**，历史原生为 **$2.217 / 608 秒**。
+不过 CLI 版本从 0.153.4 变为 0.155.1，严格同版本验收仍未满足；样本少、种子复用、
+时限放宽到 300 秒，不是官方榜单成绩。网站任务测的是前一运行时候选，其中一题外层用了截图。
+原生实时小游戏的历史失败没有重跑。完整限制与失败记录见[报告](../evals/computer_use/MINIWOB-RUNTIME.md)。
 
-保留手动 CLI：安装 Python 包后，显式使用 `jev-computer-use '任务' --helper codex`，才启用内部 Codex CLI 文字助手。默认 Skill 路径不需要它。
+## 使用边界
 
-完整入口见 [SKILL.md](../skills/jev-computer-use/SKILL.md)，[架构](architecture.md)、[源码对比](comparison.md)、[验证记录](testing.md)。
+项目仍处于实验阶段，不能保证任何电脑任务都更快更省。Jev 读取无障碍文字，不看截图；
+不支持的控件、超大界面和不确定情况会交还外层。当前完成率证据主要来自 Chrome；
+TextEdit 检查停在权限请求，不能算本地应用验证成功。
+
+界面文字会发送给 TypeSafe；日志可能包含私人内容和输入值，请存放在仓库外。
+运行时正常权限仍然生效，不自动批准授权，不自动重放不确定操作。
+保持电脑解锁，避免多个控制器同时操作。参见[安全说明](../SECURITY.md)和[运行时说明](runtime.md)。
+
+开发与贡献入口见[文档索引](README.md)、[贡献指南](../CONTRIBUTING.md)和[更新记录](../CHANGELOG.md)。

@@ -1,0 +1,66 @@
+{
+  "scope": "Read-only live Jev replays; no UI actions; not scored trials.",
+  "runs": [
+    {
+      "source_run": "08",
+      "source_step": 12,
+      "source_history_sha256": "6831e6104aaa907fe81839f15ef933fe3689a636168f8f03af513dd50b9e84c5",
+      "prior_gate": {
+        "type": "choice",
+        "choice": "continue",
+        "confidence": 0.97,
+        "probabilities": {
+          "pause": 0.01,
+          "continue": 0.99
+        }
+      },
+      "new_gate": {
+        "type": "choice",
+        "choice": "help_reasoning",
+        "confidence": 0.75,
+        "probabilities": {
+          "help_reasoning": 0.83,
+          "pause": 0.01,
+          "continue": 0.16
+        }
+      },
+      "next_action": "help_reasoning",
+      "seconds": 3.507,
+      "expected_gate": "help_reasoning",
+      "passed": true
+    },
+    {
+      "source_run": "09",
+      "source_step": 2,
+      "source_history_sha256": "8682d5070a9512fcd888c96c793c2519dc1cedc0d643f5e66f999135cc8cf280",
+      "prior_gate": {
+        "type": "choice",
+        "choice": "continue",
+        "confidence": 0.71,
+        "probabilities": {
+          "help_reasoning": 0.18,
+          "pause": 0.01,
+          "continue": 0.81
+        }
+      },
+      "new_gate": {
+        "type": "choice",
+        "choice": "continue",
+        "confidence": 0.98,
+        "probabilities": {
+          "continue": 0.99,
+          "help_reasoning": 0.01,
+          "pause": 0.0
+        }
+      },
+      "next_action": "click_28",
+      "seconds": 1.265,
+      "expected_gate": "continue",
+      "passed": true
+    }
+  ],
+  "usage": {
+    "input_tokens": 10569,
+    "output_tokens": 1443
+  }
+}

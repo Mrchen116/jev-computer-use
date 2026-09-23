@@ -16,6 +16,7 @@ ROLE_NAMES = {
     'HTML 内容': 'webarea', 'web area': 'webarea',
     '菜单栏': 'menubar', 'menu bar': 'menubar',
     '文本': 'text', 'text': 'text', 'static text': 'text', '标题': 'heading', 'heading': 'heading',
+    'container': 'container',
 }
 ROLE_NAMES = {k.lower(): v for k, v in ROLE_NAMES.items()}
 ROLE_PATTERN = '|'.join(re.escape(s) for s in sorted(ROLE_NAMES, key=len, reverse=True))
@@ -29,6 +30,11 @@ def nodes(raw):
     for line in raw.splitlines():
         match = NODE.match(line)
         if not match:
+            # AX text values can span lines (e.g. a receipt or saved JSON). Keeping
+            # only the numbered first line would silently discard final evidence.
+            if parsed and parsed[-1]['role'] in ('text', 'textbox') and line.strip():
+                parsed[-1]['detail'] += '\n' + line.strip()
+                parsed[-1]['line'] += '\n' + line
             continue
         space, ref, rest = match.groups()
         role = ROLE.match(rest)
@@ -37,14 +43,43 @@ def nodes(raw):
     return parsed
 
 
-def observation(raw, app=None, scope='window', offset=0):
+def visible_page_url(raw):
+    """Read the page URL from native metadata or an unfocused browser address bar."""
+    parsed = nodes(raw)
+    root = next((n for n in parsed if n['role'] == 'webarea'), None)
+    metadata = root['detail'] if root else raw.splitlines()[0] if raw else ''
+    match = re.search(r'\bURL: ([^\s,]+)', metadata)
+    url = match[1] if match else ''
+    if url and '…' not in url:
+        return url
+    # Native AX sometimes elides URL attributes while retaining the browser's
+    # visible address. Never use a page-owned input or an address being edited.
+    if root and url == '…':
+        focused = re.search(r'The focused UI element is (\d+)\b', raw)
+        for node in parsed:
+            if node is root:
+                break
+            if node['role'] != 'textbox' or (focused and focused[1] == node['ref']):
+                continue
+            detail = re.sub(r'^(?:\([^)]*\)\s*)+', '', node['detail'])
+            address = re.match(
+                r'(?:Address and search bar|地址和搜索栏), Value: (.*?)(?=, (?:Placeholder|Help):|$)',
+                detail,
+                re.I,
+            )
+            if address and '…' not in address[1]:
+                return address[1]
+    return ''
+
+
+def observation(raw, app=None, scope='window', offset=0, url=None):
     """Expose current window or its tabs. All controls remain reachable by paging."""
     all_nodes = nodes(raw)
     tabs = [n for n in all_nodes if n['role'] == 'tab']
     menu_depth = None
     controls = {}
     content = []
-    seen = set()
+    previous_content = None
     for node in all_nodes:
         role, detail, ref = node['role'], node['detail'], node['ref']
         if role == 'menubar':
@@ -56,9 +91,13 @@ def observation(raw, app=None, scope='window', offset=0):
         if scope == 'window' and role == 'tab':
             continue
         text = re.sub(r'^(?:\([^)]*\)\s*)+', '', detail)
-        if text and role != 'other' and text not in seen:
-            content.append(role + ': ' + text)
-            seen.add(text)
+        if text and role != 'other':
+            item = role + ': ' + text
+            # Repeated values in different sections carry different meaning:
+            # method parameters, timestamps and form state must retain context.
+            if item != previous_content:
+                content.append(item)
+            previous_content = item
         if '(disabled)' in detail:
             continue
         target = {'ref': ref, 'role': role, 'label': text or role,
@@ -76,8 +115,7 @@ def observation(raw, app=None, scope='window', offset=0):
                                                        'label': f'Scroll {direction} in {text or role}'}
     # URLs from window metadata are visible evidence even in a non-web AX root.
     first = raw.splitlines()[0] if raw else ''
-    addresses = re.findall(r'\bURL: (\S+)', raw)
-    url = addresses[0].rstrip(',') if addresses else ''
+    url = visible_page_url(raw) if url is None else url
     pairs = list(controls.items())
     offset = min(offset, max(0, (len(pairs)-1)//PAGE_SIZE*PAGE_SIZE))
     actions = dict(pairs[offset:offset + PAGE_SIZE])

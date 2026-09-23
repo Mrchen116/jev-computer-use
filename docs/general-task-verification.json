@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-22",
+  "kind": "implementation integration checks, not comparative benchmark",
+  "environment": {
+    "python": "3.9.6",
+    "native_runtime": "26.915.31945",
+    "decision_model": "jev-latest"
+  },
+  "offline": {
+    "project_tests": 85,
+    "evaluation_tests": 9,
+    "new_protocol_tests": 13
+  },
+  "live_checks": {
+    "prepared_input": {
+      "status": "needs_host",
+      "reason": "review_completion",
+      "steps": 7,
+      "elapsed_seconds": 15.348,
+      "usage": {
+        "jev": {
+          "input_tokens": 34421,
+          "output_tokens": 4517
+        },
+        "unmetered_calls": 0,
+        "jev_cost_usd": 0.001445682,
+        "outer_llm": "accounted by host"
+      },
+      "warnings": [
+        {
+          "code": "ui_changed_during_decision",
+          "count": 1,
+          "message": "Interface text changed while Jev was deciding"
+        }
+      ],
+      "actions": [
+        "host_input",
+        "switch_app",
+        "click",
+        "replace",
+        "click",
+        "click",
+        "review_completion"
+      ],
+      "success_text_visible": true
+    },
+    "host_input_resume_and_mode_switch": {
+      "first_reason": "help_input",
+      "second_reason": "review_completion",
+      "steps_before": 3,
+      "steps_after": 8,
+      "history_preserved": true,
+      "status_history_matches": true,
+      "mode": "realtime",
+      "period_ms": 100,
+      "usage": {
+        "jev": {
+          "input_tokens": 40694,
+          "output_tokens": 5367
+        },
+        "unmetered_calls": 0,
+        "jev_cost_usd": null,
+        "outer_llm": "accounted by host"
+      },
+      "success_text_visible": true,
+      "elapsed_seconds": 18.835,
+      "outer_verdict_recorded": true
+    }
+  },
+  "retained_setup_failure": {
+    "reason": "Opening Chrome with an OS command did not establish the dedicated test window; Jev requested help after app selection. No click or input was executed.",
+    "fix": "The test harness creates the window with native CUA, loads the local fixture and verifies its identity before starting the task."
+  },
+  "limits": [
+    "Synthetic local fixture validates protocol plumbing; it is not a representative task-success benchmark.",
+    "No outer LLM inference was billed in these scripted integration checks; the caller supplied known text and reviewed results.",
+    "No new Sol baseline or native realtime game run.",
+    "The prepared-input USD value uses an explicit input rate of 0.042 per million and free output; the resumed check leaves unknown cost null."
+  ],
+  "source_sha256": {
+    "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "0f160b526cae4f3b29f714cf8274663e01a09609d5520f8dcf5037756c84330a",
+    "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "7b397ac2f9dcad29204302e6c9c2e3675baa413dbc307a9b53b8d6cbed20d682",
+    "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "78e1363f68ec1f9a31e130c55f82e07c5b17071dc576e861ed84ae3128d8f51f",
+    "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "98699f435dcad00eef940c488c32ef1e3d9604a077ccd96911b5eb864df7db9d"
+  },
+  "source_sha256_note": "Hashes identify the live-check source. Subsequent window-identity recheck and slow-decision warning changes were verified with focused protocol tests.",
+  "additional_checks": {
+    "default_mcp_tools": [
+      "js",
+      "js_reset",
+      "delegate_task"
+    ],
+    "copied_skill_without_site_packages": "Read completed status and all 8 history records successfully"
+  }
+}

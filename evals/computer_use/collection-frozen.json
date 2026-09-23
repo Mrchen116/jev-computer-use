@@ -1,0 +1,1029 @@
+{
+  "manifest": {
+    "created_at": "2026-09-21T16:12:52.199128+00:00",
+    "suite": "live",
+    "seeds": [
+      19,
+      43
+    ],
+    "cases": [
+      "portfolio",
+      "latest_issue",
+      "documentation",
+      "research"
+    ],
+    "arms": [
+      "baseline",
+      "hybrid"
+    ],
+    "rates_per_million": {
+      "sol_input": 4.0,
+      "sol_cached": 0.4,
+      "sol_write": 5.0,
+      "sol_output": 20.0,
+      "jev_input": 0.042,
+      "jev_output": 0.0
+    },
+    "git_head": "b25da64d6cb15e0e8aced155b5d35cfa9b350a30",
+    "codex_version": "codex-cli 0.153.4",
+    "source_sha256": {
+      "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+      "evals/computer_use/live_cases.py": "4781ce7bb71d4d08728ba1ad776526d9069b253420168a99b39f05ae9cc763a4",
+      "evals/computer_use/report.py": "48606d678ff32fb931fa4755f6b012509c3f9a2f4ec101ced6b8849169f7486d",
+      "evals/computer_use/run.py": "72010c89beb7433d166afd83830557875ccfeedb37674ee17eda6cb6decfd3f6",
+      "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+      "evals/computer_use/test_live.py": "5bbda0f4eb0393755d6bfb8e74d623b62c333512e60c8ca80de8ce91d1da9aa0",
+      "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+      "skills/jev-computer-use/references/stages.md": "9db0f849f500d65b8821efe9a5877db31f7aa7bf872655423cc2fd75afeea5e3",
+      "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "496f4c519a348d835062e86b1e3590fc60de59ff2418598aabb96954fea18a2b",
+      "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+      "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "da0a0e194d8fb4ff72acb640f9c11b724166770532f07579c28ac0283cda3309",
+      "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+      "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "90db58a2bbfd2388f423c553124afd2a7b5239b40a6a0685d5b7742051bca0b0",
+      "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "5bfc94cc18dcdd28713c5d843ad3061bdf9628fc820cf4112eb868ef181909d5",
+      "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+      "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+      "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "1ce14668c2a1d6c6494505208b3fbdd908c17308f74169ff584ebced2e24e619",
+      "skills/jev-computer-use/scripts/jev_computer_use/models.py": "d8c8188b8b2a229f1df8922281a01ca60a4db35d07ff4547197a0bd8a68bad6e",
+      "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "ad50995aa59049950e20afd5f6d62cb962cccd30763cec39e11526aa861f94ae",
+      "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+      "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+      "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "50346ba3c52f381a3890587fb9f0142085596b534667d3759a5ab7ba84c4a1b2",
+      "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d"
+    }
+  },
+  "source_hashes_match": true,
+  "runs": [
+    {
+      "case": "portfolio",
+      "seed": 19,
+      "arm": "baseline",
+      "seconds": 36.044380124999996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 3.7189838749999997,
+      "max_request_input_tokens": 35314,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 131607,
+        "cached_input_tokens": 95744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 779,
+        "reasoning_output_tokens": 317
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.1973296,
+      "known_usd": 0.1973296,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 3,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 19,
+      "arm": "hybrid",
+      "seconds": 37.889422333999995,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.208333667000005,
+      "max_request_input_tokens": 22579,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 76180,
+        "cached_input_tokens": 61056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1020,
+        "reasoning_output_tokens": 229
+      },
+      "jev_usage": {
+        "input_tokens": 11945,
+        "output_tokens": 1416
+      },
+      "usd": 0.10582008999999999,
+      "known_usd": 0.10582008999999999,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 10,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          0,
+          1
+        ],
+        "outcomes": [
+          "collection_ready",
+          "collection_ready"
+        ],
+        "jev_seconds": 2.261
+      },
+      "jev_calls": 2,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 19,
+      "arm": "baseline",
+      "seconds": 166.25110137499996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.293423125000004,
+      "max_request_input_tokens": 79005,
+      "llm_requests": 16,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 869250,
+        "cached_input_tokens": 787584,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4255,
+        "reasoning_output_tokens": 1982
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.7267976,
+      "known_usd": 0.7267976,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 14,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 19,
+      "arm": "hybrid",
+      "seconds": 232.472676417,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 3.439136750000003,
+      "max_request_input_tokens": 149227,
+      "llm_requests": 28,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 1949374,
+        "cached_input_tokens": 1803264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6565,
+        "reasoning_output_tokens": 2852
+      },
+      "jev_usage": {
+        "input_tokens": 56137,
+        "output_tokens": 7894
+      },
+      "usd": 1.439403354,
+      "known_usd": 1.439403354,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 47,
+      "delegation": {
+        "stages": 5,
+        "actions_per_stage": [
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        "outcomes": [
+          "collection_ready",
+          "collection_ready",
+          "collection_ready",
+          "collection_ready",
+          "needs_input"
+        ],
+        "jev_seconds": 12.229000000000001
+      },
+      "jev_calls": 8,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 19,
+      "arm": "baseline",
+      "seconds": 97.42634816699996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 3.6477194159999726,
+      "max_request_input_tokens": 51775,
+      "llm_requests": 8,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 269409,
+        "cached_input_tokens": 224512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2216,
+        "reasoning_output_tokens": 1146
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.3137128,
+      "known_usd": 0.3137128,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 6,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 19,
+      "arm": "hybrid",
+      "seconds": 81.91750949999994,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.819400208000047,
+      "max_request_input_tokens": 22418,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 76968,
+        "cached_input_tokens": 54016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1627,
+        "reasoning_output_tokens": 698
+      },
+      "jev_usage": {
+        "input_tokens": 41047,
+        "output_tokens": 7512
+      },
+      "usd": 0.14767837399999997,
+      "known_usd": 0.14767837399999997,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 9,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          2
+        ],
+        "outcomes": [
+          "collection_ready"
+        ],
+        "jev_seconds": 4.25
+      },
+      "jev_calls": 4,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 19,
+      "arm": "baseline",
+      "seconds": 116.18100683299997,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.712312333999989,
+      "max_request_input_tokens": 66068,
+      "llm_requests": 11,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 391012,
+        "cached_input_tokens": 303104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2093,
+        "reasoning_output_tokens": 822
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.5147336,
+      "known_usd": 0.5147336,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 9,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 19,
+      "arm": "hybrid",
+      "seconds": 173.182234708,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 5.549531999999999,
+      "max_request_input_tokens": 37150,
+      "llm_requests": 10,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 240192,
+        "cached_input_tokens": 201728,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1996,
+        "reasoning_output_tokens": 532
+      },
+      "jev_usage": {
+        "input_tokens": 227850,
+        "output_tokens": 35519
+      },
+      "usd": 0.28403690000000004,
+      "known_usd": 0.28403690000000004,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 78,
+      "delegation": {
+        "stages": 4,
+        "actions_per_stage": [
+          1,
+          21,
+          1,
+          1
+        ],
+        "outcomes": [
+          "collection_ready",
+          "step_budget",
+          "need_help",
+          "collection_ready"
+        ],
+        "jev_seconds": 28.512000000000004
+      },
+      "jev_calls": 25,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 43,
+      "arm": "baseline",
+      "seconds": 49.03714904200001,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.2535022080001,
+      "max_request_input_tokens": 36112,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 134621,
+        "cached_input_tokens": 97920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 695,
+        "reasoning_output_tokens": 245
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.199872,
+      "known_usd": 0.199872,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 3,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "portfolio",
+      "seed": 43,
+      "arm": "hybrid",
+      "seconds": 57.565921749999916,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 3.7833392499999263,
+      "max_request_input_tokens": 22603,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 76210,
+        "cached_input_tokens": 61184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1059,
+        "reasoning_output_tokens": 248
+      },
+      "jev_usage": {
+        "input_tokens": 11926,
+        "output_tokens": 1416
+      },
+      "usd": 0.10625849200000001,
+      "known_usd": 0.10625849200000001,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "visited_portfolio": true,
+          "project": true,
+          "url": true,
+          "description": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 9,
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          0,
+          1
+        ],
+        "outcomes": [
+          "collection_ready",
+          "collection_ready"
+        ],
+        "jev_seconds": 2.308
+      },
+      "jev_calls": 2,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 43,
+      "arm": "baseline",
+      "seconds": 162.59344158299996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.756076458000052,
+      "max_request_input_tokens": 76816,
+      "llm_requests": 15,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 759974,
+        "cached_input_tokens": 688896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3260,
+        "reasoning_output_tokens": 1707
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.6250704,
+      "known_usd": 0.6250704,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 13,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "latest_issue",
+      "seed": 43,
+      "arm": "hybrid",
+      "seconds": 219.50467016699986,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.053718375000017,
+      "max_request_input_tokens": 53060,
+      "llm_requests": 14,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 476924,
+        "cached_input_tokens": 421632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4554,
+        "reasoning_output_tokens": 1972
+      },
+      "jev_usage": {
+        "input_tokens": 47270,
+        "output_tokens": 6934
+      },
+      "usd": 0.4828861400000001,
+      "known_usd": 0.4828861400000001,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "opened_issue": true,
+          "title": true,
+          "number": true,
+          "date": true,
+          "url": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 31,
+      "delegation": {
+        "stages": 5,
+        "actions_per_stage": [
+          0,
+          2,
+          2,
+          1,
+          1
+        ],
+        "outcomes": [
+          "collection_ready",
+          "collection_ready",
+          "collection_ready",
+          "collection_ready",
+          "need_help"
+        ],
+        "jev_seconds": 6.5889999999999995
+      },
+      "jev_calls": 6,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 43,
+      "arm": "baseline",
+      "seconds": 100.16119716700018,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.739704666999842,
+      "max_request_input_tokens": 61513,
+      "llm_requests": 9,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 356313,
+        "cached_input_tokens": 293376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1635,
+        "reasoning_output_tokens": 523
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.4017984,
+      "known_usd": 0.4017984,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 7,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "documentation",
+      "seed": 43,
+      "arm": "hybrid",
+      "seconds": 88.25060195899982,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.558305750000045,
+      "max_request_input_tokens": 20968,
+      "llm_requests": 3,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 54611,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1850,
+        "reasoning_output_tokens": 1084
+      },
+      "jev_usage": {
+        "input_tokens": 30076,
+        "output_tokens": 5455
+      },
+      "usd": 0.107868792,
+      "known_usd": 0.107868792,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "observed_source": true,
+          "source_link": true,
+          "read_version": true,
+          "write_version": true,
+          "arguments": true,
+          "returns": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 8,
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          2
+        ],
+        "outcomes": [
+          "collection_ready"
+        ],
+        "jev_seconds": 3.5860000000000003
+      },
+      "jev_calls": 3,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 43,
+      "arm": "baseline",
+      "seconds": 96.49645833299996,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 6.063085792000038,
+      "max_request_input_tokens": 70535,
+      "llm_requests": 12,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 508409,
+        "cached_input_tokens": 435712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1744,
+        "reasoning_output_tokens": 596
+      },
+      "jev_usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "usd": 0.49995280000000003,
+      "known_usd": 0.49995280000000003,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 10,
+      "delegation": {
+        "stages": 0,
+        "actions_per_stage": [],
+        "outcomes": [],
+        "jev_seconds": 0
+      },
+      "jev_calls": 0,
+      "jev_models": [],
+      "audit_violations": [],
+      "cost_verified": true
+    },
+    {
+      "case": "research",
+      "seed": 43,
+      "arm": "hybrid",
+      "seconds": 92.348917583,
+      "exit_code": 0,
+      "timed_out": false,
+      "interrupted": false,
+      "setup_seconds": 4.095728667000003,
+      "max_request_input_tokens": 25926,
+      "llm_requests": 6,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "llm_usage": {
+        "input_tokens": 127029,
+        "cached_input_tokens": 108288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1488,
+        "reasoning_output_tokens": 410
+      },
+      "jev_usage": {
+        "input_tokens": 51258,
+        "output_tokens": 7468
+      },
+      "usd": 0.15019203600000003,
+      "known_usd": 0.15019203600000003,
+      "unmetered_jev_calls": 0,
+      "judge": {
+        "success": true,
+        "checks": {
+          "pytest_visited": true,
+          "pytest_facts": true,
+          "ruff_visited": true,
+          "ruff_facts": true,
+          "mypy_visited": true,
+          "mypy_facts": true
+        },
+        "reaction_seconds": []
+      },
+      "native_calls": 21,
+      "delegation": {
+        "stages": 3,
+        "actions_per_stage": [
+          1,
+          3,
+          2
+        ],
+        "outcomes": [
+          "collection_ready",
+          "collection_ready",
+          "collection_ready"
+        ],
+        "jev_seconds": 7.911
+      },
+      "jev_calls": 7,
+      "jev_models": [
+        "jev-1.13.0"
+      ],
+      "audit_violations": [],
+      "cost_verified": true
+    }
+  ],
+  "summary": {
+    "cases": [
+      {
+        "case": "portfolio",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 42.54076458350001,
+          "mean_usd": 0.1986008
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 47.72767204199995,
+          "mean_usd": 0.10603929100000001
+        },
+        "cost_saving": 0.466068157832194
+      },
+      {
+        "case": "latest_issue",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 164.42227147899996,
+          "mean_usd": 0.675934
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 225.98867329199993,
+          "mean_usd": 0.9611447470000001
+        },
+        "cost_saving": -0.4219505854121852
+      },
+      {
+        "case": "documentation",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 98.79377266700007,
+          "mean_usd": 0.3577556
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 85.08405572949988,
+          "mean_usd": 0.127773583
+        },
+        "cost_saving": 0.6428467283251471
+      },
+      {
+        "case": "research",
+        "baseline": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 106.33873258299997,
+          "mean_usd": 0.5073432
+        },
+        "hybrid": {
+          "completed": 2,
+          "runs": 2,
+          "mean_seconds": 132.7655761455,
+          "mean_usd": 0.21711446800000003
+        },
+        "cost_saving": 0.5720560204611
+      }
+    ],
+    "totals": {
+      "baseline": {
+        "completed": 8,
+        "runs": 8,
+        "seconds": 824.191082625,
+        "usd": 3.4792672000000002,
+        "game_median_reaction_seconds": null
+      },
+      "hybrid": {
+        "completed": 8,
+        "runs": 8,
+        "seconds": 983.1319544179996,
+        "usd": 2.824144178,
+        "game_median_reaction_seconds": null
+      }
+    },
+    "cost_saving": 0.18829339178089,
+    "telemetry_verified": true,
+    "engineering_target_met": false
+  }
+}

@@ -2,109 +2,127 @@
 
 [![tests](https://github.com/Mrchen116/jev-computer-use/actions/workflows/test.yml/badge.svg)](https://github.com/Mrchen116/jev-computer-use/actions/workflows/test.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![macOS](https://img.shields.io/badge/platform-macOS-lightgrey)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-**Ask your agent. The skill delegates desktop work to Jev; your agent helps only when needed.**
+**Give your agent a fast System One for sustained computer interaction.**
 
-[中文说明](docs/README.zh-CN.md) · [Skill](skills/jev-computer-use/SKILL.md) · [Architecture](docs/architecture.md) · [Related projects](docs/comparison.md) · [Verification](docs/testing.md)
+[中文](docs/README.zh-CN.md) · [Get started](docs/getting-started.md) · [Skill](skills/jev-computer-use/SKILL.md) · [Results](evals/README.md) · [Documentation](docs/README.md)
 
-An experimental, self-contained **Skill + Python runner** for macOS. Give Codex or another shell-capable agent a natural-language computer-use task. Jev selects applications and controls, and the runner executes them through the installed native Computer Use runtime. No starting URL, handcrafted button list or per-website route is required.
+Your agent plans and reasons. **Jev selects the next UI action**, and Python executes
+it through native Computer Use. The agent steps in for new text, difficult reasoning
+and final verification—without relaying every click through an LLM.
 
 ```text
-User → host agent → Skill → Python worker ↔ Jev
-                               ↕
-                         native Computer Use
-                               |
-                needs text / reasoning / verification
-                               ↓
-                   pause → host agent → resume
+User task → your agent → Skill → Python ↔ Jev
+                ↑                  ↓
+          reasoning / review   native Computer Use
+                └──── current interface + progress ────┘
 ```
 
-The host keeps the conversation context and supplies missing reasoning. **The default worker never starts another LLM and does not return every click to the host.** It pauses only at handoff points. This reduces unnecessary model orchestration; it is not evidence of a measured speed or cost advantage.
+A self-contained **Skill + runner**, with no Python runtime dependencies. No required
+starting URL, predicted screen sequence or website-specific routes. Jev sees the
+whole task, complete current accessibility tree and every concise step record.
 
-## Install the skill
+## Quick start
 
-Ask your agent to install `skills/jev-computer-use` from this repository, or copy that complete directory into its skill directory. For a new Codex installation:
+Requires **macOS, Python 3.9+, Codex desktop running with Computer Use enabled,
+and a TypeSafe Jev API key**. This is an experimental community integration; it
+does not bundle or replace the Codex runtime.
 
 ```sh
 git clone https://github.com/Mrchen116/jev-computer-use.git
-mkdir -p ~/.codex/skills
-cp -R jev-computer-use/skills/jev-computer-use ~/.codex/skills/
+cd jev-computer-use
+python3 scripts/install.py --configure-key
 ```
 
-Keep an existing installation if present until you intentionally update it. Start a new agent session so it discovers the skill. Then ask:
+The installer prompts for your key without echoing it, saves it privately outside
+Git, and copies the complete Skill into Codex's skills directory. It refuses to
+overwrite existing installations or keys. Already have a key file? Omit
+`--configure-key` and give your agent its path.
 
-> Use $jev-computer-use to find the input-method project on https://mrchen116.github.io/ and return its GitHub link.
+Start a **new agent session**, then ask:
 
-> 用 $jev-computer-use 去我的个人网站找多 agent 项目，给我最新的一个 issue。
+> Use $jev-computer-use to go to https://mrchen116.github.io/, find the voice-input
+> project, and return its GitHub link. My key file is
+> ~/.config/jev-computer-use/api-key. Use a dedicated browser window.
 
-Supply your website or other personal facts when they are not already known to the host. Users do not need to write task JSON, model prompts, button lists or verification scripts. All runner code is inside the skill directory; copying it needs no pip installation and no third-party Python dependencies.
+You provide the task; the agent handles delegation. The CLI route needs no MCP
+registration. For an installation check, other agents, MCP setup and permissions,
+see [Getting started](docs/getting-started.md).
 
-## Requirements and credentials
+## What to delegate
 
-- macOS and Python 3.9+.
-- Codex desktop running with **Computer Use installed** and normal OS/app permissions.
-- A host agent that can run a long-lived shell command, read/write private files and service handoffs while the command runs.
-- A TypeSafe API key in `TYPESAFE_API_KEY`, or a private key file selected by `TYPESAFE_API_KEY_FILE` / `--key-file`. Keep that file outside repositories and mode 0600. Do not put the key in chat or command arguments.
+| Work | How it runs |
+| --- | --- |
+| Navigation and forms with known values | `step`: observe → decide → execute; return when input, reasoning or review is needed. |
+| Repeated controls on a changing interface | `realtime`: the same loop at an agent-selected minimum cycle interval. Actual latency still depends on the runtime and Jev. |
+| Mixed interaction and reasoning | Jev advances recognizable interactions; your agent resolves comparisons, missing text and other reasoning. |
+| One click or mostly analysis | Let your agent handle it directly; delegation adds overhead. |
 
-The host may be another agent, but the desktop backend **still depends on Codex's installed macOS runtime**. Actual integration has been tested with Codex as host; other agents use the same file protocol but are not individually certified. A Codex CLI login is needed only for the optional standalone helper below.
+Prepared inputs are literal values, not a UI script. Live status exposes the
+app/window, concise history, token usage and warnings. A handoff includes the
+**current interface directly**; MCP also preserves the live app binding. Full
+private logs are available when earlier screens or diagnostics are needed.
 
-The runtime is discovered from the installed plugin manifest, not redistributed. No binary signatures, OS permissions or chat credentials are modified. This is a version-dependent community integration, not an official standalone OpenAI SDK. See [runtime details](docs/runtime.md).
+## Measured results
 
-## How the host delegates
+Real native Computer Use, with **Sol/medium as the outer agent**, including its
+startup, reasoning, handoffs and final response in time and token-based cost:
 
-The [skill](skills/jev-computer-use/SKILL.md) contains the complete host workflow. The small interface is:
+| Evaluation | Completion | Cost vs historical native | Total time vs historical native |
+| --- | --- | --- | --- |
+| MiniWoB: 3 task types × 3 seeds | 9/9 | **52.7% lower** | **38.5% lower** |
+| Four public website tasks | 4/4 | 7.9% lower | **12.3% longer** |
+| Local realtime game | 12/12 correct | No valid paired cost claim | 1.21–1.52 s reaction time |
 
-```sh
-python3 SKILL_ROOT/scripts/run.py --doctor
-python3 SKILL_ROOT/scripts/run.py 'The user task' --exchange-dir /private/new-empty-run
-# Keep the worker alive; use another shell call to read requests and reply.
-python3 SKILL_ROOT/scripts/run.py status /private/new-empty-run --wait 30
-python3 SKILL_ROOT/scripts/run.py respond /private/new-empty-run --response-file /private/answer.json
-python3 SKILL_ROOT/scripts/run.py stop /private/new-empty-run
-```
+The MiniWoB batch cost **$1.049 vs $2.217**, taking **374 vs 608 seconds**.
+These are small historical comparisons, not a universal performance claim.
+Codex CLI changed from 0.153.4 to 0.155.1, so strict matched-runtime acceptance
+remains unmet. MiniWoB uses relaxed 300-second deadlines and reused seeds.
+The website batch used the preceding runtime candidate; one task needed host
+screenshots. The native realtime failure was retained, not rerun.
 
-A handoff supplies `request_id`, purpose, instructions, current evidence and answer fields. The host returns the matching ID and a typed JSON answer. The same worker retains its CUA session and continues; it is not restarted for each reply. Stale/malformed replies cannot authorize an action. Waiting for the host has a timeout and consumes a bounded help-request budget.
+Read the [full report and limitations](evals/computer_use/MINIWOB-RUNTIME.md)
+and [reproduction protocols](evals/README.md). Failed iterations and incomplete
+billing remain in the evidence. Prices are API-equivalent token estimates, not
+subscription deductions.
 
-The host handles text/shortcuts, ambiguous choices, missing user facts, authorization and final verification. Before a mutation or accepting completion, the worker observes again and rejects stale state. A failed or uncertain UI operation stops for inspection instead of replaying it.
+## Scope and privacy
 
-## Optional standalone CLI
+- **Accessibility text first.** Jev does not see screenshots. Unsupported controls,
+  oversized interfaces or uncertain decisions return to the outer agent.
+- **macOS is the tested platform.** The architecture supports native applications;
+  current completion evidence is principally Chrome. A TextEdit check was blocked
+  on permission and is not counted as desktop-app success.
+- **The host owns completion and authorization.** Confidence is not proof of success.
+  No nested LLM, automatic permission approval or replay of uncertain mutations.
+- **UI text is sent to TypeSafe for decisions.** Logs can contain screen text and
+  prepared inputs. Keep keys/logs outside Git and choose tasks accordingly.
+- **One controller at a time.** Keep the Mac unlocked and the intended window
+  available. Never let the worker and another agent manipulate the same UI together.
 
-For manual terminal use without a calling agent, explicitly choose the legacy Codex subprocess helper:
+See [Security](SECURITY.md) and [runtime compatibility](docs/runtime.md).
+
+## For contributors
 
 ```sh
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install .
-jev-computer-use 'Your task' --helper codex
+. .venv/bin/activate
+python3 -m pip install -e .
+python3 -m unittest discover -s tests -q
+python3 -m unittest discover -s evals/computer_use -q
+python3 scripts/check_release.py
 ```
 
-This mode requires the logged-in Codex CLI and invokes it for text/help/verification. If no key is configured, it uses a hidden terminal prompt. `--clipboard-key` reads the clipboard only when explicitly requested.
+| Directory | Purpose |
+| --- | --- |
+| `skills/jev-computer-use/` | Self-contained Skill and canonical Python source |
+| `scripts/` | Installation and publication checks |
+| `tests/` | Offline behavior and transport tests |
+| `evals/` | Real-run harnesses, protocols and sanitized evidence |
+| `docs/` | Setup, architecture, runtime and verification guides |
 
-Other options: `--context facts.txt`, `--local-demo`, `--max-steps 30`, `--max-llm-calls 20` (host-request budget in skill mode), `--help-timeout 600`, `--runtime-config /path/to/.mcp.json` (or `JEV_CUA_CONFIG`), `--output-dir`, `--trace-full`. See `--help`.
-
-## Data and limits
-
-This controls **real applications and existing login sessions**. Task text, supplied facts, current UI text/labels/values and recent events are sent to TypeSafe; handoffs also expose relevant evidence to the host agent. Screenshots are not sent. Field-name detection and model risk classification are not comprehensive privacy or authorization boundaries.
-
-Native permissions remain enforced. Runtime forms are passed to the host for a user decision. Consequential actions flagged by Jev pause for authorization review; a model score alone does not grant permission.
-
-Reports default to `~/.local/state/jev-computer-use/runs/`, containing metadata rather than task/UI/answer text. **The handoff exchange is a separate private channel**, mode 0700 with mode-0600 JSON files, and contains current task evidence and the final answer. Consumed replies are removed; the host removes its exchange and response files after completion. `--trace-full` explicitly retains private debugging data. Never publish unreviewed traces/exchanges. Other agents and providers have their own logging policies.
-
-Supported: accessibility-based clicks, single-line replacement with observed-value checks, scrolling, keyboard shortcuts, app selection, tab/control paging and recent factual history. Unsupported: image grounding, drag-and-drop, upload workflows and arbitrary multiline editors. Native tests primarily cover Chrome, not every app. Completion quotes establish observed evidence, not the correctness of the host's interpretation. Jev `done` alone never proves success.
-
-## Development and evidence
-
-```sh
-python -m pip install -e .
-python -m unittest discover -s tests -v
-python scripts/check_release.py
-# macOS only, controls real Chrome with a synthetic fixture; no models:
-python -m jev_computer_use.smoke
-```
-
-The source package lives inside the skill's `scripts/` directory and is also packaged by setuptools; there is no second vendored copy. CI tests the package and the directly runnable skill. [Testing](docs/testing.md) separates offline contracts, native transport checks and real Jev samples. Small development samples do not establish general success rate or cost savings.
-
-We studied [jev-desktop](https://github.com/yikangy873-gif/jev-desktop), [hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills), [Jevbridge](https://github.com/tacticocc/Jevbridge), and [kangshifu1/jev-computer-use](https://github.com/kangshifu1/jev-computer-use). [Comparison](docs/comparison.md) records source-pinned evidence and trade-offs; their implementations are not vendored.
-
-[MIT](LICENSE) for our code. External runtimes/services keep their own terms. Independent community project, not affiliated with OpenAI or TypeSafe. The same-named repository under `kangshifu1` is separate.
+The historical stage engine remains available for reproducing old experiments;
+it is not the default Skill workflow. See [Contributing](CONTRIBUTING.md),
+[Architecture](docs/architecture.md), [Changelog](CHANGELOG.md) and [MIT license](LICENSE).

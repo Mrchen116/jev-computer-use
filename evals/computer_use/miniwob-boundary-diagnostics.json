@@ -1,0 +1,125 @@
+{
+  "kind": "real Jev API replay of retained native observations; no UI actions",
+  "not_part_of_live_completion_results": true,
+  "finding": "Adding a second generic control-flow question did not prevent the wrong choice. An explicit host reasoning boundary changed the ranking decision to help_reasoning. Including terminal failure in review wording changed the post-failure decision to review_completion.",
+  "results": [
+    {
+      "case": "book-flight-22-hybrid",
+      "step": 12,
+      "old_choice": "click_46",
+      "seconds": 0.994,
+      "usage": {
+        "input_tokens": 6552,
+        "output_tokens": 861
+      },
+      "answers": {
+        "control_flow": {
+          "choice": "act",
+          "confidence": 0.94
+        },
+        "next_action": {
+          "choice": "click_46",
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "case": "book-flight-22-hybrid",
+      "step": 13,
+      "old_choice": "click_46",
+      "seconds": 1.316,
+      "usage": {
+        "input_tokens": 6715,
+        "output_tokens": 871
+      },
+      "answers": {
+        "control_flow": {
+          "choice": "act",
+          "confidence": 0.49
+        },
+        "next_action": {
+          "choice": "click_46",
+          "confidence": 0.43
+        }
+      }
+    },
+    {
+      "case": "click-checkboxes-large-11-hybrid",
+      "step": 1,
+      "old_choice": "click_26",
+      "seconds": 0.893,
+      "usage": {
+        "input_tokens": 3805,
+        "output_tokens": 641
+      },
+      "answers": {
+        "control_flow": {
+          "choice": "act",
+          "confidence": 0.99
+        },
+        "next_action": {
+          "choice": "click_26",
+          "confidence": 0.55
+        }
+      }
+    },
+    {
+      "case": "multi-layouts-11-hybrid",
+      "step": 2,
+      "old_choice": "click_28",
+      "seconds": 0.931,
+      "usage": {
+        "input_tokens": 3663,
+        "output_tokens": 611
+      },
+      "answers": {
+        "control_flow": {
+          "choice": "act",
+          "confidence": 0.98
+        },
+        "next_action": {
+          "choice": "click_28",
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "experiment": "ranking_instructions",
+      "step": 12,
+      "choice": "click_46",
+      "confidence": 0.54,
+      "seconds": 2.17,
+      "usage": {
+        "input_tokens": 6384,
+        "output_tokens": 821
+      }
+    },
+    {
+      "experiment": "ranking_host_scope",
+      "step": 12,
+      "choice": "help_reasoning",
+      "confidence": 0.75,
+      "seconds": 1.856,
+      "usage": {
+        "input_tokens": 6478,
+        "output_tokens": 821
+      }
+    },
+    {
+      "experiment": "terminal_review",
+      "step": 13,
+      "choice": "review_completion",
+      "confidence": 0.46,
+      "seconds": 1.432,
+      "usage": {
+        "input_tokens": 6547,
+        "output_tokens": 829
+      }
+    }
+  ],
+  "jev_usage": {
+    "input_tokens": 40144,
+    "output_tokens": 5455
+  },
+  "jev_usd_at_frozen_rate": 0.001686048
+}
